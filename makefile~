@@ -14,5 +14,5 @@ rechercheGrille : $(SRC)rechercheGrille.c $(INCLUDE)general.h
 	gcc -g -Wall $(SRC)rechercheGrille.c
 	
 clean:
-	rm -i $(SRC)*.o
-	rm -i $(SRC)*.*~
+	rm -i *.o
+	rm -i *.*~

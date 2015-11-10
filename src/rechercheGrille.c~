@@ -109,7 +109,7 @@ void chercheMot()
             
                 if(chercheMotGrille(mot.mot))
                 {
-                    //printf("OK");
+                    printf("OK");
                 }
             
                 k=0;
