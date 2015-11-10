@@ -1,7 +1,7 @@
 SRC=./src/
 INCLUDE=./includes/
 
-prog : $(SRC)main.c $(SRC)matrice.o $(SRC)rechercheDico.o $(SRC)rechercheGrille.o $(INCLUDE)general.h
+prog : $(SRC)main.c $(SRC)matrice.o $(SRC)rechercheDico.o $(SRC)rechercheGrille.o $(INCLUDE)general.h -stdc99
 	gcc -Wall $(SRC)main.c $(SRC)matrice.o $(SRC)rechercheDico.o $(SRC)rechercheGrille.o -o prog
 
 matrice : $(SRC)matrice.c $(INCLUDE)general.h
