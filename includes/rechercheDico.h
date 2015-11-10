@@ -1,0 +1,1 @@
+int chercheMotDico(char mot[]);

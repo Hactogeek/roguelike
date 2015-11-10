@@ -1,0 +1,2 @@
+void afficherGrille();
+void initGrille();
