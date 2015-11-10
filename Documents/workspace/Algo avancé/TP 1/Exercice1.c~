@@ -1,0 +1,42 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/** \fn tri
+* \brief place l'entier x dans le bonne ordre du tableau tab
+*/
+void tri(int *tab,int x, int N){
+	
+	int i ,int ind_min,int taille;
+	taille = strlen(tab);
+	
+	for(i = taille -1;i>=0;i--){
+		if(tab[i] < x ){
+			tab[i+1]=tab[i];
+			tab[i]=x;
+	}
+	
+}
+
+void affiche(int *tab){
+	int i =0, int taille = strlen(tab);
+	
+	for(i;i<taille;i++){
+		
+		printf("%i ",tab[i]);
+		
+	}
+}
+
+void main(void){
+	int tab[N],int saisie=0,i=0;
+	
+	do{
+		printf("Saisir un entier : ");
+		scanf("%i",saisie);
+		tab[i]=saisie;
+		tri(tab,saisie,N);
+		affichage(tab);
+	}while(saisie != -1);
+	
+}

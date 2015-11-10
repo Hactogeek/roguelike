@@ -1,0 +1,6 @@
+float g(float a){
+	float y;
+	y=sqrt(a);
+	return y;
+	}
+	

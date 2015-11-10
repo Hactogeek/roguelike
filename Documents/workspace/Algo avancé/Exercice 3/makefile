@@ -1,0 +1,28 @@
+CC = gcc
+OBJ = add_pers.o aff_anniv.o aff_base.o aff_cad.o aff_nb_fh.o concaten.o
+CFLAGS = -Wall -lm
+EXEC = menu
+
+$(EXEC) : $(OBJ) fonction.h
+	$(CC) -o $(EXEC) $(OBJ) $(CFLAGS)
+	
+add_pers.o: add_pers.c fonction.h
+	$(CC) -c add_pers.c $(CFLAGS)
+	
+aff_anniv.o: aff_anniv.c fonction.h
+	$(CC) -c aff_anniv.c $(CFLAGS)
+	
+aff_base.o: aff_base.c fonction.h
+	$(CC) -c aff_base.c $(CFLAGS)
+	
+aff_cad.o: aff_cad.c fonction.h
+	$(CC) -c aff_cad.c $(CFLAGS)
+	
+aff_nb_fh.o : aff_nb_fh.c fonction.h
+	$(CC) -c aff_nb_fh.c $(CFLAGS)
+
+concaten.o : concaten.c fonction.h
+	$(CC) -c concaten.c $(CFLAGS)
+	
+clean:
+	rm -i *.o
