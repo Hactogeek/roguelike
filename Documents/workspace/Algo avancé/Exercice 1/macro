@@ -1,0 +1,17 @@
+CC = gcc
+OBJ =  p1.o f1.o f2.o
+CFLAGS = -Wall -lm
+EXEC = prog
+
+
+prog: $(OBJ)
+	$(CC) -o $(EXEC) $(OBJ) $(CFLAGS)
+
+p1.o: p1.c
+	$(CC) -c p1.c $(CFLAGS)
+
+f1.o: f1.c
+	$(CC) -c f1.c $(CFLAGS)
+
+f2.o: f2.c
+	$(CC) -c f2.c $(CFLAGS)

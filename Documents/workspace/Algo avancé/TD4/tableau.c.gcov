@@ -1,0 +1,39 @@
+        -:    0:Source:tableau.c
+        -:    0:Graph:tableau.gcno
+        -:    0:Data:tableau.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:#include <stdlib.h> 
+        -:    5:#include <time.h> 
+        -:    6:#include <string.h>
+        5:    7:void permuter_cases (char *tableau, int i1, int i2, int taille) {
+        -:    8:    char inter;
+        5:    9:    if( (i1 < 0) || (i2 < 0) || (i1 >= taille) || (i2 >= taille)){ printf("impossible d'effectuer la permutation\n");
+    #####:   10:        exit(1);
+        -:   11:    }
+        5:   12:    inter = tableau[i2];
+        5:   13:    tableau[i2] = tableau[i1];
+        5:   14:    tableau[i1] = inter;
+        5:   15:}
+        1:   16:int main(void) {
+        -:   17:    int case1, case2, indice, taille;
+        -:   18:    char phrase[512];
+        -:   19:    time_t nb_secondes;
+        -:   20:    // lecture de la phrase
+        1:   21:    printf("entrez une phrase : "); fgets(phrase, 512, stdin);
+        1:   22:    taille = strlen(phrase);
+        1:   23:    printf("taille de la phrase : %d\n\n", taille);
+        -:   24:    // test aleatoire
+        1:   25:    printf("TEST ALEATOIRE ------------------\n");
+        1:   26:    srand(time(&nb_secondes)); //initialisation du generateur de nb aleatoires
+        6:   27:    for(indice=0; indice < 5; indice++){ // testons 5 fois
+        5:   28:    case1 = (float)rand()/RAND_MAX * 5; // nb alea. entre 0 et taille
+        5:   29:    case2 = (float)rand()/RAND_MAX * 5; // nb alea. entre 0 et taille permuter_cases(phrase, case1, case2, taille);
+        5:   30:    printf("la phrase avec les cases %2d et %2d permutees : %s", case1, case2, phrase); permuter_cases(phrase, case2, case1, taille); // on reprend la phrase d'origine
+        -:   31:    }
+        1:   32:return 0;
+        -:   33:}
+        -:   34:
