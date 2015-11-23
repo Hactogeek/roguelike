@@ -1,8 +1,3 @@
-# roguelike
-Projet roguelike
-=======
-Projet de L2SPI Université du Maine
-=======
 # Projet de Roguelike
 
 Tony Marteau, Dimitri Bernot, Marvin Jean
@@ -15,12 +10,12 @@ Le programme sera écrit en langage C et devra affiché le rendu du jeu dans le 
 
 ## Sommaire
 	**Projet Roguelike**
-	1. **[A Faire](#a-faire)**
-	2. **[Idée](#idée)**
-	3. **[Changelog](#changelog)**
-	4. **[Répartition](#répartition)**
-	5. **[Compilation](#compilation)**
-	6. **[Utilisation](#utilisation)**
+		1. **[A Faire](#a-faire)**
+		2. **[Idée](#idée)**
+		3. **[Changelog](#changelog)**
+		4. **[Répartition](#répartition)**
+		5. **[Compilation](#compilation)**
+		6. **[Utilisation](#utilisation)**
 	
 ## A Faire
 
