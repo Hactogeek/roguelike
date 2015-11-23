@@ -1,16 +1,13 @@
-CC=gcc
-OBJ=Outil.o test.o
-FLAGS=-g -Wall
+CC = gcc
+OBJ = src/carte.o
+FLAGS = -g -Wall
+EXEC = carte
 
-prog: $(OBJ)
-	$(CC) -o $@ $(OBJ) $(FLAGS)
+$(EXEC): $(OBJ)
+	$(CC) -o $(EXEC) $(OBJ) $(FLAGS)
 
-test.o: test.c outil/Outil.h
-	$(CC) -c test.c $(FLAGS)
-	
-Outil.o: outil/Outil.c outil/Outil.h
-	$(CC) -c outil/Outil.c $(FLAGS)
-	
+%.o: %.c $(HEADER)
+	$(CC) -o $@ -c $< $(FLAGS)
+
 clean:
 	rm -i *.o
-	
