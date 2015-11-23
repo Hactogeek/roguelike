@@ -1,9 +1,8 @@
 #define N
 #define M
-#include "deplacement.h"
-#include "personnage.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include "../inc/deplacement.h"
+#include "../inc/personnage.h"
+#include "../inc/Outils.h"
 
 typedef struct {int contenuCase;}t_case;
 typedef struct {int x; int y;}t_posJoueur;
@@ -22,7 +21,7 @@ typedef struct {int seed;  t_personnage perso; int difficulte;}t_partie;
 
 
 void main(){
-	int i;
+	int choix;
 	do{
 		/* Affichage du menu */
 		printf("\nMenu :\n");
@@ -39,7 +38,7 @@ void main(){
 			case 1: printf("Pas encore fais");break;
 			case 2: printf("Pas encore fais");break;
 			case 3: testDeplacer(); break;
-			case 4: printf("Pas encore fais");break;
+			case 4: CarteTester(1); break;
 			case 5: PersonnageTester(); break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 6\n");
 		}
