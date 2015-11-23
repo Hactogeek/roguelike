@@ -2,7 +2,7 @@ CC = gcc
 SRC = src/
 INC = inc/
 HEADER = $(INC)%.h
-OBJ = $(SRC)carte.o $(SRC)main.o
+OBJ = $(SRC)carte.o $(SRC)main.o $(SRC)deplacement.o
 FLAGS = -g -Wall
 EXEC = roguelike
 

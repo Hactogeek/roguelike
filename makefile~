@@ -1,18 +1,16 @@
-SRC=./src/
-INCLUDE=./includes/
+CC = gcc
+SRC = src/
+INC = inc/
+HEADER = $(INC)%.h
+OBJ = $(SRC)carte.o $(SRC)main.o
+FLAGS = -g -Wall
+EXEC = roguelike
 
-prog : $(SRC)main.c $(SRC)matrice.o $(SRC)rechercheDico.o $(SRC)rechercheGrille.o $(INCLUDE)general.h -stdc99
-	gcc -Wall $(SRC)main.c $(SRC)matrice.o $(SRC)rechercheDico.o $(SRC)rechercheGrille.o -o prog
+$(EXEC): $(OBJ)
+	$(CC) -o $(EXEC) $(OBJ) $(FLAGS)
 
-matrice : $(SRC)matrice.c $(INCLUDE)general.h
-	gcc -g -Wall $(SRC)matrice.c
+%.o: %.c $(HEADER)
+	$(CC) -o $@ -c $< $(FLAGS)
 
-rechercheDico : $(SRC)rechercheDico.c $(INCLUDE)general.h
-	gcc -g -Wall $(SRC)rechercheDico.c
-
-rechercheGrille : $(SRC)rechercheGrille.c $(INCLUDE)general.h
-	gcc -g -Wall $(SRC)rechercheGrille.c
-	
 clean:
-	rm -i $(SRC)*.o
-	rm -i $(SRC)*.*~
+	rm -i *.o
