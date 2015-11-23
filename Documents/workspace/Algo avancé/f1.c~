@@ -1,6 +1,0 @@
-float f(float a){
-	float x;
-	x=a+2;
-	return x;
-	}
-	

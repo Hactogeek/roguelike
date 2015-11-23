@@ -1,8 +1,0 @@
-monprogramme: p1.o f1.o f2.o
-	gcc -o monprogramme p1.o f1.o f2.o -lm
-p1.o: p1.c
-	gcc -c p1.c -Wall
-f1.o: f1.c
-	gcc -c f1.c -Wall
-f2.o: f2.c
-	gcc -c f2.c -Wall

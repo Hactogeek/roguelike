@@ -1,3 +1,0 @@
-gcc ton_code.c -I/lib/include -lcunit -L$home/Documents/TD5/lib/linux/lib -o monProg
-
-Remplacer $home/Documents/TD5/lib/linux/lib par votre répertoire 
