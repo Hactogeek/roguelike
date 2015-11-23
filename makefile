@@ -1,7 +1,10 @@
 CC = gcc
-OBJ = src/carte.o
+SRC = src/
+INC = inc/
+HEADER = $(INC)%.h
+OBJ = $(SRC)carte.o $(SRC)main.o
 FLAGS = -g -Wall
-EXEC = carte
+EXEC = roguelike
 
 $(EXEC): $(OBJ)
 	$(CC) -o $(EXEC) $(OBJ) $(FLAGS)
