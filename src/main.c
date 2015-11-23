@@ -1,8 +1,8 @@
 #define N
 #define M
-#include "../inc/deplacement.h"
-#include "../inc/personnage.h"
-#include "../inc/Outils.h"
+#include "./inc/deplacement.h"
+#include "./inc/personnage.h"
+#include "./inc/Outils.h"
 
 typedef struct {int contenuCase;}t_case;
 typedef struct {int x; int y;}t_posJoueur;
