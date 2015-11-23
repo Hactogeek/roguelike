@@ -7,7 +7,7 @@
 
 typedef struct {int contenuCase;}t_case;
 typedef struct {int x; int y;}t_posJoueur;
-typedef struct {t_case grille[N][M];t_posJoueur coordonnées}t_carte;
+typedef struct {t_case grille[N][M];t_posJoueur cord}t_carte;
 
 typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_stats;
