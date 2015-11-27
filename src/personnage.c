@@ -103,6 +103,7 @@ void PersonnageTester(){
             case 2: PersonnageAfficher(&perso); break;
             case 3: PersonnageSauvegarder(&perso); break;
             case 4: PersonnageCharger(&perso); break;
+            case 6: printf(""); break;
             default : printf("Erreur votre choix doit etre compris entre 1 et 6\n");
         }
     }while(test!=6);
