@@ -1,22 +1,41 @@
 #define TAILLE_SALLE 10
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "../inc/general.h"
 
-void carteCharger() {
-	FILE * salle;
+void CarteCharger() {
+	FILE * carteFichier;
+	char carte[TAILLE_SALLE][TAILLE_SALLE];
+	char carteCase = ' ';
 	
-	salle=fopen("./map/test_map.txt", "r");
+	char salleDebutX;
+	char salleDebutY;
 	
-	if(salle != NULL) {
-		fclose(salle);
-		printf("Parfait !");
+	carteFichier = fopen("./map/test_map.txt", "r");
+	
+	if(carte != NULL) {
+		while(!feof(carteFichier)) {
+			fscanf(carteFichier, "%c %c", &salleDebutX, &salleDebutY);
+			while(carteCase != '-') {
+				fscanf(carteFichier, "%c", &carteCase);
+				switch(carteCase) {
+					case '1' : printf("#"); break;
+					case '2' : printf(" "); break;
+					case '3' : printf("="); break;
+					case '4' : printf("@"); break;
+					
+					case '\n' : printf("\n");
+				}
+			}
+			printf("\n \n");
+		}
+		fclose(carteFichier);
 	} else {
-		printf("Meh");
+		printf("Erreur lors du chargement de la carte");
 	}
 }
 
-int main() {
-	carteCharger();
-	return 0;
+void CarteTester(int test) {
+	switch(test) {
+		case 1 : CarteCharger(); break;
+	}
 }
