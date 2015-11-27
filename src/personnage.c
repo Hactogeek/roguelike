@@ -35,6 +35,20 @@ void PersonnageAfficher(t_personnage * perso){
     Appel1("PersonnageAfficher");
 }
 
+void PersonnageSauvegarder( t_personnage * perso){
+    FILE * PersoSauvegarde;
+    
+    Appel0("PersonnageSauvegarder");
+    
+    PersoSauvegarde = fopen("save/persosauvegarde", "w");
+    
+    fprintf(PersoSauvegarde, "@%s_%i_%i_%i@", perso->nom, perso->niveau, perso->stats.vie, perso->stats.score);
+    
+    fclose(PersoSauvegarde);
+    
+    Appel1("PersonnageSauvegarder");
+}
+
 void PersonnageTester(){
 	int test;
 	t_personnage perso;
