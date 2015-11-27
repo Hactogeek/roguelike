@@ -4,3 +4,4 @@
 #include "Outil.h"
 #include "personnage.h"
 #include "check.h"
+#include "jeu.h"

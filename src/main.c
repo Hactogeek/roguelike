@@ -20,8 +20,9 @@ int main(){
 			case 1: printf("Pas encore fais");break;
 			case 2: printf("Pas encore fais");break;
             case 3:{
-                CarteCharger();
-                //JeuCommencer(t_carte carte);
+                t_carte carte;
+                CarteCharger(carte);
+                JeuCommencer(carte);
                 break;
 
             }

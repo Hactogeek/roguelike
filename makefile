@@ -7,7 +7,7 @@ FLAGS = -g -Wall
 EXEC = roguelike
 
 $(EXEC): $(OBJ)
-	$(CC) -o $(EXEC) $(OBJ) $(FLAGS)
+	$(CC) -o bin/$(EXEC) $(OBJ) $(FLAGS)
 
 %.o: %.c $(HEADER)
 	$(CC) -o $@ -c $< $(FLAGS)
