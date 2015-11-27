@@ -6,17 +6,17 @@
 //
 //
 
-#include "jeu.h"
+#include "../inc/general.h"
 
-void Jeu_Amorcer(){
+void JeuAmorcer(){
 
 }
 
-void Jeu_tester(){
+void Jeutester(){
     
 }
 
-void Jeu_commencer(t_carte){
+void JeuCommencer(t_carte carte){
     
     
     

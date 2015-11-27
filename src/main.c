@@ -18,12 +18,12 @@ int main(){
 			case 1: printf("Pas encore fais");break;
 			case 2: printf("Pas encore fais");break;
             case 3:{
-                
-                carteCharger
-                Jeu_commencer(t_carte);
+                CarteCharger();
+                //JeuCommencer(t_carte carte);
                 break;
 
-            }			case 4: CarteTester(1); break;
+            }
+            case 4: CarteTester(1); break;
 			case 5: PersonnageTester(); break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 6\n");
 		}
