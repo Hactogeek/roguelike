@@ -5,3 +5,4 @@
 #include "personnage.h"
 #include "check.h"
 #include "jeu.h"
+#include "monstre.h"

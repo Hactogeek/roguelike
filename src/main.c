@@ -10,7 +10,8 @@ int main(){
 		printf(" 3 - Test deplacement\n");
 		printf(" 4 - Test generation salles\n");
 		printf(" 5 - Initialiser Joueur\n");
-        printf(" 6 - Quitter\n");
+        printf(" 6 - MonstreTest\n");
+        printf(" 7 - Quitter\n");
         
 		printf("Votre choix : ");
 		scanf("%i",&choix);
@@ -28,10 +29,11 @@ int main(){
             }
             case 4: CarteTester(1); break;
 			case 5: PersonnageTester(); break;
-            case 6: printf("Au Revoir\n"); break;
+            case 6: MonstreTester(); break;
+            case 7: printf("Au Revoir\n"); break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 6\n");
 		}
-	}while(choix!=6);
+	}while(choix!=7);
     
     return 0;
 }
