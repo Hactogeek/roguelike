@@ -1,3 +1,5 @@
+#include "../inc/general.h"
+
 void CheckAmorcer(){
     
 }
