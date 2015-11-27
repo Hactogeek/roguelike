@@ -4,8 +4,8 @@ void DeplacementAmorcer(){
 }
 
 void DeplacementTester(int t){
-	t_carte map
-		switch(t){case 1 :Deplacement_marcher(map); break;}
+    t_carte map;
+    switch(t){case 1 :DeplacementMarcher(map); break;}
 }
 
 /* Deplace le personnage qui est au position entré */
