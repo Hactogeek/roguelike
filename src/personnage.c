@@ -1,4 +1,4 @@
-#include "general.h"
+#include "../inc/general.h"
 
 void PersonnageAmorcer(){
 
