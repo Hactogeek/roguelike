@@ -17,7 +17,14 @@ void Jeutester(){
 }
 
 void JeuCommencer(t_carte carte){
+    int i=0;
     
+    do{
+        CarteAfficher(carte);
+        DeplacementMarcher(carte);
+        i++;
+        
+    }while(i!=5);
     
     
 }
