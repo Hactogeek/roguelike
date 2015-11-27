@@ -35,6 +35,10 @@ void PersonnageAfficher(t_personnage * perso){
     Appel1("PersonnageAfficher");
 }
 
+void PersonnageSauvegarder(t_personnage *perso) {
+    
+}
+
 void PersonnageTester(){
 	int test;
 	t_personnage perso;
