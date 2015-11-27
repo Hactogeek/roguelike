@@ -9,9 +9,11 @@
 #ifndef _Structure_h
 #define _Structure_h
 
-typedef struct {int contenuCase;}t_case;
+#define TAILLE_CARTE_X 10
+#define TAILLE_CARTE_Y 10
+
 typedef struct {int x; int y;}t_posJoueur;
-typedef struct {t_case grille[N][M];t_posJoueur cord}t_carte;
+typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord;}t_carte;
 
 typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_stats;
