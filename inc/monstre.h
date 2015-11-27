@@ -1,0 +1,2 @@
+void MonstreAmorcer();
+void MonstreTester();
