@@ -16,7 +16,7 @@ void carteCharger() {
 	}
 }
 
-int main() {
+/*int main() {
 	carteCharger();
 	return 0;
-}
+}*/
