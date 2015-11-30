@@ -13,4 +13,4 @@ $(EXEC): $(OBJ)
 	$(CC) -o $@ -c $< $(FLAGS)
 
 clean:
-	rm -i *.o
+	rm -i $(SRC)*.o
