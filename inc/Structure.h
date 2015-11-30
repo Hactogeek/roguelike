@@ -10,7 +10,7 @@
 #define _Structure_h
 
 #define TAILLE_CARTE_X  10
-#define TAILLE_CARTE_Y  20
+#define TAILLE_CARTE_Y  50
 #define TAILLE_SALLE_X  10
 #define TAILLE_SALLE_Y  10
 #define SALLES_MAX_X    TAILLE_CARTE_X / TAILLE_SALLE_X
