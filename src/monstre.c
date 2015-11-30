@@ -8,6 +8,50 @@ void MonstreInitialiser(){
     
 }
 
+void MonstreDeplacement(t_carte carte)
+// Déplacement monstre en fonction du joueur
+{
+    int i;
+    for(i=0; i<NB_MAX_MONSTRE; i++)
+     {
+        if((carte.cord.x == carte.monstre[i].x-1) || (carte.cord.x == carte.monstre[i].x+1) || (carte.cord.y == carte.monstre[i].y-1) || (carte.cord.y == carte.monstre[i].y+1))
+         {
+            MonstreAttaque()
+         }
+        else
+         {
+            if((carte.cord.x>carte.monstre[i].x) || (carte.cord.y>carte.monstre[i].y))
+             {
+                if(carte.cord.x>carte.monstre[i].x)
+                 {
+                    carte.monstre[i].x--;
+                 }
+                else
+                 {
+                    carte.monstre[i].y--;
+                 }
+             }
+            else
+             {
+                if(carte.cord.x<carte.monstre[i].x)
+                 {
+                    carte.monstre[i].x++;
+                 }
+                else
+                 {
+                    carte.monstre[i].y++;
+                 }
+             }
+         }
+     }
+}
+
+void MonstreAttaque()
+// Attaque du joueur par le monstre
+{
+
+}
+
 void MonstreTester(){
 	int test;
     
