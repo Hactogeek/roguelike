@@ -9,8 +9,13 @@
 #ifndef _Structure_h
 #define _Structure_h
 
-#define TAILLE_CARTE_X 10
-#define TAILLE_CARTE_Y 10
+#define TAILLE_CARTE_X  10
+#define TAILLE_CARTE_Y  20
+#define TAILLE_SALLE_X  10
+#define TAILLE_SALLE_Y  10
+#define SALLES_MAX_X    TAILLE_CARTE_X / TAILLE_SALLE_X
+#define SALLES_MAX_Y    TAILLE_CARTE_Y / TAILLE_SALLE_Y
+#define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
 
 typedef struct {int x; int y;}t_posJoueur;
 typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord;}t_carte;
