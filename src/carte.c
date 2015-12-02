@@ -23,7 +23,7 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 
 
 void CarteAfficher(t_carte carte) {
-	int i,j;
+	int i,j; 
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
@@ -128,10 +128,6 @@ t_carte CarteCharger() {
 			}
 		}
 
-		printf("Carte :\n");
-		carte.cord.x = 5;
-        carte.cord.y = 5;
-		CarteAfficher(carte);
 		fclose(carteFichier);
         
 	} else {
