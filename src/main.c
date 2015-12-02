@@ -3,7 +3,6 @@
 int main(){
 	int choix,i,j ;
     t_carte carte;
-    fflush(stdout);
 	do{
 		/* Affichage du menu */
 		printf("\nMenu :\n");
@@ -23,10 +22,10 @@ int main(){
 			case 1: printf("Pas encore fais");break;
 			case 2: printf("Pas encore fais");break;
             case 3:{
-                carte = CarteCharger();
-                carte.cord.x = 5;
+            	carte.cord.x = 5;
                 carte.cord.y = 5;
-                CarteAfficher(&carte);
+                carte = CarteCharger();
+                
 		JeuCommencer(&carte);
                 break;
 
