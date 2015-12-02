@@ -9,40 +9,40 @@ Un roguelike est un jeu où un personnage evolue dans un environnement hostile e
 Le programme sera écrit en langage C et devra affiché le rendu du jeu dans le terminal, du moin pour le début. Nous pourrons a terme nous permettre d'utilisé une interface graphique.
 
 ## Sommaire
-	**Projet Roguelike**
-		1. **[A Faire](#a-faire)**
-		2. **[Idée](#idée)**
-		3. **[Changelog](#changelog)**
-		4. **[Répartition](#répartition)**
-		5. **[Compilation](#compilation)**
-		6. **[Utilisation](#utilisation)**
+  **Projet Roguelike**
+  1. **[A Faire](#a-faire)**
+  2. **[Idée](#idée)**
+  3. **[Changelog](#changelog)**
+  4. **[Répartition](#répartition)** 
+  5. **[Compilation](#compilation)**
+  6. **[Utilisation](#utilisation)**
 	
 ## A Faire
 
-	- [ ] Devellopement
-		- [ ] Generation de la grille
-		- [ ] Déplacement du personnage
-		- [ ] Changement d'étage
-		- [ ] Sauvegarde
-		- [ ] Charger une partie		
-		- [ ] Gestion des monstres
-		- [ ] Systeme de combat
-	- [ ] Makefile
-	- [ ] Test
-	- [ ] Documentation
-	- [ ] Github
-		- [x] Création
-		- [ ] Organisation definitive
-		- [ ] README à jour
-	- [ ] Compte Rendu
-	- [ ] Interface Graphique
+ - [ ] Developement
+  - [ ] Generation de la grille
+  - [ ] Déplacement du personnage
+  - [ ] Changement d'étage
+  - [ ] Sauvegarde
+  - [ ] Charger une partie		
+  - [ ] Gestion des monstres
+  - [ ] Systeme de combat
+ - [ ] Makefile
+ - [ ] Test
+ - [ ] Documentation
+ - [ ] Github
+  - [x] Création
+  - [ ] Organisation definitive
+  - [ ] README à jour
+ - [ ] Compte Rendu
+ - [ ] Interface Graphique
 
 ## Idée
-	- Inventaire
-	- Caractéristique
-	- Classe pour le personnage
-	- Musique
-	- Brouillard de guerre
+ - Inventaire
+ - Caractéristique
+ - Classe pour le personnage
+ - Musique
+ - Brouillard de guerre
 	
 ## Changelog
 

@@ -9,13 +9,22 @@
 #ifndef _Structure_h
 #define _Structure_h
 
-#define TAILLE_CARTE_X 16-1
-#define TAILLE_CARTE_Y 16-1
+#define TAILLE_CARTE_X  30
+#define TAILLE_CARTE_Y  60
+#define TAILLE_SALLE_X  15
+#define TAILLE_SALLE_Y  15
+#define SALLES_MAX_X    TAILLE_CARTE_X / TAILLE_SALLE_X
+#define SALLES_MAX_Y    TAILLE_CARTE_Y / TAILLE_SALLE_Y
+#define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
 #define NB_MAX_MONSTRE 1
 
-typedef struct {int x; int y;}t_posJoueur;
+
 typedef struct {int x; int y;}t_posMonstre;
-typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; t_posMonstre monstre[NB_MAX_MONSTRE];}t_carte;
+typedef struct {t_posMonstre monstrePos; int monstreVie; int puissance;}t_monstre;
+
+typedef struct {int x; int y;}t_posJoueur;
+
+typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; /*t_posMonstre*/ t_monstre monstre[NB_MAX_MONSTRE];}t_carte;
 
 typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_statistique;
