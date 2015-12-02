@@ -8,7 +8,6 @@
 
 #ifndef _Structure_h
 #define _Structure_h
-
 #define TAILLE_CARTE_X  15
 #define TAILLE_CARTE_Y  15
 #define TAILLE_SALLE_X  15

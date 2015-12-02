@@ -1,7 +1,8 @@
 #include "../inc/general.h"
 
 int main(){
-	int choix;
+	int choix,i,j ;
+    t_carte carte;
 	do{
 		/* Affichage du menu */
 		printf("\nMenu :\n");
@@ -21,9 +22,11 @@ int main(){
 			case 1: printf("Pas encore fais");break;
 			case 2: printf("Pas encore fais");break;
             case 3:{
-                t_carte carte;
-                CarteCharger(carte);
-                JeuCommencer(carte);
+            	carte.cord.x = 5;
+                carte.cord.y = 5;
+                carte = CarteCharger();
+                
+		JeuCommencer(&carte);
                 break;
 
             }
