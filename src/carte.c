@@ -12,18 +12,31 @@ void CarteInitialiser(t_carte *carteGrille) {
     }
 }
 
-void CarteAfficher(t_carte carte) {
+void CarteAfficher(t_carte * carte) {
     int i,j;
+    printf("\n");
     
     for(i = 0; i < TAILLE_SALLE; i++) {
         for(j = 0; j < TAILLE_SALLE; j++) {
-            printf("%i", carte.grille[i][j]);
+            if(carte->cord.x==i && carte->cord.y==j){
+                printf("@");
+            }else{
+                switch(carte->grille[i][j]){
+                    case 0 : printf("0");break;
+                    case 1 : printf("1");break;
+                    case 2 : printf("2");break;
+                    case 3 : printf("3");break;
+                    case 4 : printf("4");break;
+                    //default: printf("A");
+                }
+            }
+            
         }
         printf("\n");
     }
 }
     
-void CarteCharger() {
+t_carte CarteCharger(){
 	FILE * carteFichier;
 	t_carte carte;
     char carteCase;
@@ -32,7 +45,6 @@ void CarteCharger() {
     int tailleSalleX;
     int tailleSalleY;
     int i,j;
-	
 	carteFichier = fopen("./map/test_map.txt", "r");
     
 	if(carteFichier != NULL) {
@@ -52,12 +64,14 @@ void CarteCharger() {
                 }
             }
 		}
-        CarteAfficher(carte);
 		fclose(carteFichier);
+        
 	} else {
 		printf("Erreur lors du chargement de la carte");
 	}
+    return carte;
 }
+
 
 void CarteTester(int test) {
     switch(test) {

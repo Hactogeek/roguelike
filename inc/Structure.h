@@ -9,8 +9,8 @@
 #ifndef _Structure_h
 #define _Structure_h
 
-#define TAILLE_CARTE_X 10
-#define TAILLE_CARTE_Y 10
+#define TAILLE_CARTE_X 16-1
+#define TAILLE_CARTE_Y 16-1
 #define NB_MAX_MONSTRE 1
 
 typedef struct {int x; int y;}t_posJoueur;

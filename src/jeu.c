@@ -16,15 +16,13 @@ void Jeutester(){
     
 }
 
-void JeuCommencer(t_carte carte){
+void JeuCommencer(t_carte * carte){
     int i=0;
+        while(i!=5){
+            DeplacementMarcher(carte);
+            CarteAfficher(carte);
+            i++;
+        }
     
-    do{
-        CarteAfficher(carte);
-        DeplacementMarcher(carte);
-        i++;
-        
-    }while(i!=5);
-    
-    
+
 }
