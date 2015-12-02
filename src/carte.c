@@ -22,15 +22,25 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
+int verificationMonstre(t_carte carte, int i, int j){
+    int k;
+    
+    for(k=0; k<NB_MAX_MONSTRE; k++)
+    {
+        if(carte.monstre[k].monstrePos.x==i && carte.monstre[k].monstrePos.y==j)
+            return 1;
+    }
+    return 0;
+}
 
 void CarteAfficher(t_carte carte) {
-	int i,j;
+	int i,j,k;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 			if(carte.cord.x==i && carte.cord.y==j){
 				printf("@");
-			} else if (carte.monstre[0].monstrePos.x==i && carte.monstre[0].monstrePos.y==j){
+            } else if (verificationMonstre(carte, i, j)){
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {

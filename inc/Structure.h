@@ -16,7 +16,7 @@
 #define TAILLE_CARTE_X  TAILLE_SALLE_X * SALLES_MAX_X
 #define TAILLE_CARTE_Y  TAILLE_SALLE_Y * SALLES_MAX_Y
 #define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
-#define NB_MAX_MONSTRE 4
+#define NB_MAX_MONSTRE 20
 
 
 typedef struct {int x; int y;}t_posMonstre;

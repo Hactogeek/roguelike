@@ -82,6 +82,7 @@ void MonstrePositionner(t_carte * carte)
 {
     int i, hasardX, hasardY;
     
+    srand(time(NULL));
     
     for(i=0; i<NB_MAX_MONSTRE; i++)
     {
@@ -90,12 +91,13 @@ void MonstrePositionner(t_carte * carte)
             hasardY=uHasard(TAILLE_CARTE_Y);
         }while(carte->grille[hasardX][hasardY]!=2);
         
-        carte->monstre[0].monstrePos.x=hasardX;
-        carte->monstre[0].monstrePos.y=hasardY;
+        carte->monstre[i].monstrePos.x=hasardX;
+        carte->monstre[i].monstrePos.y=hasardY;
         
         printf("%i/%i\n", hasardX, hasardY);
     }
 }
+
 
 void MonstreTester(){
 	int test;
@@ -129,6 +131,7 @@ void MonstreTester(){
         
         switch(test){
             case 1: MonstreDeplacement(&carte, &perso); break;
+            case 2: CarteAfficher(carte); break;
             case 6: printf(""); break;
             default : printf("Erreur votre choix doit etre compris entre 1 et 6\n");
         }
