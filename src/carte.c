@@ -53,26 +53,31 @@ void CarteCharger() {
 	int tailleSalleX;
 	int tailleSalleY;
 	int i,j;
-	int nb_salles_diff = 1;
+	int salleId;
+	int nb_salles_diff;
 	int nb_salles_x;
 	int nb_salles_y;
 	int nb_salles = 0;
-	int salleId;
 	int salleCompteur;
+	int portes_possibles_x[TAILLE_SALLE_X];
+	int portes_possibles_y[TAILLE_SALLE_Y];
 	
 	carteFichier = fopen("./map/test_map.txt", "r");
 	
 	if(carteFichier != NULL) {
+		srand(time(NULL));
+		
 		CarteInitialiser(&carte);
 		
 		//Comptage du nombre de salles possibles
-		do {
+		while(!feof(carteFichier)) {
 			fscanf(carteFichier, "%c", &carteCase);
 			if(carteCase == '-') {
 				nb_salles_diff++;
 			}
-		}while(!feof(carteFichier));
+		}
 		
+		//Création des salles
 		while(nb_salles < SALLES_MAX) {
 			//Séparation de la carte en plusieurs salles
 			for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
@@ -83,7 +88,8 @@ void CarteCharger() {
 					}
 					
 					//Détermination de la salle qui sera mise
-					salleId = (nHasard(nb_salles_diff)*nHasard(nb_salles_diff))%nb_salles_diff;
+					//salleId = rand()/RAND_MAX * nb_salles_diff;
+					salleId = nHasard(nb_salles_diff);
 					
 					//Récupération de la salle au bon id
 					salleCompteur = 0;
@@ -98,6 +104,7 @@ void CarteCharger() {
 					fscanf(carteFichier, "%i %i", &tailleSalleX, &tailleSalleY);
 					
 					//Choix aléatoire des coordonnées de début de la salle
+					salleDebutX = rand()/RAND_MAX * (TAILLE_SALLE_X - tailleSalleX);
 					salleDebutX = nHasard(TAILLE_SALLE_X - tailleSalleX);
 					salleDebutY = nHasard(TAILLE_SALLE_Y - tailleSalleY);
 							
@@ -123,6 +130,17 @@ void CarteCharger() {
 				}
 			}
 		}
+		
+		//Création des chemins
+		/*for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
+			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
+				//Chemin à gauche
+				if(nb_salles_y < 0) {
+					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
+					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
+						
+						
+						
 		printf("Carte :\n");
 		CarteAfficher(carte);
 		fclose(carteFichier);

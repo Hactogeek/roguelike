@@ -9,12 +9,12 @@
 #ifndef _Structure_h
 #define _Structure_h
 
-#define TAILLE_CARTE_X  30
-#define TAILLE_CARTE_Y  60
+#define SALLES_MAX_X    2
+#define SALLES_MAX_Y    5
 #define TAILLE_SALLE_X  15
 #define TAILLE_SALLE_Y  15
-#define SALLES_MAX_X    TAILLE_CARTE_X / TAILLE_SALLE_X
-#define SALLES_MAX_Y    TAILLE_CARTE_Y / TAILLE_SALLE_Y
+#define TAILLE_CARTE_X  TAILLE_SALLE_X * SALLES_MAX_X
+#define TAILLE_CARTE_Y  TAILLE_SALLE_Y * SALLES_MAX_Y
 #define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
 #define NB_MAX_MONSTRE 1
 
