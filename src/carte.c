@@ -10,14 +10,15 @@ void CarteInitialiser(t_carte *carteGrille) {
 	}
 }
 
+
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
-		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			printf("%i", matrice[i][j]);
-		}
-		printf("\n");
+        for(j = 0; j < TAILLE_CARTE_Y; j++) {
+            printf("%i", matrice[i][j]);
+        }
+        printf("\n");
 	}
 }
 

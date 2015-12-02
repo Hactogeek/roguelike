@@ -23,10 +23,12 @@ void MonstreAttaque(t_personnage * perso)
 void MonstreDeplacement(t_carte * carte, t_personnage * perso)
 // Déplacement monstre en fonction du joueur
 {
+    int i;
     
     Appel0("MonstreDeplacement");
     
-    int i;
+    CarteAfficher(*carte);
+    
     for(i=0; i<NB_MAX_MONSTRE; i++)
      {
         // Si le monstre et le joueur sont cote a cote, attaque
@@ -82,6 +84,8 @@ void MonstreTester(){
     
     t_personnage perso;
     t_carte carte;
+    
+    CarteCharger(carte);
     
     carte.cord.x=1;
     carte.cord.y=1;
