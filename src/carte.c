@@ -10,6 +10,7 @@ void CarteInitialiser(t_carte *carteGrille) {
 	}
 }
 
+
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
 	
@@ -21,30 +22,33 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
+
 void CarteAfficher(t_carte carte) {
 	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			switch(carte.grille[i][j]) {
-				case 0 : printf("~"); break;
-				case 1 : printf("#"); break;
-				case 2 : printf(" "); break;
-				case 3 : printf("="); break;
-				case 4 : printf(">"); break;
-				
-				default : printf(" "); break;
-			}
-			
-			/*if(carte.cord.x == i && carte.cord.y == j) {
+			if(carte.cord.x==i && carte.cord.y==j){
 				printf("@");
-			}*/
+			} else if (carte.monstre[0].monstrePos.x==i && carte.monstre[0].monstrePos.y==j){
+				printf("£");
+			} else {
+				switch(carte.grille[i][j]) {
+					case 0 : printf("~"); break;
+					case 1 : printf("#"); break;
+					case 2 : printf(" "); break;
+					case 3 : printf("="); break;
+					case 4 : printf(">"); break;
+				
+					default : printf(" "); break;
+				}
+			}
 		}
 		printf("\n");
 	}
 }
 	
-void CarteCharger() {
+t_carte CarteCharger() {
 	FILE * carteFichier;
 	t_carte carte;
 	char carteCase;
@@ -138,16 +142,17 @@ void CarteCharger() {
 				if(nb_salles_y < 0) {
 					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
 					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
-						
-						
-						
+
 		printf("Carte :\n");
 		CarteAfficher(carte);
 		fclose(carteFichier);
+		
 	} else {
 		printf("Erreur lors du chargement de la carte");
 	}
+	return carte;
 }
+
 
 void CarteTester(int test) {
 	switch(test) {
