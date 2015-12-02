@@ -7,7 +7,7 @@ void PersonnageAmorcer(){
 //Cherche un endroit pour placer le personnage dans une salle
 void PersonnagePositionner(t_carte * carte){
 	int bienPlace=0,x,y;
-	Appel0("PersonnagePositionner");
+	srand(time(NULL));
 	do{
 		x=uHasard(TAILLE_CARTE_X);
 		y=uHasard(TAILLE_CARTE_Y);
@@ -16,7 +16,6 @@ void PersonnagePositionner(t_carte * carte){
 			carte->cord.x=x;
 			carte->cord.y=y;	
 	printf("Position du personnage positionner : %i %i\n",carte->cord.x,carte->cord.y);
-	Appel1("PersonnagePositionner");
 }
 
 void PersonnageInitialiser(t_personnage * perso){
