@@ -22,6 +22,16 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
+int verificationMonstre(t_carte carte, int i, int j){
+    int k;
+    
+    for(k=0; k<NB_MAX_MONSTRE; k++)
+    {
+        if(carte.monstre[k].monstrePos.x==i && carte.monstre[k].monstrePos.y==j)
+            return 1;
+    }
+    return 0;
+}
 
 void CarteAfficher(t_carte carte) {
 	int i,j; 
@@ -30,7 +40,7 @@ void CarteAfficher(t_carte carte) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 			if(carte.cord.x==i && carte.cord.y==j){
 				printf("@");
-			} else if (carte.monstre[0].monstrePos.x==i && carte.monstre[0].monstrePos.y==j){
+            } else if (verificationMonstre(carte, i, j)){
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {
@@ -58,13 +68,16 @@ t_carte CarteCharger() {
 	int tailleSalleY;
 	int i,j;
 	int salleId;
-	int nb_salles_diff;
+	int nb_salles_diff = 0;
 	int nb_salles_x;
 	int nb_salles_y;
 	int nb_salles = 0;
 	int salleCompteur;
-	int portes_possibles_x[TAILLE_SALLE_X];
-	int portes_possibles_y[TAILLE_SALLE_Y];
+	int portes_possibles_x_1[TAILLE_SALLE_X] = {0};
+	int portes_possibles_x_2[TAILLE_SALLE_X] = {0};
+	int portes_possibles_y_1[TAILLE_SALLE_Y] = {0};
+	int portes_possibles_y_2[TAILLE_SALLE_Y] = {0};
+	int mur_trouve;
 	
 	carteFichier = fopen("./map/test_map.txt", "r");
 	
@@ -121,7 +134,17 @@ t_carte CarteCharger() {
 								switch(carteCase) {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
-									case '3' : carte.grille[i][j] = 3; break;
+									case '3' :
+										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) {
+											carte.grille[i][j] = 1;
+										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) {
+											carte.grille[i][j] = 1;
+										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) {
+											carte.grille[i][j] = 1;
+										} else {
+											carte.grille[i][j] = 3;
+										}
+										break;
 									case '4' : carte.grille[i][j] = 4; break;
 
 									default : carte.grille[i][j] = 0; break;
@@ -143,7 +166,9 @@ t_carte CarteCharger() {
 					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
 					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
 
-
+							
+		printf("Carte :\n");
+		CarteAfficher(carte);
 		fclose(carteFichier);
 		
 	} else {
