@@ -26,11 +26,14 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 void CarteAfficher(t_carte carte) {
 	int i,j;
 	
-	for(i = 0; i < TAILLE_CARTE_X; i++) {
+    for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 		if(carte.cord.x==i && carte.cord.y==j){
 			printf("@");
-		}else{
+        }else if(carte.monstre[0].monstrePos.x==i && carte.monstre[0].monstrePos.y==j){
+            printf("£");
+        }
+        else{
 			switch(carte.grille[i][j]) {
 				case 0 : printf("~"); break;
 				case 1 : printf("#"); break;
