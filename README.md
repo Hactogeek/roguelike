@@ -20,20 +20,22 @@ Le programme sera écrit en langage C et devra affiché le rendu du jeu dans le 
 ## A Faire
 
  - [ ] Developement
-  - [ ] Generation de la grille
-  - [ ] Déplacement du personnage
+  - [x] Generation de la grille
+   - [ ] Chemin entre les salles 
+  - [x] Déplacement du personnage
   - [ ] Changement d'étage
   - [ ] Sauvegarde
   - [ ] Charger une partie		
   - [ ] Gestion des monstres
+   - [x] Positionnement aléatoire
   - [ ] Systeme de combat
- - [ ] Makefile
+ - [x] Makefile
  - [ ] Test
  - [ ] Documentation
  - [ ] Github
   - [x] Création
   - [ ] Organisation definitive
-  - [ ] README à jour
+  - [x] README à jour
  - [ ] Compte Rendu
  - [ ] Interface Graphique
 
@@ -45,9 +47,12 @@ Le programme sera écrit en langage C et devra affiché le rendu du jeu dans le 
  - Brouillard de guerre
 	
 ## Changelog
-
+2/12/15 Deplacement du joueur dans une map generé aleatoirement. Deplacement de monstre dans une map genere aleatoirement
 
 ## Répartition
+Tony : Les monstres
+Dimitri : La map
+Marvin : Le joueur
 
 ## Compilation
 
