@@ -68,7 +68,7 @@ t_carte CarteCharger() {
 	int tailleSalleY;
 	int i,j;
 	int salleId;
-	int nb_salles_diff;
+	int nb_salles_diff = 1;
 	int nb_salles_x;
 	int nb_salles_y;
 	int nb_salles = 0;
