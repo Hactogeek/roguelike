@@ -65,7 +65,7 @@ void CarteCharger() {
 		CarteInitialiser(&carte);
 		salleId = 2;
 		
-		while(nb_salles <= SALLES_MAX) {
+		while(nb_salles < SALLES_MAX) {
 			//Séparation de la carte en plusieurs salles
 			for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
 				//On se remet au début du fichier à chaque tour
@@ -92,6 +92,7 @@ void CarteCharger() {
 					//Récupération de la taille de la salle
 					fscanf(carteFichier, "%i %i", &tailleSalleX, &tailleSalleY);
 					//printf("Taille de la salle : %i, %i\n\n", tailleSalleX, tailleSalleY);
+					printf("ID de la salle : %i\nNombre de salles faites : %i", salleCompteur, nb_salles_y);
 					
 					//Placement de la salle et remplissage
 					for(i = salleDebutX + nb_salles_x * TAILLE_SALLE_X; i < salleDebutX + tailleSalleX + nb_salles_x * TAILLE_SALLE_X; i++) {
