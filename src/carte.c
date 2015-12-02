@@ -58,13 +58,16 @@ t_carte CarteCharger() {
 	int tailleSalleY;
 	int i,j;
 	int salleId;
-	int nb_salles_diff;
+	int nb_salles_diff = 0;
 	int nb_salles_x;
 	int nb_salles_y;
 	int nb_salles = 0;
 	int salleCompteur;
-	int portes_possibles_x[TAILLE_SALLE_X];
-	int portes_possibles_y[TAILLE_SALLE_Y];
+	int portes_possibles_x_1[TAILLE_SALLE_X] = {0};
+	int portes_possibles_x_2[TAILLE_SALLE_X] = {0};
+	int portes_possibles_y_1[TAILLE_SALLE_Y] = {0};
+	int portes_possibles_y_2[TAILLE_SALLE_Y] = {0};
+	int mur_trouve;
 	
 	carteFichier = fopen("./map/test_map.txt", "r");
 	
@@ -121,7 +124,17 @@ t_carte CarteCharger() {
 								switch(carteCase) {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
-									case '3' : carte.grille[i][j] = 3; break;
+									case '3' :
+										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) {
+											carte.grille[i][j] = 1;
+										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) {
+											carte.grille[i][j] = 1;
+										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) {
+											carte.grille[i][j] = 1;
+										} else {
+											carte.grille[i][j] = 3;
+										}
+										break;
 									case '4' : carte.grille[i][j] = 4; break;
 
 									default : carte.grille[i][j] = 0; break;
@@ -134,15 +147,7 @@ t_carte CarteCharger() {
 				}
 			}
 		}
-		
-		//Création des chemins
-		/*for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
-			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
-				//Chemin à gauche
-				if(nb_salles_y < 0) {
-					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
-					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
-
+							
 		printf("Carte :\n");
 		CarteAfficher(carte);
 		fclose(carteFichier);
