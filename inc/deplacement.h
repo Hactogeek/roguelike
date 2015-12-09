@@ -1,3 +1,3 @@
 void DeplacementAmorcer();
 void DeplacementTester(int t);
-void DeplacementMarcher(t_carte * map);
+t_posMonstre DeplacementMarcher(t_carte * map);
