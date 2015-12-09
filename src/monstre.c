@@ -17,7 +17,6 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
     carte->monstre[i].monstreVie--;
     
     printf("Joueur Vie : %i\n", perso->stats.vie);
-    printf("Monstre Vie : %i\n", carte->monstre[i].monstreVie);
     
     Appel1("MonstreAttaque");
 }
@@ -28,8 +27,6 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
     int i;
     
     Appel0("MonstreDeplacement");
-    
-    CarteAfficher(*carte);
     
     for(i=0; i<NB_MAX_MONSTRE; i++)
      {
@@ -49,110 +46,35 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
              {
                 if(((carte->cord.x>carte->monstre[i].monstrePos.x) || (carte->cord.y>carte->monstre[i].monstrePos.y)))
                  {
-                     // Si le monstre est en dessous ou a droite du joueur
+                    // Si le monstre est en dessous ou a droite du joueur
                     if(carte->cord.x>carte->monstre[i].monstrePos.x)
                      {
-                         // Si le monstre est a droite du joueur
-                         if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]!=1)
-                         {
-                             // Si la case a gauche n'est pas un mur, deplacement a gauche
-                             carte->monstre[i].monstrePos.x++;
-                         }
-                         else
-                         {
-                             // Si la case a gauche est un mur
-                             if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y-1]!=1)
-                             {
-                                 // Si la case au dessus a gauche est libre, deplacement vers le haut
-                                 carte->monstre[i].monstrePos.y--;
-                             }
-                             else
-                             {
-                                 // Sinon déplacement vers le bas
-                                 carte->monstre[i].monstrePos.y++;
-                             }
-                         }
+                        // Si le monstre est a droite du joueur
+                        carte->monstre[i].monstrePos.x++;
                      }
                     else
                      {
-                         // Si le monstre est en dessous
-                         if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y+1]!=1)
-                         {
-                             // Si la case au dessus n'est pas un mur, deplacement vers le haut
-                             carte->monstre[i].monstrePos.y++;
-                             
-                         }
-                         else
-                         {
-                             // Si la case au dessus est un mur
-                             if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y-1]!=1)
-                             {
-                                 // Si la case en haut a droite n'est pas un mur, deplacement a droite
-                                 carte->monstre[i].monstrePos.x++;
-                             }
-                             else
-                             {
-                                 // Sinon deplacement a gauche
-                                 carte->monstre[i].monstrePos.x--;
-                             }
-                         }
+                        // Si le monstre est en dessous
+                        carte->monstre[i].monstrePos.y++;
                      }
                  }
                 else
                  {
-                     // Si le monstre est au dessus ou a gauche du joueur
+                    // Si le monstre est au dessus ou a gauche du joueur
                     if(carte->cord.x<carte->monstre[i].monstrePos.x)
                      {
-                         // Si le monstre est a gauche du joueur
-                         if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y]!=1)
-                         {
-                             // Si la case droite n'est pas un mur, deplacement a droite
-                             carte->monstre[i].monstrePos.x--;
-                         }
-                         else
-                         {
-                             // Si la case a droite est un mur
-                             if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y-1]!=1)
-                             {
-                                 // Si la case en haut a droite n'est pas un mur, deplacement vers le haut
-                                 carte->monstre[i].monstrePos.y--;
-                             }
-                             else
-                             {
-                                 // Sinon déplacement vers le bas
-                                 carte->monstre[i].monstrePos.y++;
-                             }
-                         }
+                        // Si le monstre est a gauche du joueur
+                        carte->monstre[i].monstrePos.x--;
                      }
                     else
                      {
                          // Si le monstre est au dessus du joueur
-                         if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y-1]!=1)
-                         {
-                             // Si la case en dessous n'est pas un mur, deplacement vers le bas
-                             carte->monstre[i].monstrePos.y--;
-                         }
-                         else
-                         {
-                             // Si la case en dessous est un mur
-                             if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y-1]!=1)
-                             {
-                                 // Si la case en bas a droite n'est pas un mur, deplacement a droite
-                                 carte->monstre[i].monstrePos.x++;
-                             }
-                             else
-                             {
-                                 // Sinon deplacement a gauche
-                                 carte->monstre[i].monstrePos.x--;
-                             }
-                         }
+                         carte->monstre[i].monstrePos.y--;
                      }
                  }
              }
          }
      }
-    
-    //printf(" Joueur : %i / %i\n", carte->cord.x, carte->cord.y);
     
     Appel1("MonstreDeplacement");
     
@@ -174,7 +96,7 @@ int MonstreIdParPosition(t_carte * carte, int x, int y)
             return i;
         }
     }
-    return 0;
+    return -1;
 }
 
 void MonstrePositionner(t_carte * carte)
@@ -182,7 +104,7 @@ void MonstrePositionner(t_carte * carte)
 {
     int i, hasardX, hasardY, hasardMonstre;
     
-    srand(time(NULL));
+    srand(time(NULL)+10);
     
     //hasardMonstre=uHasard(NB_MAX_MONSTRE);
     
@@ -191,11 +113,13 @@ void MonstrePositionner(t_carte * carte)
         do{
             hasardX=uHasard(TAILLE_CARTE_X);
             hasardY=uHasard(TAILLE_CARTE_Y);
-        }while((carte->grille[hasardX][hasardY]!=2) && ((carte->cord.x!=hasardX) && (carte->cord.y!=hasardY)));
+        }while((carte->grille[hasardX][hasardY]!=2) && (MonstreIdParPosition(carte, hasardX, hasardY)==-1));
         
         carte->monstre[i].monstrePos.x=hasardX;
         carte->monstre[i].monstrePos.y=hasardY;
         carte->monstre[i].monstreVie=5;
+        
+        printf("%i %i\n",hasardX, hasardY);
     }
 }
 
@@ -210,10 +134,7 @@ void MonstreTester(){
     
     carte=CarteCharger();
     
-    //PersonnagePositionner(&carte);
-    
-    carte.cord.x=25;
-    carte.cord.y=18;
+    PersonnagePositionner(&carte);
     
     MonstrePositionner(&carte);
     
@@ -233,7 +154,7 @@ void MonstreTester(){
         scanf("%i", &test);
         
         switch(test){
-            case 1: MonstreDeplacement(&carte, &perso); break;
+            case 1: MonstreDeplacement(&carte, &perso); CarteAfficher(carte); break;
             case 2: CarteAfficher(carte); break;
             case 6: printf(""); break;
             default : printf("Erreur votre choix doit etre compris entre 1 et 6\n");
