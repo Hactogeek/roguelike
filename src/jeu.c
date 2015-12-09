@@ -30,7 +30,6 @@ void JeuCommencer(t_carte * carte,t_personnage * player){
         	//CombatTaper(player,carte,idMob);
         	//MonstreAttaque(player,carte,idMob);
         }
-        
         i++;
     }
     Appel1("JeuCommencer");
