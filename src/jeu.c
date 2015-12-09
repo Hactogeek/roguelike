@@ -18,11 +18,14 @@ void Jeutester(){
 
 void JeuCommencer(t_carte * carte){
     int i=0;
-    while(i!=5){
-       
+    Appel0("JeuCommencer");
+    PersonnagePositionner(carte);
+    while(i!=10){
+    	
+		CarteAfficher(*carte);
         DeplacementMarcher(carte); 
-        CarteAfficher(*carte);
+        
         i++;
     }
-    
+    Appel1("JeuCommencer");
 }

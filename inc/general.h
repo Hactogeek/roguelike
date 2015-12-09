@@ -1,5 +1,4 @@
 #include <time.h>
-
 #include "Structure.h"
 #include "carte.h"
 #include "deplacement.h"

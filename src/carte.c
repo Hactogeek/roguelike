@@ -34,7 +34,7 @@ int verificationMonstre(t_carte carte, int i, int j){
 }
 
 void CarteAfficher(t_carte carte) {
-	int i,j,k;
+	int i,j; 
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
@@ -157,6 +157,15 @@ t_carte CarteCharger() {
 				}
 			}
 		}
+		
+		//Création des chemins
+		/*for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
+			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
+				//Chemin à gauche
+				if(nb_salles_y < 0) {
+					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
+					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
+
 							
 		printf("Carte :\n");
 		CarteAfficher(carte);

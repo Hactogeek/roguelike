@@ -8,7 +8,6 @@
 
 #ifndef _Structure_h
 #define _Structure_h
-
 #define SALLES_MAX_X    2
 #define SALLES_MAX_Y    5
 #define TAILLE_SALLE_X  15
