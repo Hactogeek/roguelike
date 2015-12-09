@@ -34,6 +34,6 @@ int CheckMonstre(int x,int y, t_carte carte){
 
 //Retourn 1 si il y a un mur au coordonné saisie
 int CheckMur(int x,int y, t_carte carte){
-	return (if(carte.grille[x][y]==1));
+	return (carte.grille[x][y]==1);
 }
 
