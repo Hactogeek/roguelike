@@ -32,8 +32,22 @@ int CheckMonstre(int x,int y, t_carte carte){
 	return 0;
 }
 
-//Retourn 1 si il y a un mur au coordonné saisie
+//Retourne 1 si il y a un mur au coordonné saisie
 int CheckMur(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==1);
 }
+
+//Retourne 1 si le monstre est en vie
+int CheckMonstreVie(int idMob,t_carte carte){
+	return (carte.monstre[idMob].monstreVie>=0);
+}
+
+//Retourne 1 si il y a un chemin au coordonné saisie
+int CheckChemin(int x,int y, t_carte carte){
+	return (carte.grille[x][y]==3);
+}
+
+/*int CheckUpNiveau(t_personnage player){
+	//return (player.xp
+}*/
 

@@ -5,3 +5,5 @@ int CheckTestEtage(t_carte pos);
 int CheckPositionSalle(int x,int y, t_carte carte);
 int CheckMonstre(int x,int y, t_carte carte);
 int CheckMur(int x,int y, t_carte carte);
+int CheckMonstreVie(int idMob,t_carte carte);
+int CheckChemin(int x,int y, t_carte carte);
