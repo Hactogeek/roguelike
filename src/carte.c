@@ -45,10 +45,25 @@ void CarteAfficher(t_carte carte) {
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {
-					case 0 : printf("X"); break;
-					case 1 : printf("#"); break;
+					case 0 : printf(" "); break;
+					case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+									printf("┌");
+								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+									printf("└");
+								} else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+									printf("┐");
+								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+									printf("┘");
+								} else if((CheckMur(i,j-1,carte) || carte.grille[i][j-1] == 3) && (CheckMur(i,j+1,carte) || carte.grille[i][j+1] == 3)) {
+									printf("—");
+								} else if((CheckMur(i-1,j,carte) || carte.grille[i-1][j] == 3) && (CheckMur(i+1,j,carte) || carte.grille[i+1][j] == 3)) {
+									printf("|");
+								} else {
+									printf("#");
+								}
+							break;
 					case 2 : printf(" "); break;
-					case 3 : printf(" "); break;
+					case 3 : printf("░"); break;
 					case 4 : printf(">"); break;
 				
 					default : printf(" "); break;
@@ -121,10 +136,14 @@ t_carte CarteCharger() {
 					//Afin de garder un espacement suffisant entre les salles pour placer les chemins, on s'assure que les salles ne pourront pas être placées sur les bords de l'espace qui leur est réservé
 					salleDebutX = nHasard(TAILLE_SALLE_X - tailleSalleX);
 					salleDebutX += salleDebutX == 0;
-					salleDebutX -= salleDebutX == tailleSalleX;
+					if(salleDebutX > tailleSalleX - 2) {
+						salleDebutX = tailleSalleX-2;
+					}
 					salleDebutY = nHasard(TAILLE_SALLE_Y - tailleSalleY);
 					salleDebutY += salleDebutY == 0;
-					salleDebutY -= salleDebutX == tailleSalleY;
+					if(salleDebutY > tailleSalleY - 2) {
+						salleDebutY = tailleSalleY-2;
+					}
 							
 					//Placement de la salle et remplissage
 					for(i = salleDebutX + nb_salles_x * TAILLE_SALLE_X; i < salleDebutX + tailleSalleX + nb_salles_x * TAILLE_SALLE_X; i++) {
