@@ -47,7 +47,8 @@ int CheckChemin(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==3);
 }
 
-/*int CheckUpNiveau(t_personnage player){
-	//return (player.xp
-}*/
+//retourne 1 si le joueur merite d'up
+int CheckUpNiveau(t_personnage player){
+	return (player.experience.xpRequis<= player.experience.xp);
+}
 
