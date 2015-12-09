@@ -23,3 +23,17 @@ int CheckPositionSalle(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==2);
 }
 
+//Retourne 1 si il y a un monstre aux coordonnées indiqué
+int CheckMonstre(int x,int y, t_carte carte){
+	int i=0;
+	for(i;i<NB_MAX_MONSTRE;i++){
+		if(carte.monstre[i].monstrePos.x==x && carte.monstre[i].monstrePos.y==y)return 1;
+	}
+	return 0;
+}
+
+//Retourn 1 si il y a un mur au coordonné saisie
+int CheckMur(int x,int y, t_carte carte){
+	return (if(carte.grille[x][y]==1));
+}
+
