@@ -20,9 +20,9 @@ void JeuCommencer(t_carte * carte){
     int i=0;
     Appel0("JeuCommencer");
     PersonnagePositionner(carte);
-    while(i!=10){
-    	
-		CarteAfficher(*carte);
+    while(i!=100){
+    	system("clear");
+	CarteAfficher(*carte);
         DeplacementMarcher(carte); 
         
         i++;

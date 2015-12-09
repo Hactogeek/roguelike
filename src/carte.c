@@ -10,18 +10,6 @@ void CarteInitialiser(t_carte *carteGrille) {
 	}
 }
 
-int verificationMonstre(t_carte carte, int i, int j){
-    int k;
-    
-    for(k=0; k<NB_MAX_MONSTRE; k++)
-    {
-        if(carte.monstre[k].monstrePos.x==i && carte.monstre[k].monstrePos.y==j)
-            return 1;
-    }
-    return 0;
-}
-
-
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
 	
@@ -36,12 +24,11 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 void CarteAfficher(t_carte carte) {
 	int i,j; 
 	
-	printf("\nCarte :\n");
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 			if(carte.cord.x==i && carte.cord.y==j){
 				printf("@");
-            } else if (verificationMonstre(carte, i, j)){
+            } else if (CheckMonstre(i,j,carte)){
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {
@@ -54,9 +41,9 @@ void CarteAfficher(t_carte carte) {
 									printf("┐");
 								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
 									printf("┘");
-								} else if((CheckMur(i,j-1,carte) || carte.grille[i][j-1] == 3) && (CheckMur(i,j+1,carte) || carte.grille[i][j+1] == 3)) {
+								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte)))) {
 									printf("—");
-								} else if((CheckMur(i-1,j,carte) || carte.grille[i-1][j] == 3) && (CheckMur(i+1,j,carte) || carte.grille[i+1][j] == 3)) {
+								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte)))) {
 									printf("|");
 								} else {
 									printf("#");
