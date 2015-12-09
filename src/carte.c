@@ -10,6 +10,17 @@ void CarteInitialiser(t_carte *carteGrille) {
 	}
 }
 
+int verificationMonstre(t_carte carte, int i, int j){
+    int k;
+    
+    for(k=0; k<NB_MAX_MONSTRE; k++)
+    {
+        if(carte.monstre[k].monstrePos.x==i && carte.monstre[k].monstrePos.y==j)
+            return 1;
+    }
+    return 0;
+}
+
 
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
@@ -20,17 +31,6 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 		}
 		printf("\n");
 	}
-}
-
-int verificationMonstre(t_carte carte, int i, int j){
-    int k;
-    
-    for(k=0; k<NB_MAX_MONSTRE; k++)
-    {
-        if(carte.monstre[k].monstrePos.x==i && carte.monstre[k].monstrePos.y==j)
-            return 1;
-    }
-    return 0;
 }
 
 void CarteAfficher(t_carte carte) {
@@ -45,10 +45,10 @@ void CarteAfficher(t_carte carte) {
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {
-					case 0 : printf("~"); break;
+					case 0 : printf("X"); break;
 					case 1 : printf("#"); break;
 					case 2 : printf(" "); break;
-					case 3 : printf("="); break;
+					case 3 : printf(" "); break;
 					case 4 : printf(">"); break;
 				
 					default : printf(" "); break;
@@ -212,18 +212,23 @@ t_carte CarteCharger() {
 				for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x + 1) * TAILLE_SALLE_X; i++) {
 					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y + 1) * TAILLE_SALLE_Y; j++) {
 						if(carte.grille[i][j] == 3) {
-							if(carte.grille[i-1][j] != 3) {
-								//Chemin à compléter sur le bas
-								if(carte.grille[i][j-1] == 3 || carte.grille[i][j+1] == 3 /*&& !(carte.grille[i][j-1] == 3 && carte.grille[i][j+1] == 3)*/) { 
-									printf("ok2");
-									do {
-										carte.grille[i][j] = 3;
+							if(carte.grille[i-1][j] == 0 && carte.grille[i+1][j] == 0) {
+								//Chemin à compléter vers la droite
+								if((carte.grille[i][j-1] == 3 || carte.grille[i][j+1] == 3) && !(carte.grille[i][j-1] == 3 && carte.grille[i][j+1] == 3)) { 
+									while(carte.grille[i+1][j] != 3 && (carte.grille[i][j-1] != 3 || carte.grille[i][j+1] != 3)) {
+										carte.grille[i+1][j] = 3;
 										i++;
-									} while(!carte.grille[i][j] == 3);
-									/*while(!carte.grille[i][j] == 3) {
-										carte.grille[i][j] = 3;
-										i++;
-									}*/
+									}
+								}
+							}
+							
+							if(carte.grille[i][j-1] == 0 && carte.grille[i][j+1] == 0) {
+								//Chemin à compléter vers le bas
+								if((carte.grille[i-1][j] == 3 || carte.grille[i+1][j] == 3) && !(carte.grille[i-1][j] == 3 && carte.grille[i+1][j] == 3)) { 
+									while(carte.grille[i][j+1] != 3 && (carte.grille[i-1][j] != 3 || carte.grille[i+1][j] != 3)) {
+										carte.grille[i][j+1] = 3;
+										j++;
+									}
 								}
 							}
 						}
