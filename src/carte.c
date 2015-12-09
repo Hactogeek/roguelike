@@ -45,7 +45,7 @@ void CarteAfficher(t_carte carte) {
 				printf("£");
 			} else {
 				switch(carte.grille[i][j]) {
-					case 0 : printf("X"); break;
+					case 0 : printf(" "); break;
 					case 1 : printf("#"); break;
 					case 2 : printf(" "); break;
 					case 3 : printf(" "); break;
