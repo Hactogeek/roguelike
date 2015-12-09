@@ -168,7 +168,7 @@ t_carte CarteCharger() {
 
 							
 		printf("Carte :\n");
-		CarteAfficher(carte);
+		//CarteAfficher(carte);
 		fclose(carteFichier);
 		
 	} else {
