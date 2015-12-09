@@ -214,7 +214,7 @@ t_carte CarteCharger() {
 						if(carte.grille[i][j] == 3) {
 							if(carte.grille[i-1][j] == 0 && carte.grille[i+1][j] == 0) {
 								//Chemin à compléter vers la droite
-								if(carte.grille[i][j-1] == 3 || carte.grille[i][j+1] == 3 && !(carte.grille[i][j-1] == 3 && carte.grille[i][j+1] == 3)) { 
+								if((carte.grille[i][j-1] == 3 || carte.grille[i][j+1] == 3) && !(carte.grille[i][j-1] == 3 && carte.grille[i][j+1] == 3)) { 
 									while(carte.grille[i+1][j] != 3 && (carte.grille[i][j-1] != 3 || carte.grille[i][j+1] != 3)) {
 										carte.grille[i+1][j] = 3;
 										i++;
@@ -224,7 +224,7 @@ t_carte CarteCharger() {
 							
 							if(carte.grille[i][j-1] == 0 && carte.grille[i][j+1] == 0) {
 								//Chemin à compléter vers le bas
-								if(carte.grille[i-1][j] == 3 || carte.grille[i+1][j] == 3 && !(carte.grille[i-1][j] == 3 && carte.grille[i+1][j] == 3)) { 
+								if((carte.grille[i-1][j] == 3 || carte.grille[i+1][j] == 3) && !(carte.grille[i-1][j] == 3 && carte.grille[i+1][j] == 3)) { 
 									while(carte.grille[i][j+1] != 3 && (carte.grille[i-1][j] != 3 || carte.grille[i+1][j] != 3)) {
 										carte.grille[i][j+1] = 3;
 										j++;
