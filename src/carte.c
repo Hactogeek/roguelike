@@ -36,6 +36,7 @@ int verificationMonstre(t_carte carte, int i, int j){
 void CarteAfficher(t_carte carte) {
 	int i,j; 
 	
+	printf("\nCarte :\n");
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 			if(carte.cord.x==i && carte.cord.y==j){
@@ -67,17 +68,13 @@ t_carte CarteCharger() {
 	int tailleSalleX;
 	int tailleSalleY;
 	int i,j;
+	int x,y;
 	int salleId;
 	int nb_salles_diff = 0;
 	int nb_salles_x;
 	int nb_salles_y;
 	int nb_salles = 0;
 	int salleCompteur;
-	int portes_possibles_x_1[TAILLE_SALLE_X] = {0};
-	int portes_possibles_x_2[TAILLE_SALLE_X] = {0};
-	int portes_possibles_y_1[TAILLE_SALLE_Y] = {0};
-	int portes_possibles_y_2[TAILLE_SALLE_Y] = {0};
-	int mur_trouve;
 	
 	carteFichier = fopen("./map/test_map.txt", "r");
 	
@@ -121,9 +118,13 @@ t_carte CarteCharger() {
 					fscanf(carteFichier, "%i %i", &tailleSalleX, &tailleSalleY);
 					
 					//Choix aléatoire des coordonnées de début de la salle
-					salleDebutX = rand()/RAND_MAX * (TAILLE_SALLE_X - tailleSalleX);
+					//Afin de garder un espacement suffisant entre les salles pour placer les chemins, on s'assure que les salles ne pourront pas être placées sur les bords de l'espace qui leur est réservé
 					salleDebutX = nHasard(TAILLE_SALLE_X - tailleSalleX);
+					salleDebutX += salleDebutX == 0;
+					salleDebutX -= salleDebutX == tailleSalleX;
 					salleDebutY = nHasard(TAILLE_SALLE_Y - tailleSalleY);
+					salleDebutY += salleDebutY == 0;
+					salleDebutY -= salleDebutX == tailleSalleY;
 							
 					//Placement de la salle et remplissage
 					for(i = salleDebutX + nb_salles_x * TAILLE_SALLE_X; i < salleDebutX + tailleSalleX + nb_salles_x * TAILLE_SALLE_X; i++) {
@@ -135,11 +136,13 @@ t_carte CarteCharger() {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
 									case '3' :
-										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) {
+										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) { //Porte sur la gauche
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) {
+										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) { //Porte sur le dessus
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) {
+										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) { //Porte sur la droite
+											carte.grille[i][j] = 1;
+										} else if(nb_salles_x == SALLES_MAX_X-1 && carte.grille[i-1][j] == 2) { //Porte sur le dessous
 											carte.grille[i][j] = 1;
 										} else {
 											carte.grille[i][j] = 3;
@@ -159,16 +162,76 @@ t_carte CarteCharger() {
 		}
 		
 		//Création des chemins
-		/*for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
+		/*
+		 * Lors de la création de la carte, des portes ont été atribuées
+		 * On repasse sur la carte en cherchant les portes
+		 * Si on en trouve, on regarde autour (en haut et à gauche) pour voir dans quel sens est le chemin à créer
+		 * Dans tous les cas, on créé un chemin jusqu'à l'extrémité de la salle
+		 * Ensuite, les salles étendent leurs chemins vers les autres salles situées au dessus et à gauche, afin de combler le vide qu'il y a
+		 */
+		for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
 			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
-				//Chemin à gauche
-				if(nb_salles_y < 0) {
-					for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x+1) * TAILLE_SALLE_X -1; i++) {
-					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y+1) * TAILLE_SALLE_Y -1; j++) {*/
-
+				for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x + 1) * TAILLE_SALLE_X; i++) {
+					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y + 1) * TAILLE_SALLE_Y; j++) {
+						if(carte.grille[i][j] == 3) {
+							//Chemin à faire vers le haut
+							if(carte.grille[i-1][j] == 0 && carte.grille[i][j-1] == 1 && nb_salles_x > 0) {
+								for(x = i-1; x >= nb_salles_x * TAILLE_SALLE_X; x--) {
+									carte.grille[x][j] = 3;
+								}
+							}
 							
-		printf("Carte :\n");
-		//CarteAfficher(carte);
+							//Chemin à faire vers le bas
+							if(carte.grille[i-1][j] == 2 && carte.grille[i][j-1] == 1 && nb_salles_x < SALLES_MAX_X) {
+								for(x = i+1; x <= (nb_salles_x + 1) * TAILLE_SALLE_X; x++) {
+									carte.grille[x][j] = 3;
+								}
+							}
+							
+							//Chemin à faire vers la droite
+							if(carte.grille[i-1][j] == 1 && carte.grille[i][j-1] == 0 && nb_salles_y > 0) {
+								for(y = j-1; y >= nb_salles_y * TAILLE_SALLE_Y; y--) {
+									carte.grille[i][y] = 3;
+								}
+							}
+							
+							//Chemin à faire vers la gauche
+							if(carte.grille[i-1][j] == 1 && carte.grille[i][j+1] == 0 && nb_salles_y < SALLES_MAX_Y) {
+								for(y = j+1; y <= (nb_salles_y + 1) * TAILLE_SALLE_Y; y++) {
+									carte.grille[i][y] = 3;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
+			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
+				for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x + 1) * TAILLE_SALLE_X; i++) {
+					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y + 1) * TAILLE_SALLE_Y; j++) {
+						if(carte.grille[i][j] == 3) {
+							if(carte.grille[i-1][j] != 3) {
+								//Chemin à compléter sur le bas
+								if(carte.grille[i][j-1] == 3 || carte.grille[i][j+1] == 3 /*&& !(carte.grille[i][j-1] == 3 && carte.grille[i][j+1] == 3)*/) { 
+									printf("ok2");
+									do {
+										carte.grille[i][j] = 3;
+										i++;
+									} while(!carte.grille[i][j] == 3);
+									/*while(!carte.grille[i][j] == 3) {
+										carte.grille[i][j] = 3;
+										i++;
+									}*/
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+							
 		fclose(carteFichier);
 		
 	} else {
@@ -179,7 +242,10 @@ t_carte CarteCharger() {
 
 
 void CarteTester(int test) {
+	t_carte carte;
 	switch(test) {
-		case 1 : CarteCharger(); break;
+		case 1 : 	carte = CarteCharger();
+					CarteAfficher(carte);
+					break;
 	}
 }
