@@ -1,3 +1,3 @@
 void JeuAmorcer();
 void JeuTester();
-void JeuCommencer(t_carte * carte);
+void JeuCommencer(t_carte * carte,t_personnage * player);

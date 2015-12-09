@@ -30,7 +30,7 @@ typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_statistique;
 typedef struct {int arme; int armure;}t_equip;
 typedef struct {int aReflechir;}t_inv;
-typedef struct {int niveau;int xpRequis;int xp} t_experience
+typedef struct {int niveau;int xpRequis;int xp;} t_experience;
 typedef struct {char nom[20];t_experience experience; t_statistique stats; t_caracteristique caract; t_equip equipement; t_inv inventaire;}t_personnage;
 
 typedef struct {int seed;  t_personnage perso; int difficulte;}t_partie;
