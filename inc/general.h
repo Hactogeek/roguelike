@@ -5,6 +5,7 @@
 #include "Outil.h"
 #include "personnage.h"
 #include "check.h"
+#include "combat.h"
 #include "jeu.h"
 #include "monstre.h"
-//#include "combat.h"
+

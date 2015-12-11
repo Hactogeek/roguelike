@@ -12,7 +12,7 @@ void PersonnagePositionner(t_carte * carte){
 		x=uHasard(TAILLE_CARTE_X);
 		y=uHasard(TAILLE_CARTE_Y);
 		
-		}while(carte->grille[x][y]!=2);
+		}while(!CheckSalle(x,y,*carte));
 			carte->cord.x=x;
 			carte->cord.y=y;	
 	printf("Position du personnage positionner : %i %i\n",carte->cord.x,carte->cord.y);
@@ -30,8 +30,9 @@ void PersonnageInitialiser(t_personnage * perso){
     strcpy(perso->nom, pseudo);
     
 	perso->experience.niveau=0;
-	perso->stats.vie=3;
+	perso->stats.vie=100;
 	perso->stats.score=1;
+	perso->caract.force=2;
     
     printf("Fin Creation Personnage\n\n");
     Appel1("PersonnageInitialiser");
@@ -122,4 +123,14 @@ void PersonnageTester(){
         }
     }while(test!=6);
 	
+}
+void PersonnageLevelUp(t_personnage * player){
+	
+	player->experience.niveau+=1;
+	player->experience.xp-=player->experience.xpRequis;
+	player->experience.xpRequis*=1.2;
+
+
+
+
 }

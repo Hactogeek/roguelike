@@ -52,7 +52,7 @@ int CheckUpNiveau(t_personnage player){
 	return (player.experience.xpRequis<= player.experience.xp);
 }
 
-//Retourne 1 si il y a un chemin au coordonné saisie
+//Retourne 1 si il y a une salle au coordonné saisie
 int CheckSalle(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==2);
 }
