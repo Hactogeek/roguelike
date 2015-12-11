@@ -29,7 +29,7 @@ void PersonnageInitialiser(t_personnage * perso){
     strcpy(perso->nom, pseudo);
     
 	perso->experience.niveau=0;
-	perso->stats.vie=100;
+	perso->stats.vie=20;
 	perso->stats.score=1;
 	perso->caract.force=2;
     
@@ -127,8 +127,12 @@ void PersonnageLevelUp(t_personnage * player){
 	player->experience.niveau+=1;
 	player->experience.xp-=player->experience.xpRequis;
 	player->experience.xpRequis*=1.2;
+}
 
-
-
+void PersonnageAfficherPseudo(t_personnage player){
+	int taille=strlen(player.nom),i;
+	for(i=0;i<taille;i++){
+		printf("%c",player.nom[i]);
+	}
 
 }

@@ -10,7 +10,7 @@ void CheckTester(){
 
 //Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1
 int CheckTestPersonnage(t_personnage perso){
-    return (perso.caract.vitalite<=0);
+    return (perso.stats.vie<=0);
 }
 
 //Retourne 1 si le joueur est sur une case de changement d'etage

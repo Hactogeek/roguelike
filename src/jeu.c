@@ -21,13 +21,18 @@ void JeuCommencer(t_carte * carte,t_personnage * player){
     PersonnagePositionner(carte);
     PersonnageInitialiser(player);
     MonstrePositionner(carte);
-    while(CheckTestPersonnage(*player)){
+    while(!CheckTestPersonnage(*player)){
 		CarteAfficher(*carte);
 		idMob=DeplacementMarcher(carte);
 		if(idMob != -1){
 		    	CombatTaper(player,carte,idMob);
-		    	MonstreAttaque(player,carte,idMob);
+		    	MonstreMort(carte);
+		    	
 		}
+		MonstreDeplacement(carte,player);
 		i++;
     }
+    system("clear");
+    PersonnageAfficherPseudo(*player);
+    printf(" est mort. Paix à son ame");
 }

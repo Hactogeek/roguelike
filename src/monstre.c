@@ -11,20 +11,17 @@ void MonstreInitialiser(){
 void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
 // Attaque du joueur par le monstre
 {
-    Appel0("MonstreAttaque");
     
     perso->stats.vie--;
     
     printf("Joueur Vie : %i\n", perso->stats.vie);
     
-    Appel1("MonstreAttaque");
 }
 
 void MonstreMort(t_carte * carte)
 {
 	int i;
 	
-	Appel0("MonstreMort");
 	
 	for(i=0; i<NB_MAX_MONSTRE; i++)
      {
@@ -35,7 +32,6 @@ void MonstreMort(t_carte * carte)
      	}
      }
 	
-	Appel1("MonstreMort");
 }
 
 void MonstreDeplacement(t_carte * carte, t_personnage * perso)
