@@ -29,7 +29,7 @@ void PersonnageInitialiser(t_personnage * perso){
 	 
     strcpy(perso->nom, pseudo);
     
-	perso->niveau=0;
+	perso->experience.niveau=0;
 	perso->stats.vie=3;
 	perso->stats.score=1;
     
@@ -44,7 +44,7 @@ void PersonnageAfficher(t_personnage * perso){
     printf("\nVotre Personnage\n");
 	
 	printf("|Pseudo	|Niveau	|Vie	|Score	|\n");
-	printf("|	%s	|	%i	|	%i	|	%i	|\n\n", perso->nom, perso->niveau, perso->stats.vie, perso->stats.score);
+	printf("|	%s	|	%i	|	%i	|	%i	|\n\n", perso->nom, perso->experience.niveau, perso->stats.vie, perso->stats.score);
     
     Appel1("PersonnageAfficher");
 }
@@ -56,7 +56,7 @@ void PersonnageSauvegarder( t_personnage * perso){
     
     PersoSauvegarde = fopen("save/persosauvegarde", "w");
     
-    fprintf(PersoSauvegarde, "@%s_%i_%i_%i@", perso->nom, perso->niveau, perso->stats.vie, perso->stats.score);
+    fprintf(PersoSauvegarde, "@%s_%i_%i_%i@", perso->nom, perso->experience.niveau, perso->stats.vie, perso->stats.score);
     
     fclose(PersoSauvegarde);
     
@@ -83,7 +83,7 @@ void PersonnageCharger(t_personnage * perso)
         
         strcpy(perso->nom, pseudo);
         
-        perso->niveau=niveau;
+        perso->experience.niveau=niveau;
         perso->stats.vie=vie;
         perso->stats.score=score;
         

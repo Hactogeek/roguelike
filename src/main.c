@@ -5,6 +5,7 @@ int main(){
 	int choix,i,j ;    
 	fflush(stdout);
     t_carte carte;
+    t_personnage personnage;
 	do{
 		/* Affichage du menu */
 		printf("\nMenu :\n");
@@ -25,7 +26,7 @@ int main(){
 			case 2: printf("Pas encore fais");break;
             case 3:{
                 carte = CarteCharger();
-                JeuCommencer(&carte);
+                JeuCommencer(&carte, &personnage);
                 break;
 
             }

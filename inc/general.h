@@ -7,4 +7,4 @@
 #include "check.h"
 #include "jeu.h"
 #include "monstre.h"
-#include "combat.h"
+//#include "combat.h"
