@@ -14,7 +14,6 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
     Appel0("MonstreAttaque");
     
     perso->stats.vie--;
-    carte->monstre[i].monstreVie--;
     
     printf("Joueur Vie : %i\n", perso->stats.vie);
     
