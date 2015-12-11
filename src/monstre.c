@@ -30,7 +30,7 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
     
     for(i=0; i<NB_MAX_MONSTRE; i++)
      {
-        // Si le monstre et le joueur sont cote a cote, attaque
+        // Si le monstre et le joueur sont cote a cote, attaque!
         if(((carte->cord.x == carte->monstre[i].monstrePos.x-1) && (carte->cord.y == carte->monstre[i].monstrePos.y)) ||
            ((carte->cord.x == carte->monstre[i].monstrePos.x+1) && (carte->cord.y == carte->monstre[i].monstrePos.y)) ||
            ((carte->cord.y == carte->monstre[i].monstrePos.y-1) && (carte->cord.x == carte->monstre[i].monstrePos.x)) ||
@@ -40,22 +40,63 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
          }
         else
          {
-            // Verification si le joueur et le mob sont dans la même salle
             if((carte->cord.x/TAILLE_CARTE_X==carte->monstre[i].monstrePos.x/TAILLE_CARTE_X) &&
                (carte->cord.y/TAILLE_CARTE_Y==carte->monstre[i].monstrePos.y/TAILLE_CARTE_Y))
              {
+             	// Verification si le joueur et le mob sont dans la même salle
                 if(((carte->cord.x>carte->monstre[i].monstrePos.x) || (carte->cord.y>carte->monstre[i].monstrePos.y)))
                  {
                     // Si le monstre est en dessous ou a droite du joueur
                     if(carte->cord.x>carte->monstre[i].monstrePos.x)
                      {
                         // Si le monstre est a droite du joueur
-                        carte->monstre[i].monstrePos.x++;
+                        if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]==1)
+                        {
+                        	// Mur a droite
+                        	if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y-1]==2)
+                        	{
+                        		// Deplacement vers la haut
+                        		carte->monstre[i].monstrePos.y--;
+                        		printf("HAUT");
+                        	}
+                        	else if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y+1]==2)
+                        	{
+                        		// Deplacement vers la bas
+                        		carte->monstre[i].monstrePos.y++;
+                        		printf("BAS");
+                        	}
+                        }
+                        else if((carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]==2))
+                        {
+                        	// Pas mur a droite, deplacement a droite
+                        	carte->monstre[i].monstrePos.x++;
+                        	printf("DROITE");
+                        }
                      }
                     else
                      {
-                        // Si le monstre est en dessous
-                        carte->monstre[i].monstrePos.y++;
+                     	if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y+1]==1)
+                     	{
+                     		// Mur en dessous
+                     		if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y+1]==2)
+                     		{
+                     			// Deplacement a droite
+                     			carte->monstre[i].monstrePos.x++;
+                     			printf("DROITE");
+                     		}
+                     		else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y+1]==2)
+                     		{
+                     			// Deplacement a gauche
+                     			carte->monstre[i].monstrePos.x--;
+                     			printf("GAUCHE");
+                     		}
+                     	}
+                     	else if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y+1]==2)
+                     	{
+                        	// Pas mur en dessous, deplacement vers le bas
+                        	carte->monstre[i].monstrePos.y++;
+                        	printf("BAS");
+                        }
                      }
                  }
                 else
@@ -63,30 +104,71 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                     // Si le monstre est au dessus ou a gauche du joueur
                     if(carte->cord.x<carte->monstre[i].monstrePos.x)
                      {
-                        // Si le monstre est a gauche du joueur
-                        carte->monstre[i].monstrePos.x--;
+                        if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y]==1)
+                        {
+                        	// Mur a gauche
+                        	if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y-1]==2)
+                        	{
+                        		// Deplacement vers le haut
+                        		carte->monstre[i].monstrePos.y--;
+                        		printf("HAUT");
+                        	}
+                        	else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y+1]==2)
+                        	{
+                        		// Deplacement vers le bas
+                        		carte->monstre[i].monstrePos.y++;
+                        		printf("BAS");
+                        	}
+                        }
+                        else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y]==2)
+                        {
+                        	// Pas mur a gauche, deplacement a gauche
+                        	carte->monstre[i].monstrePos.x--;
+                        	printf("GAUCHE");
+                        }
                      }
                     else
                      {
-                         // Si le monstre est au dessus du joueur
-                         carte->monstre[i].monstrePos.y--;
+                     	if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y-1]==1)
+                     	{
+                     		// Mur au dessus
+                     		if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y-1]==2)
+                     		{
+                     			// Deplacement a droite
+                     			carte->monstre[i].monstrePos.x++;
+                     			printf("DROITE");
+                     		}
+                     		else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y-1]==2)
+                     		{
+                     			// Deplacement a gauche
+                     			carte->monstre[i].monstrePos.x--;
+                     			printf("GAUCHE");
+                     		}
+                     	}
+                     	else if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y-1]==2)
+                     	{
+                         	// Pas mur au dessus, deplacement vers le haut
+                         	carte->monstre[i].monstrePos.y--;
+                         	printf("HAUT");
+                        }
                      }
                  }
              }
          }
      }
     
-    Appel1("MonstreDeplacement");
-    
+    Appel1("MonstreDeplacement");  
 }
 
 void MonstrePositionParId(t_carte * carte, int i, int * x, int * y)
+// Recupere l'adresse du monstre par ID
 {
     *x=carte->monstre[i].monstrePos.x;
     *y=carte->monstre[i].monstrePos.y;
 }
 
 int MonstreIdParPosition(t_carte * carte, int x, int y)
+// Retourne l'ID du monstre s'il y en a un a la position
 {
     int i;
     for(i=0; i<NB_MAX_MONSTRE; i++)
@@ -124,7 +206,9 @@ void MonstrePositionner(t_carte * carte)
 }
 
 
-void MonstreTester(){
+void MonstreTester()
+// Fonction de test du monstre
+{
 	int test;
     
     Appel0("MonstreTester");
