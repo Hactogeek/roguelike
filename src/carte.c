@@ -33,13 +33,13 @@ void CarteAfficher(t_carte carte) {
 			} else {
 				switch(carte.grille[i][j]) {
 					case 0 : printf(" "); break;
-					case 1 : 	if(CheckMur(i+1,j,carte) { //Haut de la salle
+					case 1 : 	if(CheckMur(i+1,j,carte)) { //Haut de la salle
 									if(CheckMur(i,j+1,carte)) {
 										printf("┌");
 									} else if(CheckMur(i,j-1,carte)) {
 										printf("┐");
 									}
-								} else if(CheckMur(i-1,j,carte) { //Bas de la salle
+								} else if(CheckMur(i-1,j,carte)) { //Bas de la salle
 									if(CheckMur(i,j+1,carte)) {
 										printf("└");
 									} else if(CheckMur(i,j-1,carte)) {
