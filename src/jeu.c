@@ -21,7 +21,7 @@ void JeuCommencer(t_carte * carte,t_personnage * player){
     PersonnagePositionner(carte);
     PersonnageInitialiser(player);
     MonstrePositionner(carte);
-    while(!CheckTestPersonnage(*player)){
+    while(CheckTestPersonnage(*player)){
 		CarteAfficher(*carte);
 		idMob=DeplacementMarcher(carte);
 		if(idMob != -1){

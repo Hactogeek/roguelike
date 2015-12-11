@@ -21,7 +21,6 @@ void PersonnagePositionner(t_carte * carte){
 void PersonnageInitialiser(t_personnage * perso){
 	char pseudo[20];
 	
-    Appel0("PersonnageInitialiser");
     printf("\nCréation Personnage\n");
     
 	printf("Pseudo : ");
@@ -35,7 +34,6 @@ void PersonnageInitialiser(t_personnage * perso){
 	perso->caract.force=2;
     
     printf("Fin Creation Personnage\n\n");
-    Appel1("PersonnageInitialiser");
 }
 
 void PersonnageAfficher(t_personnage * perso){
