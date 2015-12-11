@@ -35,7 +35,7 @@ Le programme sera écrit en langage C et devra affiché le rendu du jeu dans le 
  - [ ] Github
   - [x] Création
   - [ ] Organisation definitive
-  - [x] README à jour
+  - [ ] README à jour
  - [ ] Compte Rendu
  - [ ] Interface Graphique
 
