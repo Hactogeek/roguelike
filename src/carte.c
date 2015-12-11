@@ -33,18 +33,14 @@ void CarteAfficher(t_carte carte) {
 			} else {
 				switch(carte.grille[i][j]) {
 					case 0 : printf(" "); break;
-					case 1 : 	if(CheckMur(i+1,j,carte)) { //Haut de la salle
-									if(CheckMur(i,j+1,carte)) {
-										printf("┌");
-									} else if(CheckMur(i,j-1,carte)) {
-										printf("┐");
-									}
-								} else if(CheckMur(i-1,j,carte)) { //Bas de la salle
-									if(CheckMur(i,j+1,carte)) {
-										printf("└");
-									} else if(CheckMur(i,j-1,carte)) {
-										printf("┘");
-									}
+					case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+									printf("┌");
+								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+									printf("└");
+								} else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+									printf("┐");
+								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+									printf("┘");
 								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte)))) {
 									printf("—");
 								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte)))) {
