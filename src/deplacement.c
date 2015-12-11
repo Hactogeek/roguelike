@@ -26,7 +26,7 @@ int DeplacementMarcher(t_carte * map){
         }
 		case 'q':{
 			if(CheckMonstre(map->cord.x,map->cord.y-1,*map)==1){
-        		return MonstreIdParPosition(map,map->cord.x,map->cord.y);
+        		return MonstreIdParPosition(map,map->cord.x,map->cord.y-1);
         	}else if(CheckSalle(map->cord.x,map->cord.y-1,*map)==1||CheckChemin(map->cord.x,map->cord.y-1,*map)){
         		map->cord.y -=1;
         	}

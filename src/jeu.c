@@ -17,20 +17,17 @@ void Jeutester(){
 }
 
 void JeuCommencer(t_carte * carte,t_personnage * player){
-    int i=0,idMob;
-    Appel0("JeuCommencer");
+    int i=0,idMob=-1;
     PersonnagePositionner(carte);
+    PersonnageInitialiser(player);
     MonstrePositionner(carte);
-    while(i!=10){
-    	system("clear");
-	
-	CarteAfficher(*carte);
-	idMob=DeplacementMarcher(carte);
-	if(idMob != -1){
-        	//CombatTaper(player,carte,idMob);
-        	//MonstreAttaque(player,carte,idMob);
-        }
-        i++;
+    while(CheckTestPersonnage(*player)){
+		CarteAfficher(*carte);
+		idMob=DeplacementMarcher(carte);
+		if(idMob != -1){
+		    	CombatTaper(player,carte,idMob);
+		    	MonstreAttaque(player,carte,idMob);
+		}
+		i++;
     }
-    Appel1("JeuCommencer");
 }

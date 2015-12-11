@@ -219,7 +219,6 @@ void MonstrePositionner(t_carte * carte)
         carte->monstre[i].monstrePos.y=hasardY;
         carte->monstre[i].monstreVie=5;
         
-        printf("%i %i\n",hasardX, hasardY);
     }
 }
 
