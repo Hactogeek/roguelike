@@ -21,6 +21,24 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
     Appel1("MonstreAttaque");
 }
 
+void MonstreMort(t_carte * carte)
+{
+	int i;
+	
+	Appel0("MonstreMort");
+	
+	for(i=0; i<NB_MAX_MONSTRE; i++)
+     {
+     	if(carte->monstre[i].monstreVie<=0)
+     	{
+     		carte->monstre[i].monstrePos.x=0;
+     		carte->monstre[i].monstrePos.y=0;
+     	}
+     }
+	
+	Appel1("MonstreMort");
+}
+
 void MonstreDeplacement(t_carte * carte, t_personnage * perso)
 // Déplacement monstre en fonction du joueur
 {
