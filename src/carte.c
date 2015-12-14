@@ -65,6 +65,8 @@ t_carte CarteCharger() {
 	FILE * carteFichier;
 	t_carte carte;
 	char carteCase;
+	int salleX;
+	int salleY;
 	int salleDebutX;
 	int salleDebutY;
 	int tailleSalleX;
@@ -93,6 +95,59 @@ t_carte CarteCharger() {
 				nb_salles_diff++;
 			}
 		}
+		
+		for(x = 0; x < SALLES_MAX_X; x++) {
+			for(y = 0; y < SALLES_MAX_Y; y++) {
+				carte.porte[x][y].droite = 0;
+				carte.porte[x][y].gauche = 0;
+				carte.porte[x][y].bas = 0;
+				carte.porte[x][y].haut = 0;
+			}
+		}
+		
+		for(x = 0; x < SALLES_MAX_X; x++) {
+			for(y = 0; y < SALLES_MAX_Y; y++) {
+				if(y < SALLES_MAX_Y - 1) {
+					carte.porte[x][y].droite = 1;
+					carte.porte[x][y+1].gauche = 1;
+				}
+
+				if(y > 0) {
+					carte.porte[x][y].gauche = 1;
+					carte.porte[x][y-1].droite = 1;
+				}
+				
+				if(x < SALLES_MAX_X - 1) {
+					carte.porte[x][y].bas = 1;
+					carte.porte[x+1][y].haut = 1;
+				}
+				
+				if(x > 0) {
+					carte.porte[x][y].haut = 1;
+					carte.porte[x-1][y].bas = 1;
+				}
+			}
+		}
+		
+		for(x = 0; x < SALLES_MAX_X; x++) {
+			for(y = 0; y < SALLES_MAX_Y; y++) {
+				if(carte.porte[x][y].haut) {
+					carte.porte[x][y].haut -= nHasard(2);
+				}
+				
+				if(!carte.porte[x][y].haut) {
+					carte.porte[x-1][y].bas = 0;
+				}
+				
+				if(carte.porte[x][y].gauche) {
+					carte.porte[x][y].gauche -= nHasard(2);
+				}
+				
+				if(!carte.porte[x][y].gauche) {
+					carte.porte[x][y-1].droite = 0;
+				}
+			}
+		}	
 		
 		//Création des salles
 		while(nb_salles < SALLES_MAX) {
@@ -132,11 +187,10 @@ t_carte CarteCharger() {
 					if(salleDebutY > tailleSalleY - 2) {
 						salleDebutY = tailleSalleY-2;
 					}
-							
+					
 					//Placement de la salle et remplissage
 					for(i = salleDebutX + nb_salles_x * TAILLE_SALLE_X; i < salleDebutX + tailleSalleX + nb_salles_x * TAILLE_SALLE_X; i++) {
 						for(j = salleDebutY + nb_salles_y * TAILLE_SALLE_Y-1; j <= salleDebutY + tailleSalleY + nb_salles_y * TAILLE_SALLE_Y-1; j++) {
-							nb_portes = 0;
 							//Récupération du contenu de la case
 							fscanf(carteFichier, "%c", &carteCase);
 							if(carteCase != 0) {
@@ -144,22 +198,18 @@ t_carte CarteCharger() {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
 									case '3' :
-										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) { //Salle dans la rangée la plus à gauche
+										if(carte.porte[nb_salles_x][nb_salles_y].haut && carte.grille[i-1][j] == 0) {
+											carte.grille[i][j] = 3;
+										} else if(carte.porte[nb_salles_x][nb_salles_y].bas && carte.grille[i-1][j] == 2) {
+											carte.grille[i][j] = 3;
+										} else if(carte.porte[nb_salles_x][nb_salles_y].gauche && carte.grille[i][j-1] == 0) {
+											carte.grille[i][j] = 3;
+										} else if(carte.porte[nb_salles_x][nb_salles_y].droite && carte.grille[i][j-1] == 2) {
+											carte.grille[i][j] = 3;
+										} else {
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) { //Salle dans la rangée la plus haute
-											carte.grille[i][j] = 1;
-										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) { //Salle dans la rangée la plus à droite
-											carte.grille[i][j] = 1;
-										} else if(nb_salles_x == SALLES_MAX_X-1 && carte.grille[i-1][j] == 2) { //Salle dans la rangée la plus basse
-											carte.grille[i][j] = 1;
-										} else { //Si une salle est éligible, on regarde maintenant si elle a déjà une porte - si oui, on peut éventuellement ne pas lui en mettre d'autre
-											if(!nb_portes * uHasard(2)) {
-												carte.grille[i][j] = 3;
-												nb_portes++;
-											} else {
-												carte.grille[i][j] = 1;
-											}
 										}
+										
 										break;
 									case '4' : carte.grille[i][j] = 4; break;
 
@@ -174,6 +224,14 @@ t_carte CarteCharger() {
 			}
 		}
 		
+		do {
+			salleX = uHasard(SALLES_MAX_X);
+			salleY = uHasard(SALLES_MAX_Y);
+			salleDebutX = uHasard(TAILLE_SALLE_X);
+			salleDebutY = uHasard(TAILLE_SALLE_Y);
+		} while(!CheckSalle(salleX * TAILLE_SALLE_X + salleDebutX, salleY * TAILLE_SALLE_Y + salleDebutY, carte));
+		carte.grille[salleX * TAILLE_SALLE_X + salleDebutX][salleY * TAILLE_SALLE_Y + salleDebutY] = 4;
+		
 		//Création des chemins
 		/*
 		 * Lors de la création de la carte, des portes ont été atribuées
@@ -184,13 +242,11 @@ t_carte CarteCharger() {
 		 */
 		for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
 			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
-				nb_portes = 0;
 				for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x + 1) * TAILLE_SALLE_X; i++) {
 					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y + 1) * TAILLE_SALLE_Y; j++) {
 						if(carte.grille[i][j] == 3) {
 							//Chemin à faire vers le haut
 							if(carte.grille[i-1][j] == 0 && carte.grille[i][j-1] == 1 && nb_salles_x > 0) {
-								printf("%i", nb_portes * nHasard(2));
 								for(x = i-1; x >= nb_salles_x * TAILLE_SALLE_X; x--) {
 									carte.grille[x][j] = 3;
 								}
@@ -265,6 +321,7 @@ void CarteTester(int test) {
 	t_carte carte;
 	switch(test) {
 		case 1 : 	carte = CarteCharger();
+					//MatriceAfficher(carte.grille);
 					CarteAfficher(carte);
 					break;
 	}
