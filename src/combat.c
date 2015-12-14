@@ -16,7 +16,7 @@ void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
 	
 	printf("Le joueur a infligé %i dégats au monstre, il lui en reste %i.\n",player->caract.force,(carte->monstre[idMob].monstreVie));
 	
-	if(CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
+	if(!CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
 		CombatRemporter(player,carte,idMob);
 	}
 }
