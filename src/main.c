@@ -9,7 +9,7 @@ int main(){
 		printf("\nMenu :\n");
 		printf(" 1 - Nouvelle partie\n");
 		printf(" 2 - Charger partie\n");
-		printf(" 3 - Test deplacement\n");
+		printf(" 3 - Test jeu\n");
 		printf(" 4 - Test generation salles\n");
 		printf(" 5 - Initialiser Joueur\n");
 		printf(" 6 - MonstreTest\n");
