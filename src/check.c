@@ -26,7 +26,7 @@ int CheckPositionSalle(int x,int y, t_carte carte){
 //Retourne 1 si il y a un monstre aux coordonnées indiqué
 int CheckMonstre(int x,int y, t_carte carte){
 	int i;
-	for(i=0;i<carte.nbMonstreCarte;i++){
+	for(i=0;i<NB_MAX_MONSTRE;i++){
 		if((carte.monstre[i].monstrePos.x==x) && (carte.monstre[i].monstrePos.y==y))
 		{
 			return 1;

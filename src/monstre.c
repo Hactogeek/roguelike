@@ -23,7 +23,7 @@ void MonstreMort(t_carte * carte)
 	int i;
 	
 	
-	for(i=0; i<carte->nbMonstreCarte; i++)
+	for(i=0; i<NB_MAX_MONSTRE; i++)
      {
      	if(carte->monstre[i].monstreVie<=0)
      	{
@@ -41,7 +41,7 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
     
     Appel0("MonstreDeplacement");
     
-    for(i=0; i<carte->nbMonstreCarte; i++)
+    for(i=0; i<NB_MAX_MONSTRE; i++)
      {
         // Si le monstre et le joueur sont cote a cote, attaque!
         if(((carte->cord.x == carte->monstre[i].monstrePos.x-1) && (carte->cord.y == carte->monstre[i].monstrePos.y)) ||
@@ -185,7 +185,7 @@ int MonstreIdParPosition(t_carte * carte, int x, int y)
 // Retourne l'ID du monstre s'il y en a un a la position
 {
     int i;
-    for(i=0; i<carte->nbMonstreCarte; i++)
+    for(i=0; i<NB_MAX_MONSTRE; i++)
     {
         if((carte->monstre[i].monstrePos.x==x) && (carte->monstre[i].monstrePos.y==y))
         {
@@ -198,17 +198,13 @@ int MonstreIdParPosition(t_carte * carte, int x, int y)
 void MonstrePositionner(t_carte * carte)
 // Positionnement du monstre dans les salles
 {
-    int i, hasardX, hasardY, hasardMonstre=0;
+    int i, hasardX, hasardY, hasardMonstre;
     
     srand(time(NULL)+10);
     
-    do{
-        hasardMonstre=uHasard(NB_MAX_MONSTRE);
-    }while((hasardMonstre<=0) && (hasardMonstre>=NB_MAX_MONSTRE));
+    //hasardMonstre=uHasard(NB_MAX_MONSTRE);
     
-    carte->nbMonstreCarte=hasardMonstre;
-    
-    for(i=0; i<carte->nbMonstreCarte; i++)
+    for(i=0; i<NB_MAX_MONSTRE; i++)
     {
         do{
             hasardX=uHasard(TAILLE_CARTE_X);
