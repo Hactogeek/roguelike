@@ -24,7 +24,7 @@ typedef struct {t_posMonstre monstrePos; int monstreVie; int puissance;}t_monstr
 
 typedef struct {int x; int y;}t_posJoueur;
 
-typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; /*t_posMonstre*/ t_monstre monstre[NB_MAX_MONSTRE];}t_carte;
+typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; int nbMonstreCarte; t_monstre monstre[NB_MAX_MONSTRE];}t_carte;
 
 typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_statistique;
