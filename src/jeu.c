@@ -23,6 +23,7 @@ void JeuCommencer(){
     t_personnage personnage;
     
     carte = CarteCharger();
+    carte.etage=1;
     PersonnagePositionner(&carte);
     MonstrePositionner(&carte);
     
@@ -40,6 +41,7 @@ void JeuCommencer(){
             MonstrePositionner(&carte);
             CarteAfficher(carte);
             idMob=DeplacementMarcher(&carte);
+            carte.etage+=1;
         }
         
 		if(idMob != -1){
