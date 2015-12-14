@@ -247,8 +247,15 @@ void MonstrePositionner(t_carte * carte)
         
         carte->monstre[i].monstrePos.x=hasardX;
         carte->monstre[i].monstrePos.y=hasardY;
-        carte->monstre[i].monstreVie=4;
-        carte->monstre[i].puissance=2;
+        carte->monstre[i].monstreVie=3+carte->etage;
+        if(carte->etage%2==0)
+        {
+            carte->monstre[i].puissance=2;
+        }
+        else
+        {
+           carte->monstre[i].puissance=2; 
+        }
         
         
     }
