@@ -43,7 +43,7 @@ int DeplacementMarcher(t_carte * map){
 		case 'd':{
 			if(CheckMonstre(map->cord.x,map->cord.y+1,*map)==1){
         		return MonstreIdParPosition(map,map->cord.x,map->cord.y+1);
-        	}else if(CheckSalle(map->cord.x,map->cord.y+1,*map)==1||CheckChemin(map->cord.x,map->cord.y+1,*map)||CheckEscalier(map->cord.x-1,map->cord.y,*map)){
+        	}else if(CheckSalle(map->cord.x,map->cord.y+1,*map)==1||CheckChemin(map->cord.x,map->cord.y+1,*map)||CheckEscalier(map->cord.x,map->cord.y+1,*map)){
         		map->cord.y +=1;
         	}
 			break;
