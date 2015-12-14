@@ -10,11 +10,20 @@ void MonstreInitialiser(){
 
 void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
 // Attaque du joueur par le monstre
-{
+{    
+	srand(time(NULL)+42);
+	int esquive = 0;
+	//float fatigue = (float)perso->stats.vie/perso->caract.vitalite;//rapport entre les pdv max et ceux actuel
+	
+	esquive = nHasard(101) /* fatigue*/;
+	if(esquive <= perso->caract.agilite){
+		printf("Le joueur a reussi a esquivé l'attaque.\n");
+	}else{
+		perso->stats.vie -= carte->monstre[i].puissance;
     
-    perso->stats.vie--;
+    	printf("Le joueur a : %i pdv.\n", perso->stats.vie);
+	}
     
-    printf("Joueur Vie : %i\n", perso->stats.vie);
     
 }
 
@@ -39,7 +48,6 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
 {
     int i;
     
-    Appel0("MonstreDeplacement");
     
     for(i=0; i<NB_MAX_MONSTRE; i++)
      {
@@ -70,20 +78,17 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                         	{
                         		// Deplacement vers la haut
                         		carte->monstre[i].monstrePos.y--;
-                        		printf("HAUT");
                         	}
                         	else if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y+1]==2)
                         	{
                         		// Deplacement vers la bas
                         		carte->monstre[i].monstrePos.y++;
-                        		printf("BAS");
                         	}
                         }
                         else if((carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]==2))
                         {
                         	// Pas mur a droite, deplacement a droite
                         	carte->monstre[i].monstrePos.x++;
-                        	printf("DROITE");
                         }
                      }
                     else
@@ -95,20 +100,17 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                      		{
                      			// Deplacement a droite
                      			carte->monstre[i].monstrePos.x++;
-                     			printf("DROITE");
                      		}
                      		else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y+1]==2)
                      		{
                      			// Deplacement a gauche
                      			carte->monstre[i].monstrePos.x--;
-                     			printf("GAUCHE");
                      		}
                      	}
                      	else if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y+1]==2)
                      	{
                         	// Pas mur en dessous, deplacement vers le bas
                         	carte->monstre[i].monstrePos.y++;
-                        	printf("BAS");
                         }
                      }
                  }
@@ -124,20 +126,17 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                         	{
                         		// Deplacement vers le haut
                         		carte->monstre[i].monstrePos.y--;
-                        		printf("HAUT");
                         	}
                         	else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y+1]==2)
                         	{
                         		// Deplacement vers le bas
                         		carte->monstre[i].monstrePos.y++;
-                        		printf("BAS");
                         	}
                         }
                         else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y]==2)
                         {
                         	// Pas mur a gauche, deplacement a gauche
                         	carte->monstre[i].monstrePos.x--;
-                        	printf("GAUCHE");
                         }
                      }
                     else
@@ -149,28 +148,24 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                      		{
                      			// Deplacement a droite
                      			carte->monstre[i].monstrePos.x++;
-                     			printf("DROITE");
                      		}
                      		else if(carte->grille[carte->monstre[i].monstrePos.x-1][carte->monstre[i].monstrePos.y-1]==2)
                      		{
                      			// Deplacement a gauche
                      			carte->monstre[i].monstrePos.x--;
-                     			printf("GAUCHE");
                      		}
                      	}
                      	else if(carte->grille[carte->monstre[i].monstrePos.x][carte->monstre[i].monstrePos.y-1]==2)
                      	{
                          	// Pas mur au dessus, deplacement vers le haut
                          	carte->monstre[i].monstrePos.y--;
-                         	printf("HAUT");
                         }
                      }
                  }
              }
          }
      }
-    
-    Appel1("MonstreDeplacement");  
+     
 }
 
 void MonstrePositionParId(t_carte * carte, int i, int * x, int * y)
@@ -212,7 +207,9 @@ void MonstrePositionner(t_carte * carte)
         
         carte->monstre[i].monstrePos.x=hasardX;
         carte->monstre[i].monstrePos.y=hasardY;
-        carte->monstre[i].monstreVie=5;
+        carte->monstre[i].monstreVie=4;
+        carte->monstre[i].puissance=2;
+        
         
     }
 }

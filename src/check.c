@@ -18,10 +18,6 @@ int CheckTestEtage(t_carte pos){
     return (pos.grille[pos.cord.x][pos.cord.y]==4);
 }
 
-//Retourne 1 si les coordonnés entré sont dans une salle
-int CheckPositionSalle(int x,int y, t_carte carte){
-	return (carte.grille[x][y]==2);
-}
 
 //Retourne 1 si il y a un monstre aux coordonnées indiqué
 int CheckMonstre(int x,int y, t_carte carte){
@@ -59,4 +55,5 @@ int CheckUpNiveau(t_personnage player){
 int CheckSalle(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==2);
 }
+
 

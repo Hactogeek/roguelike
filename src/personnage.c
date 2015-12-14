@@ -12,10 +12,9 @@ void PersonnagePositionner(t_carte * carte){
 		x=uHasard(TAILLE_CARTE_X);
 		y=uHasard(TAILLE_CARTE_Y);
 		
-		}while(!CheckSalle(x,y,*carte));
+		}while(!CheckSalle(x,y,*carte));// Crée des position tant que le personnage n'est pas dans une salle
 			carte->cord.x=x;
-			carte->cord.y=y;	
-	printf("Position du personnage positionner : %i %i\n",carte->cord.x,carte->cord.y);
+			carte->cord.y=y;// Une fois que c'est bon les coordonné sont affecté	
 }
 
 void PersonnageInitialiser(t_personnage * perso){
@@ -25,27 +24,34 @@ void PersonnageInitialiser(t_personnage * perso){
     
 	printf("Pseudo : ");
 	scanf("%20s", pseudo);
-	 
+	
     strcpy(perso->nom, pseudo);
     
 	perso->experience.niveau=0;
-	perso->stats.vie=20;
-	perso->stats.score=1;
+	perso->experience.xp=0;
+	perso->experience.xpRequis=50;// Initialisation de l'experience
+	
+	perso->caract.vitalite=100;
 	perso->caract.force=2;
+	perso->caract.agilite=10;// initialisation des caracteristiques
+	
+	perso->stats.vie=perso->caract.vitalite;
+	perso->stats.score=1;// Initialisation des statistiques;
+	
+	
+	
     
     printf("Fin Creation Personnage\n\n");
 }
 
 void PersonnageAfficher(t_personnage * perso){
 	
-    Appel0("PersonnageAfficher");
     
     printf("\nVotre Personnage\n");
 	
 	printf("|Pseudo	|Niveau	|Vie	|Score	|\n");
 	printf("|	%s	|	%i	|	%i	|	%i	|\n\n", perso->nom, perso->experience.niveau, perso->stats.vie, perso->stats.score);
     
-    Appel1("PersonnageAfficher");
 }
 
 void PersonnageSauvegarder( t_personnage * perso){
@@ -123,10 +129,23 @@ void PersonnageTester(){
 	
 }
 void PersonnageLevelUp(t_personnage * player){
+	int gainVita=0, gainForce=0, gainAgi=0;
 	
 	player->experience.niveau+=1;
 	player->experience.xp-=player->experience.xpRequis;
-	player->experience.xpRequis*=1.2;
+	player->experience.xpRequis*=1.2;// Gestion de l'xp lors du level up
+	
+	gainVita = nHasard(4)+5;//Gain aleatoire entre 5 et 8 pdv
+	gainForce = nHasard(2)+1;
+	gainAgi = nHasard(2)+1;//Gain aleatoire entre 1 et 2
+	player->caract.vitalite += gainVita;
+	player->caract.force += gainForce;
+	player->caract.agilite += gainAgi;// Gestion du gain de stats lors du level up
+	
+	player->stats.vie = player->caract.vitalite;//Le joueur regenere sa vie lors du level up
+	player->stats.score += 1000;//Lorsque le joueur level up il gagne du score
+	
+	printf("Vous etes passé au niveau %i !\n",player->experience.niveau);
 }
 
 void PersonnageAfficherPseudo(t_personnage player){

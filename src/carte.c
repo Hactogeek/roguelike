@@ -190,7 +190,6 @@ t_carte CarteCharger() {
 						if(carte.grille[i][j] == 3) {
 							//Chemin à faire vers le haut
 							if(carte.grille[i-1][j] == 0 && carte.grille[i][j-1] == 1 && nb_salles_x > 0) {
-								printf("%i", nb_portes * nHasard(2));
 								for(x = i-1; x >= nb_salles_x * TAILLE_SALLE_X; x--) {
 									carte.grille[x][j] = 3;
 								}
