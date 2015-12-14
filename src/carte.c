@@ -41,9 +41,9 @@ void CarteAfficher(t_carte carte) {
 									printf("┐");
 								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
 									printf("┘");
-								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte)))) {
+								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
 									printf("—");
-								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte)))) {
+								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
 									printf("|");
 								} else {
 									printf("#");
