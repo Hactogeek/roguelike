@@ -60,3 +60,8 @@ int CheckSalle(int x,int y, t_carte carte){
 	return (carte.grille[x][y]==2);
 }
 
+//Retourne 1 si le joueur est sur un escalier
+int CheckEscalier(int x, int y, t_carte carte){
+    return (carte.grille[x][y]==4);
+}
+

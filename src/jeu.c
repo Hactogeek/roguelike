@@ -16,23 +16,39 @@ void Jeutester(){
     
 }
 
-void JeuCommencer(t_carte * carte,t_personnage * player){
-    int i=0,idMob=-1;
-    PersonnagePositionner(carte);
-    PersonnageInitialiser(player);
-    MonstrePositionner(carte);
-    while(!CheckTestPersonnage(*player)){
-		CarteAfficher(*carte);
-		idMob=DeplacementMarcher(carte);
+void JeuCommencer(){
+    int idMob=-1;
+    
+    t_carte carte;
+    t_personnage personnage;
+    
+    carte = CarteCharger();
+    PersonnagePositionner(&carte);
+    MonstrePositionner(&carte);
+    
+    PersonnageInitialiser(&personnage);
+    
+    while(!CheckTestPersonnage(personnage)){
+        
+        CarteAfficher(carte);
+		idMob=DeplacementMarcher(&carte);
+        
+        if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
+        {
+            carte = CarteCharger();
+            PersonnagePositionner(&carte);
+            MonstrePositionner(&carte);
+            CarteAfficher(carte);
+        }
+        
 		if(idMob != -1){
-		    	CombatTaper(player,carte,idMob);
-		    	MonstreMort(carte);
-		    	
+		    	CombatTaper(&personnage,&carte,idMob);
+		    	MonstreMort(&carte);
 		}
-		MonstreDeplacement(carte,player);
-		i++;
+        
+		MonstreDeplacement(&carte,&personnage);
     }
     system("clear");
-    PersonnageAfficherPseudo(*player);
+    PersonnageAfficherPseudo(personnage);
     printf(" est mort. Paix à son ame");
 }
