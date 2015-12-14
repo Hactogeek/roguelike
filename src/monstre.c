@@ -39,8 +39,6 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
 {
     int i;
     
-    Appel0("MonstreDeplacement");
-    
     for(i=0; i<carte->nbMonstreCarte; i++)
      {
         // Si le monstre et le joueur sont cote a cote, attaque!
@@ -194,8 +192,6 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
              }
          }
      }
-    
-    Appel1("MonstreDeplacement");  
 }
 
 void MonstrePositionParId(t_carte * carte, int i, int * x, int * y)
