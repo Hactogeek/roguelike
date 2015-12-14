@@ -23,14 +23,11 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
     
     	printf("Le joueur a : %i pdv.\n", perso->stats.vie);
 	}
-    
-    
 }
 
 void MonstreMort(t_carte * carte)
 {
 	int i;
-	
 	
 	for(i=0; i<carte->nbMonstreCarte; i++)
      {
@@ -40,7 +37,6 @@ void MonstreMort(t_carte * carte)
      		carte->monstre[i].monstrePos.y=0;
      	}
      }
-	
 }
 
 void MonstreDeplacement(t_carte * carte, t_personnage * perso)
@@ -225,7 +221,7 @@ int MonstreIdParPosition(t_carte * carte, int x, int y)
     return -1;
 }
 
-void MonstrePositionner(t_carte * carte)
+void MonstrePositionner(t_carte * carte, int monstrePuissance)
 // Positionnement du monstre dans les salles
 {
     int i, hasardX, hasardY, hasardMonstre;
@@ -247,16 +243,9 @@ void MonstrePositionner(t_carte * carte)
         
         carte->monstre[i].monstrePos.x=hasardX;
         carte->monstre[i].monstrePos.y=hasardY;
-        carte->monstre[i].monstreVie=3+carte->etage;
-        if(carte->etage%2==0)
-        {
-            carte->monstre[i].puissance=2;
-        }
-        else
-        {
-           carte->monstre[i].puissance=2; 
-        }
+        carte->monstre[i].monstreVie=carte->etage+3;
         
+        carte->monstre[i].puissance=monstrePuissance;
         
     }
 }
@@ -265,7 +254,7 @@ void MonstrePositionner(t_carte * carte)
 void MonstreTester()
 // Fonction de test du monstre
 {
-	int test;
+    int test, monstrePuissance;
     
     Appel0("MonstreTester");
     
@@ -276,7 +265,7 @@ void MonstreTester()
     
     PersonnagePositionner(&carte);
     
-    MonstrePositionner(&carte);
+    MonstrePositionner(&carte, monstrePuissance);
     
     printf("\n\n");
     CarteAfficher(carte);
