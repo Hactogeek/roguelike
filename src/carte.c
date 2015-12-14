@@ -77,6 +77,7 @@ t_carte CarteCharger() {
 	int nb_salles_y;
 	int nb_salles = 0;
 	int salleCompteur;
+	int nb_portes;
 	
 	carteFichier = fopen("./map/test_map.txt", "r");
 	
@@ -135,6 +136,7 @@ t_carte CarteCharger() {
 					//Placement de la salle et remplissage
 					for(i = salleDebutX + nb_salles_x * TAILLE_SALLE_X; i < salleDebutX + tailleSalleX + nb_salles_x * TAILLE_SALLE_X; i++) {
 						for(j = salleDebutY + nb_salles_y * TAILLE_SALLE_Y-1; j <= salleDebutY + tailleSalleY + nb_salles_y * TAILLE_SALLE_Y-1; j++) {
+							nb_portes = 0;
 							//Récupération du contenu de la case
 							fscanf(carteFichier, "%c", &carteCase);
 							if(carteCase != 0) {
@@ -142,16 +144,21 @@ t_carte CarteCharger() {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
 									case '3' :
-										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) { //Porte sur la gauche
+										if(nb_salles_y == 0 && carte.grille[i][j-1] == 0) { //Salle dans la rangée la plus à gauche
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) { //Porte sur le dessus
+										} else if(nb_salles_x == 0 && carte.grille[i-1][j] == 0) { //Salle dans la rangée la plus haute
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) { //Porte sur la droite
+										} else if(nb_salles_y == SALLES_MAX_Y-1 && carte.grille[i][j-1] == 2) { //Salle dans la rangée la plus à droite
 											carte.grille[i][j] = 1;
-										} else if(nb_salles_x == SALLES_MAX_X-1 && carte.grille[i-1][j] == 2) { //Porte sur le dessous
+										} else if(nb_salles_x == SALLES_MAX_X-1 && carte.grille[i-1][j] == 2) { //Salle dans la rangée la plus basse
 											carte.grille[i][j] = 1;
-										} else {
-											carte.grille[i][j] = 3;
+										} else { //Si une salle est éligible, on regarde maintenant si elle a déjà une porte - si oui, on peut éventuellement ne pas lui en mettre d'autre
+											if(!nb_portes * uHasard(2)) {
+												carte.grille[i][j] = 3;
+												nb_portes++;
+											} else {
+												carte.grille[i][j] = 1;
+											}
 										}
 										break;
 									case '4' : carte.grille[i][j] = 4; break;
@@ -177,11 +184,13 @@ t_carte CarteCharger() {
 		 */
 		for(nb_salles_x = 0; nb_salles_x < SALLES_MAX_X; nb_salles_x++) {
 			for(nb_salles_y = 0; nb_salles_y < SALLES_MAX_Y; nb_salles_y++) {
+				nb_portes = 0;
 				for(i = nb_salles_x * TAILLE_SALLE_X; i < (nb_salles_x + 1) * TAILLE_SALLE_X; i++) {
 					for(j = nb_salles_y * TAILLE_SALLE_Y; j < (nb_salles_y + 1) * TAILLE_SALLE_Y; j++) {
 						if(carte.grille[i][j] == 3) {
 							//Chemin à faire vers le haut
 							if(carte.grille[i-1][j] == 0 && carte.grille[i][j-1] == 1 && nb_salles_x > 0) {
+								printf("%i", nb_portes * nHasard(2));
 								for(x = i-1; x >= nb_salles_x * TAILLE_SALLE_X; x--) {
 									carte.grille[x][j] = 3;
 								}
