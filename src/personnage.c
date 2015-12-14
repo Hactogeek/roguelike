@@ -44,13 +44,12 @@ void PersonnageInitialiser(t_personnage * perso){
     printf("Fin Creation Personnage\n\n");
 }
 
-void PersonnageAfficher(t_personnage * perso){
+void PersonnageAfficher(t_personnage perso){
 	
-    
-    printf("\nVotre Personnage\n");
 	
-	printf("|Pseudo	|Niveau	|Vie	|Score	|\n");
-	printf("|	%s	|	%i	|	%i	|	%i	|\n\n", perso->nom, perso->experience.niveau, perso->stats.vie, perso->stats.score);
+	printf("|Pseudo: ");
+	PersonnageAfficherPseudo(perso);
+	printf(" |Niveau : %i |Vie : %i/%i |Score : %i |\n\n", perso.nom, perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score);
     
 }
 
@@ -119,7 +118,7 @@ void PersonnageTester(){
         
         switch(test){
             case 1: PersonnageInitialiser(&perso); break;
-            case 2: PersonnageAfficher(&perso); break;
+            case 2: PersonnageAfficher(perso); break;
             case 3: PersonnageSauvegarder(&perso); break;
             case 4: PersonnageCharger(&perso); break;
             case 6: printf(""); break;

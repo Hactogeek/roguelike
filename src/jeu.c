@@ -31,6 +31,7 @@ void JeuCommencer(){
     
     while(!CheckTestPersonnage(personnage)){
         
+        PersonnageAfficher(personnage);
         CarteAfficher(carte);
 		idMob=DeplacementMarcher(&carte);
         
@@ -50,6 +51,7 @@ void JeuCommencer(){
 		}
         
 		MonstreDeplacement(&carte,&personnage);
+		system("clear");
     }
     system("clear");
     PersonnageAfficherPseudo(personnage);

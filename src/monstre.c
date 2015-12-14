@@ -236,7 +236,6 @@ void MonstrePositionner(t_carte * carte)
     
     carte->nbMonstreCarte=hasardMonstre;
     
-    printf("Monstre total : %i\n", carte->nbMonstreCarte);
     
     for(i=0; i<carte->nbMonstreCarte; i++)
     {
