@@ -11,7 +11,6 @@ void CombatRemporter(t_personnage * player,t_carte * carte,int idMob){
 }
 
 void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
-
 	carte->monstre[idMob].monstreVie = carte->monstre[idMob].monstreVie-player->caract.force;
 	
 	printf("Le joueur a infligé %i dégats au monstre, il lui en reste %i.\n",player->caract.force,(carte->monstre[idMob].monstreVie));

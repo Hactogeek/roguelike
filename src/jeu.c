@@ -37,12 +37,11 @@ void JeuCommencer(){
     
     while(!CheckTestPersonnage(personnage)){
         
-        PersonnageAfficher(personnage);
-        CarteAfficher(carte);
-		idMob=DeplacementMarcher(&carte);
+        
         
         if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
         {
+        	printf("score : %i, xp : %i",personnage.stats.score,personnage.experience.xp);
             etage=carte.etage;
             monstrePuissance=carte.monstrePuissance;
             
@@ -62,13 +61,10 @@ void JeuCommencer(){
             
             PersonnagePositionner(&carte);
             MonstrePositionner(&carte, carte.monstrePuissance);
-            CarteAfficher(carte);
-            idMob=DeplacementMarcher(&carte);
         }
-        
-        printf("Vie : %i\n", personnage.stats.vie);
-        printf("Etage : %i\n", carte.etage);
-        printf("Score : %i\n", personnage.stats.score);
+        PersonnageAfficher(personnage);
+        CarteAfficher(carte);
+		idMob=DeplacementMarcher(&carte);
         
 		if(idMob != -1){
 		    	CombatTaper(&personnage,&carte,idMob);
@@ -76,7 +72,7 @@ void JeuCommencer(){
 		}
         
 		MonstreDeplacement(&carte,&personnage);
-		system("clear");
+		fflush(stdout);
     }
     system("clear");
     PersonnageAfficherPseudo(personnage);
