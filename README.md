@@ -26,9 +26,9 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
   - [ ] Changement d'étage
   - [ ] Sauvegarde de la partie
   - [ ] Charger d'une partie
-  - [ ] Gestion des monstres
+  - [x] Gestion des monstres
    - [x] Positionnement aléatoire
-  - [ ] Systeme de combat
+  - [x] Systeme de combat
  - [x] Makefile
  - [ ] Test
  - [ ] Documentation
@@ -48,6 +48,7 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
 	
 ## Changelog
 2/12/15 Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.
+14/12/15 Deplacement joueur / monstre mis en commun et en version definitive. Implementation de statisitque et caracteristique (peut etre a revoir). Chemin aleatoire lors de la generation.
 
 ## Répartition
 Tony : Les monstres
