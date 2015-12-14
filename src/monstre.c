@@ -54,7 +54,8 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
         else
          {
             if((carte->cord.x/TAILLE_CARTE_X==carte->monstre[i].monstrePos.x/TAILLE_CARTE_X) &&
-               (carte->cord.y/TAILLE_CARTE_Y==carte->monstre[i].monstrePos.y/TAILLE_CARTE_Y))
+               (carte->cord.y/TAILLE_CARTE_Y==carte->monstre[i].monstrePos.y/TAILLE_CARTE_Y) &&
+               (carte->grille[carte->cord.x][carte->cord.y]==2))
              {
              	// Verification si le joueur et le mob sont dans la même salle
                 if(((carte->cord.x>carte->monstre[i].monstrePos.x) || (carte->cord.y>carte->monstre[i].monstrePos.y)))
@@ -79,7 +80,7 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
                         		printf("BAS");
                         	}
                         }
-                        else if((carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]==2))
+                        else if(carte->grille[carte->monstre[i].monstrePos.x+1][carte->monstre[i].monstrePos.y]==2)
                         {
                         	// Pas mur a droite, deplacement a droite
                         	carte->monstre[i].monstrePos.x++;
