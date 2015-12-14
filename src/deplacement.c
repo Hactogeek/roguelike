@@ -8,12 +8,12 @@ void DeplacementTester(int t){
     switch(t){case 1 :DeplacementMarcher(&map); break;}
 }
 
+
 /* Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/
 int DeplacementMarcher(t_carte * map){
 	char cmd_move;
-	printf("Position du personnage avant : %i %i\n",map->cord.x,map->cord.y);
-	printf("Saisir un deplacement : ");
-	scanf(" %c",&cmd_move);
+		printf("Saisir un deplacement : ");
+		scanf(" %1c",&cmd_move);
 	
     switch(cmd_move){
         case 's':{
