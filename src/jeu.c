@@ -39,6 +39,7 @@ void JeuCommencer(){
             PersonnagePositionner(&carte);
             MonstrePositionner(&carte);
             CarteAfficher(carte);
+            idMob=DeplacementMarcher(&carte);
         }
         
 		if(idMob != -1){
