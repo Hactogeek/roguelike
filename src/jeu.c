@@ -60,7 +60,6 @@ void JeuCommencer(){
             PersonnagePositionner(&carte);
            
             
-            
             MonstrePositionner(&carte, carte.monstrePuissance);
            
         }
