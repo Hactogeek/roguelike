@@ -45,9 +45,10 @@ void PersonnageInitialiser(t_personnage * perso){
 }
 
 void PersonnageAfficher(t_personnage perso){
-	
-	
-	printf("|Pseudo: ");
+	printf("|");
+	color(7, "Pseudo");
+	printf(": ");
+	//printf("|Pseudo: ");
 	PersonnageAfficherPseudo(perso);
 	printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);
     

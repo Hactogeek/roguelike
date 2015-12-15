@@ -43,6 +43,21 @@ int CheckMonstre(int x,int y, t_carte carte){
 	}
 }
 
+//Retourne 1 s'il y a un mostre en vie aux coordonénes indiquées
+int CheckMonstreEnVieIci(int x,int y, t_carte carte) {
+	if(EstContenuDans(0, TAILLE_CARTE_X-1, x) && EstContenuDans(0, TAILLE_CARTE_Y, y)) { 
+		int i;
+		for(i=0;i<carte.nbMonstreCarte;i++){
+			if((carte.monstre[i].monstrePos.x == x) && (carte.monstre[i].monstrePos.y == y) && CheckMonstreVie(i, carte)) {
+				return 1;
+			}
+		}
+		return 0;
+	} else {
+		return 0;
+	}
+}
+
 //Retourne 1 si il y a un mur au coordonné saisie
 int CheckMur(int x,int y, t_carte carte){
 	if(EstContenuDans(0, TAILLE_CARTE_X-1, x) && EstContenuDans(0, TAILLE_CARTE_Y, y)) { 

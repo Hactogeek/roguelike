@@ -118,9 +118,9 @@ void CarteAfficher(t_carte carte) {
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
 			if(carte.cord.x==i && carte.cord.y==j){
-				printf("@");
-            } else if (CheckMonstre(i,j,carte)){
-				printf("£");
+				color(6,"@");
+            } else if (CheckMonstreEnVieIci(i,j,carte)){
+				color(1,"£");
 			} else {
 				switch(carte.grille[i][j]) {
 					case 0 : printf(" "); break;
