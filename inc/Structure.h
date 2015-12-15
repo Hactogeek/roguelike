@@ -16,8 +16,7 @@
 #define TAILLE_CARTE_Y  TAILLE_SALLE_Y * SALLES_MAX_Y
 #define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
 #define NB_MAX_MONSTRE 20
-
-
+#define CLEAR_SC		"\e[1;1H\e[2J"
 
 typedef struct {int x; int y;}t_posMonstre;
 typedef struct {t_posMonstre monstrePos; int monstreVie; int puissance;}t_monstre;

@@ -17,6 +17,7 @@ void Jeutester(){
 }
 
 void JeuCommencer(){
+	printf(CLEAR_SC);
     int idMob=-1;
     
     t_carte carte;
@@ -36,7 +37,7 @@ void JeuCommencer(){
     PersonnageInitialiser(&personnage);
     personnage.stats.score=0;
     while(!CheckTestPersonnage(personnage)){        
-        
+        printf(CLEAR_SC);
         if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
         {
         	
@@ -68,7 +69,6 @@ void JeuCommencer(){
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);
-		system("clear");
 		if(idMob != -1){
 		    	CombatTaper(&personnage,&carte,idMob);
 		    	MonstreMort(&carte);
@@ -77,7 +77,7 @@ void JeuCommencer(){
 		MonstreDeplacement(&carte,&personnage);
 		
     }
-    fflush(stdout);
+    printf(CLEAR_SC);
     PersonnageAfficherPseudo(personnage);
     printf(" est mort. Paix à son ame");
 }
