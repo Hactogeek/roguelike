@@ -65,14 +65,24 @@ void PersonnageAfficherNiveau(t_personnage player){
 
 void PersonnageAfficherVie(t_personnage player){
 	char vie[10];
+	int couleur;
+	
+	if(player.stats.vie >= player.caract.vitalite / 2) {
+		couleur = 2; //Vert
+	} else if(player.stats.vie >= player.caract.vitalite / 4) {
+		couleur = 3; //Cyan
+	} else {
+		couleur = 1;
+	}
+	
 	sprintf(vie, "%i", player.stats.vie);
-	color(6, vie);
+	color(couleur, vie);
 }
 
 void PersonnageAfficherVieMax(t_personnage player){
 	char vitalite[10];
 	sprintf(vitalite, "%i", player.caract.vitalite);
-	color(6, vitalite);
+	color(2, vitalite);
 }
 
 void PersonnageAfficherScore(t_personnage player){
@@ -113,9 +123,7 @@ void PersonnageAfficher(t_personnage perso){
 	
 	printf("/");
 	PersonnageAfficherXpRequis(perso);
-	printf(" |\n");
-	/*printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);*/
-    
+	printf(" |\n");    
 }
 
 void PersonnageSauvegarder( t_personnage * perso){

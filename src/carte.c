@@ -66,26 +66,29 @@ void PortePlacer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 
 void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	int x,y;
-	int cheminBas = SALLES_MAX_Y-1;
+	int ordre;
 	
 	for(x = 0; x < SALLES_MAX_X; x++) {
 		for(y = 0; y < SALLES_MAX_Y; y++) {
-			if(porte[x][y].haut && cheminBas > 0) {
-				porte[x][y].haut -= nHasard(2);
-				cheminBas--;
-			}
+			ordre = nHasard(2);
 			
-			if(!porte[x][y].haut) {
-				porte[x-1][y].bas = 0;
+			if(ordre) {
+				if(porte[x][y].haut && porte[x][y].gauche && nHasard(4)) {
+					porte[x][y].haut = 0;
+					porte[x-1][y].bas = 0;
+				} else if(porte[x][y].haut && porte[x][y].gauche && nHasard(4)) {
+					porte[x][y].gauche = 0;
+					porte[x][y-1].droite = 0;
+				}
+			} else {
+				if(porte[x][y].haut && porte[x][y].gauche && nHasard(4)) {
+					porte[x][y].gauche = 0;
+					porte[x][y-1].droite = 0;
+				} else if(porte[x][y].haut && porte[x][y].gauche && nHasard(4)) {
+					porte[x][y].haut = 0;
+					porte[x-1][y].bas = 0;
+				}
 			}
-			
-			/*if(carte.porte[x][y].gauche) {
-				carte.porte[x][y].gauche -= nHasard(2);
-			}
-			
-			if(!carte.porte[x][y].gauche) {
-				carte.porte[x][y-1].droite = 0;
-			}*/
 		}
 	}
 }
@@ -97,7 +100,7 @@ void EscalierChoix(t_carte * carte) {
 	do {
 		caseX = nHasard(TAILLE_CARTE_X);
 		caseY = nHasard(TAILLE_CARTE_Y);
-	} while(!CheckSalle(caseX, caseY, *carte)/* && !CheckChemin(caseX+1, caseY, *carte) && !CheckChemin(caseX-1, caseY, *carte) && !CheckChemin(caseX, caseY+1, *carte) && !CheckChemin(caseX, caseY-1, *carte)*/);
+	} while(!CheckSalle(caseX, caseY, *carte));
 	carte->grille[caseX][caseY] = 4;
 }
 
