@@ -21,7 +21,7 @@ int main(){
 			case 3: printf("Au Revoir\n"); break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}
-	}while(choix!=7);
+	}while(choix!=3);
 	
 	return 0;
 }
