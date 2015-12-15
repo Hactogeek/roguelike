@@ -100,7 +100,7 @@ void EscalierChoix(t_carte * carte) {
 	do {
 		caseX = nHasard(TAILLE_CARTE_X);
 		caseY = nHasard(TAILLE_CARTE_Y);
-	} while(!CheckSalle(caseX, caseY, *carte));
+	} while(!CheckSalle(caseX, caseY, *carte) || CheckChemin(caseX-1, caseY, *carte) || CheckChemin(caseX, caseY-1, *carte) || CheckChemin(caseX+1, caseY, *carte) || CheckChemin(caseX, caseY+1, *carte));
 	carte->grille[caseX][caseY] = 4;
 }
 
