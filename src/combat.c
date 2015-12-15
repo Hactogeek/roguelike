@@ -1,8 +1,6 @@
 #include "../inc/general.h"
 
 void CombatRemporter(t_personnage * player,t_carte * carte,int idMob){
-
-	printf("OK");
 	
 	player->experience.xp +=carte->monstre[idMob].puissance;// Gain d'exp en fonction de la puissance du mob
 	player->stats.score += 100;
@@ -22,10 +20,10 @@ void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
 	if(vita > 0){
 	printf("il lui en reste %i.\n",vita);
 	}else{
-	printf("il est mort");
+	printf("il est mort.\n");
 	}
 	
-	if(CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
+	if(!CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
 		CombatRemporter(player,carte,idMob);
 	}
 }
