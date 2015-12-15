@@ -21,40 +21,49 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
 
  - [ ] Dévelopement
   - [x] Génération de la grille
-   - [ ] Chemin entre les salles 
+   - [x] Chemin entre les salles 
   - [x] Déplacement du personnage
-  - [ ] Changement d'étage
+  - [x] Changement d'étage
   - [ ] Sauvegarde de la partie
   - [ ] Charger d'une partie
   - [x] Gestion des monstres
+  - [x] Caractéristique
    - [x] Positionnement aléatoire
   - [x] Systeme de combat
  - [x] Makefile
- - [ ] Test
+ - [x] Test
  - [ ] Documentation
- - [ ] Github
+ - [x] Github
   - [x] Création
-  - [ ] Organisation definitive
-  - [ ] README à jour
+  - [x] Organisation definitive
+  - [x] README à jour
  - [ ] Compte Rendu
  - [ ] Interface Graphique
 
 ## Idée
  - Inventaire
- - Caractéristique
  - Classe pour le personnage
  - Musique
  - Brouillard de guerre
 	
 ## Changelog
-2/12/15 Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.
-14/12/15 Deplacement joueur / monstre mis en commun et en version definitive. Implementation de statisitque et caracteristique (peut etre a revoir). Chemin aleatoire lors de la generation.
+ - 2/12/15 : Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.
+ - 14/12/15 : Deplacement joueur / monstre mis en commun et en version definitive. Implementation de statisitque et caracteristique (peut etre a revoir). Chemin aleatoire lors de la generation.
+ - 15/12/15 : Version terminal jouable, ajout de quelques couleurs.
 
 ## Répartition
-Tony : Les monstres
-Dimitri : La carte
-Marvin : Le joueur
+ - Tony : Les monstres
+ - Dimitri : La carte
+ - Marvin : Le joueur
 
-## Compilation
+##Compilation
 
-## Utilisation
+Pour lancer l'éxécutable du programme et l'utiliser il suffit de taper la commande suivante dans le terminal :
+
+> $ make
+
+##Execution
+
+Pour lancer l'écécutable du programme et l'utiliser il suffit de taper la commande suivante dans le terminal :
+
+> $ bin/roguelike
