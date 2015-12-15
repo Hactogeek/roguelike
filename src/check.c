@@ -121,3 +121,11 @@ int CheckSalleVide(int salleX, int salleY, t_carte carte) {
 		return 0;
 	}
 }
+
+int CheckVide(int x, int y, t_carte carte) {
+	if(EstContenuDans(0, TAILLE_CARTE_X-1, x) && EstContenuDans(0, TAILLE_CARTE_Y, y)) {
+		return (carte.grille[x][y]==0);
+	} else {
+		return 0;
+	}
+}

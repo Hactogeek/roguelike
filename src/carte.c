@@ -204,7 +204,6 @@ t_carte CarteCharger() {
 					}
 					
 					//Détermination de la salle qui sera mise
-					//salleId = rand()/RAND_MAX * nb_salles_diff;
 					salleId = nHasard(nb_salles_diff);
 					
 					//Récupération de la salle au bon id
@@ -242,13 +241,13 @@ t_carte CarteCharger() {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
 									case '3' :
-										if(carte.porte[nb_salles_x][nb_salles_y].haut && carte.grille[i-1][j] == 0) {
+										if(carte.porte[nb_salles_x][nb_salles_y].haut && CheckVide(i-1, j, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].bas && carte.grille[i-1][j] == 2) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].bas && CheckSalle(i-1, j, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].gauche && carte.grille[i][j-1] == 0) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].gauche && CheckVide(i, j-1, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].droite && carte.grille[i][j-1] == 2) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].droite && CheckSalle(i, j-1, carte)) {
 											carte.grille[i][j] = 3;
 										} else {
 											carte.grille[i][j] = 1;
