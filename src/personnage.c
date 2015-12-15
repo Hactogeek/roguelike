@@ -44,13 +44,65 @@ void PersonnageInitialiser(t_personnage * perso){
     printf("Fin Creation Personnage\n\n");
 }
 
+void PersonnageAfficherPseudo(t_personnage player){
+	int taille=strlen(player.nom),i;
+	for(i=0;i<taille;i++){
+		printf("%c",player.nom[i]);
+	}
+
+}
+
+void PersonnageAfficherNiveau(t_personnage player){
+	char[2] niveau;
+	sprintf(player.experience.niveau, niveau);
+	color(7, niveau);
+
+}
+
+void PersonnageAfficherVie(t_personnage player){
+	char[2] niveau;
+	sprintf(player.experience.niveau, niveau);
+	color(7, player.experience.vie);
+}
+
+void PersonnageAfficherVieMax(t_personnage player){
+	char[2] niveauMax;
+	sprintf(player.experience.niveau, niveau);
+	color(7, player.experience.vie);
+}
+
+void PersonnageAfficherScore(t_personnage player){
+	color(7, player.experience.score);
+
+}
+
+void PersonnageAfficherXP(t_personnage player){
+	color(7, player.experience.xp);
+}
+
+void PersonnageAfficherXpRequis(t_personnage player){
+	color(7, player.experience.xpRequis);
+}
+
 void PersonnageAfficher(t_personnage perso){
-	printf("|");
-	color(7, "Pseudo");
-	printf(": ");
-	//printf("|Pseudo: ");
+	printf("|Pseudo: ");
 	PersonnageAfficherPseudo(perso);
-	printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);
+	
+	printf(" |Niveau : ");
+	PersonnageAfficherNiveau(perso);
+	
+	printf(" |Vie : ");
+	PersonnageAfficherVie(perso);
+	
+	printf(" |Score : ");
+	PersonnageAfficherScore(perso);
+	
+	printf(" |XP : ");
+	PersonnageAfficherXP(perso);
+	
+	printf("/ ");
+	PersonnageAfficherXpRequis(perso);
+	//printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);
     
 }
 
@@ -146,12 +198,4 @@ void PersonnageLevelUp(t_personnage * player){
 	player->stats.score += 1000;//Lorsque le joueur level up il gagne du score
 	
 	printf("Vous etes passé au niveau %i !\n",player->experience.niveau);
-}
-
-void PersonnageAfficherPseudo(t_personnage player){
-	int taille=strlen(player.nom),i;
-	for(i=0;i<taille;i++){
-		printf("%c",player.nom[i]);
-	}
-
 }
