@@ -51,6 +51,5 @@ int DeplacementMarcher(t_carte * map){
 			}
 		    default:printf("Les deplacement se font avec les touches zqsd, veuillez saisir un deplacment valide.\n");return -2;break;
 		}// Effectue le deplacement et la verification de la position, le personnage ne peut pas etre dans un mur.
-    return -1;
 }
 
