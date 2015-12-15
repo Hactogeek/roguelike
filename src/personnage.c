@@ -197,5 +197,5 @@ void PersonnageLevelUp(t_personnage * player){
 	player->stats.vie = player->caract.vitalite;//Le joueur regenere sa vie lors du level up
 	player->stats.score += 1000;//Lorsque le joueur level up il gagne du score
 	
-	printf("Vous etes passé au niveau %i !\n",player->experience.niveau);
+	printf("Le joueur est passé au niveau %i !\n",player->experience.niveau);
 }

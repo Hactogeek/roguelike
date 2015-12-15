@@ -65,7 +65,9 @@ void JeuCommencer(){
         }
         PersonnageAfficher(personnage);
         CarteAfficher(carte);
-		idMob=DeplacementMarcher(&carte);
+        do{
+			idMob=DeplacementMarcher(&carte);
+		}while(idMob==-2);
 		fflush(stdout);  
 		if(idMob != -1){
 		    	CombatTaper(&personnage,&carte,idMob);
