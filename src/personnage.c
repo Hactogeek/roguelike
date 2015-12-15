@@ -46,63 +46,75 @@ void PersonnageInitialiser(t_personnage * perso){
 
 void PersonnageAfficherPseudo(t_personnage player){
 	int taille=strlen(player.nom),i;
+	char nom[taille];
 	for(i=0;i<taille;i++){
-		printf("%c",player.nom[i]);
+		//color(6, player.nom[i]);
+		//printf("%c",player.nom[i]);
+		nom[i] = player.nom[i];
 	}
-
+	
+	color(6, nom);
 }
 
 void PersonnageAfficherNiveau(t_personnage player){
-	char[2] niveau;
-	sprintf(player.experience.niveau, niveau);
-	color(7, niveau);
+	char niveau[10];
+	sprintf(niveau, "%i", player.experience.niveau);
+	color(6, niveau);
 
 }
 
 void PersonnageAfficherVie(t_personnage player){
-	char[2] niveau;
-	sprintf(player.experience.niveau, niveau);
-	color(7, player.experience.vie);
+	char vie[10];
+	sprintf(vie, "%i", player.stats.vie);
+	color(6, vie);
 }
 
 void PersonnageAfficherVieMax(t_personnage player){
-	char[2] niveauMax;
-	sprintf(player.experience.niveau, niveau);
-	color(7, player.experience.vie);
+	char vitalite[10];
+	sprintf(vitalite, "%i", player.caract.vitalite);
+	color(6, vitalite);
 }
 
 void PersonnageAfficherScore(t_personnage player){
-	color(7, player.experience.score);
-
+	char score[10];
+	sprintf(score, "%i", player.stats.score);
+	color(6, score);
 }
 
 void PersonnageAfficherXP(t_personnage player){
-	color(7, player.experience.xp);
+	char xp[10];
+	sprintf(xp, "%i", player.experience.xp);
+	color(6, xp);
 }
 
 void PersonnageAfficherXpRequis(t_personnage player){
-	color(7, player.experience.xpRequis);
+	char xpRequis[10];
+	sprintf(xpRequis, "%i", player.experience.xpRequis);
+	color(6, xpRequis);
 }
 
 void PersonnageAfficher(t_personnage perso){
-	printf("|Pseudo: ");
+	printf("| Pseudo : ");
 	PersonnageAfficherPseudo(perso);
 	
-	printf(" |Niveau : ");
+	printf(" | Niveau : ");
 	PersonnageAfficherNiveau(perso);
 	
-	printf(" |Vie : ");
+	printf(" | Vie : ");
 	PersonnageAfficherVie(perso);
+	printf("/");
+	PersonnageAfficherVieMax(perso);
 	
-	printf(" |Score : ");
+	printf(" | Score : ");
 	PersonnageAfficherScore(perso);
 	
-	printf(" |XP : ");
+	printf(" | XP : ");
 	PersonnageAfficherXP(perso);
 	
-	printf("/ ");
+	printf("/");
 	PersonnageAfficherXpRequis(perso);
-	//printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);
+	printf(" |");
+	/*printf(" |Niveau : %i |Vie : %i/%i |Score : %i |Xp : %i/%i|\n\n",perso.experience.niveau, perso.stats.vie,perso.caract.vitalite, perso.stats.score,perso.experience.xp,perso.experience.xpRequis);*/
     
 }
 
