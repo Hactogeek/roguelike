@@ -8,14 +8,14 @@
 
 #ifndef _Structure_h
 #define _Structure_h
-#define SALLES_MAX_X    2
-#define SALLES_MAX_Y    5
+#define SALLES_MAX_X    3
+#define SALLES_MAX_Y    6
 #define TAILLE_SALLE_X  15
 #define TAILLE_SALLE_Y  15
 #define TAILLE_CARTE_X  TAILLE_SALLE_X * SALLES_MAX_X
 #define TAILLE_CARTE_Y  TAILLE_SALLE_Y * SALLES_MAX_Y
 #define SALLES_MAX      SALLES_MAX_X * SALLES_MAX_Y
-#define NB_MAX_MONSTRE 20
+#define NB_MAX_MONSTRE 	SALLES_MAX_X * SALLES_MAX_Y * 2
 #define CLEAR_SC		"\e[1;1H\e[2J"
 
 typedef struct {int x; int y;}t_posMonstre;
