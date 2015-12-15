@@ -1,6 +1,7 @@
 #include <time.h>
 #include "Outil.h"
 #include "Structure.h"
+#include "couleur.h"
 #include "carte.h"
 #include "deplacement.h"
 #include "personnage.h"
@@ -8,4 +9,3 @@
 #include "combat.h"
 #include "jeu.h"
 #include "monstre.h"
-
