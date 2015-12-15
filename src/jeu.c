@@ -36,7 +36,7 @@ void JeuCommencer(){
     PersonnageInitialiser(&personnage);
     personnage.stats.score=0;
     while(!CheckTestPersonnage(personnage)){        
-        
+        printf(CLEAR_SC);
         if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
         {
         	
@@ -68,7 +68,8 @@ void JeuCommencer(){
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);
-		fflush(stdout);  
+		//fflush(stdout); 
+		
 		if(idMob != -1){
 		    	CombatTaper(&personnage,&carte,idMob);
 		    	MonstreMort(&carte);
