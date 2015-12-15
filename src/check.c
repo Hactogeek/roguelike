@@ -69,7 +69,7 @@ int CheckMur(int x,int y, t_carte carte){
 
 //Retourne 1 si le monstre est en vie
 int CheckMonstreVie(int idMob,t_carte carte){
-	return (carte.monstre[idMob].monstreVie>=0);
+	return (carte.monstre[idMob].monstreVie>0);
 }
 
 //Retourne 1 si il y a un chemin au coordonné saisie
