@@ -47,15 +47,23 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
  - Brouillard de guerre
 	
 ## Changelog
- - 2/12/15 Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.
- - 14/12/15 Deplacement joueur / monstre mis en commun et en version definitive. Implementation de statisitque et caracteristique (peut etre a revoir). Chemin aleatoire lors de la generation.
- - 15/12/15 Version terminal jouable, ajout de quelques couleurs
+ - 2/12/15 : Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.
+ - 14/12/15 : Deplacement joueur / monstre mis en commun et en version definitive. Implementation de statisitque et caracteristique (peut etre a revoir). Chemin aleatoire lors de la generation.
+ - 15/12/15 : Version terminal jouable, ajout de quelques couleurs.
 
 ## Répartition
  - Tony : Les monstres
  - Dimitri : La carte
  - Marvin : Le joueur
 
-## Compilation
+##Compilation
 
-## Utilisation
+Pour lancer l'éxécutable du programme et l'utiliser il suffit de taper la commande suivante dans le terminal :
+
+> $ make
+
+##Execution
+
+Pour lancer l'écécutable du programme et l'utiliser il suffit de taper la commande suivante dans le terminal :
+
+> $ bin/prog
