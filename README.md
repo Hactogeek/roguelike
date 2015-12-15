@@ -33,7 +33,7 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
  - [x] Makefile
  - [x] Test
  - [ ] Documentation
- - [ ] Github
+ - [x] Github
   - [x] Création
   - [x] Organisation definitive
   - [x] README à jour
@@ -52,9 +52,9 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
  - 15/12/15 Version terminal jouable, ajout de quelques couleurs
 
 ## Répartition
-Tony : Les monstres
-Dimitri : La carte
-Marvin : Le joueur
+ - Tony : Les monstres
+ - Dimitri : La carte
+ - Marvin : Le joueur
 
 ## Compilation
 
