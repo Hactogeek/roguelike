@@ -68,7 +68,7 @@ void JeuCommencer(){
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);
-		fflush(stdout);  
+		system("clear");
 		if(idMob != -1){
 		    	CombatTaper(&personnage,&carte,idMob);
 		    	MonstreMort(&carte);
@@ -77,7 +77,7 @@ void JeuCommencer(){
 		MonstreDeplacement(&carte,&personnage);
 		
     }
-    system("clear");
+    fflush(stdout);
     PersonnageAfficherPseudo(personnage);
     printf(" est mort. Paix à son ame");
 }
