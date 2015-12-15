@@ -2,6 +2,8 @@
 
 void CombatRemporter(t_personnage * player,t_carte * carte,int idMob){
 
+	printf("OK");
+	
 	player->experience.xp +=carte->monstre[idMob].puissance;// Gain d'exp en fonction de la puissance du mob
 	player->stats.score += 100;
 	
@@ -11,11 +13,19 @@ void CombatRemporter(t_personnage * player,t_carte * carte,int idMob){
 }
 
 void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
+	int vita;
 	carte->monstre[idMob].monstreVie = carte->monstre[idMob].monstreVie-player->caract.force;
 	
-	printf("Le joueur a infligé %i dégats au monstre, il lui en reste %i.\n",player->caract.force,(carte->monstre[idMob].monstreVie));
+	printf("Le joueur a infligé %i dégats au monstre, ",player->caract.force);
 	
-	if(!CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
+	vita=carte->monstre[idMob].monstreVie;
+	if(vita > 0){
+	printf("il lui en reste %i.\n",vita);
+	}else{
+	printf("il est mort");
+	}
+	
+	if(CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
 		CombatRemporter(player,carte,idMob);
 	}
 }

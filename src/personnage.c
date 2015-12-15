@@ -36,7 +36,7 @@ void PersonnageInitialiser(t_personnage * perso){
 	perso->caract.agilite=10;// initialisation des caracteristiques
 	
 	perso->stats.vie=perso->caract.vitalite;
-	perso->stats.score=1;// Initialisation des statistiques;
+	perso->stats.score=0;// Initialisation des statistiques;
 	
 	
 	
