@@ -38,7 +38,7 @@ void PersonnageInitialiser(t_personnage * perso){
 	perso->stats.vie=perso->caract.vitalite;
 	perso->stats.score=0;// Initialisation des statistiques;
 	
-	if(strcmp(pseudo,"Marvin"){
+	if(strcmp(pseudo,"Marvin")){
 		perso->caract.vitalite=420;
 		perso->stats.vie=420;
 		perso->caract.force=42;
