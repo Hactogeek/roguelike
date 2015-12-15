@@ -90,6 +90,17 @@ void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	}
 }
 
+void EscalierChoix(t_carte * carte) {
+	int caseX;
+	int caseY;
+	
+	do {
+		caseX = nHasard(TAILLE_CARTE_X);
+		caseY = nHasard(TAILLE_CARTE_Y);
+	} while(!CheckSalle(caseX, caseY, *carte)/* && !CheckChemin(caseX+1, caseY, *carte) && !CheckChemin(caseX-1, caseY, *carte) && !CheckChemin(caseX, caseY+1, *carte) && !CheckChemin(caseX, caseY-1, *carte)*/);
+	carte->grille[caseX][caseY] = 4;
+}
+
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
 	
@@ -241,7 +252,6 @@ t_carte CarteCharger() {
 										}
 										
 										break;
-									case '4' : carte.grille[i][j] = 4; break;
 
 									default : carte.grille[i][j] = 0; break;
 								}
@@ -253,11 +263,9 @@ t_carte CarteCharger() {
 			}
 		}
 		
-		do {
-			caseX = uHasard(TAILLE_CARTE_X);
-			caseY = uHasard(TAILLE_CARTE_Y);
-		} while(!CheckSalle(caseX, caseY, carte));
-		carte.grille[caseX][caseY] = 4;
+		EscalierChoix(&carte);
+		
+		
 		
 		//Création des chemins
 		/*
@@ -352,3 +360,4 @@ void CarteTester(int test) {
 					break;
 	}
 }
+
