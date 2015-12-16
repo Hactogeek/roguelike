@@ -140,7 +140,7 @@ void CarteAfficher(t_carte carte) {
 								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
 									printf("|");
 								} else {
-									printf("#");
+									printf("¤");
 								}
 							break;
 					case 2 : printf(" "); break;
