@@ -42,6 +42,7 @@ void JeuCommencer(){
             etage=carte.etage;
             monstrePuissance=carte.monstrePuissance;
             
+            carte.escalierVu = 0;
             carte = CarteCharger();
             
             carte.etage=etage+1;
@@ -61,7 +62,7 @@ void JeuCommencer(){
            
         }
         PersonnageAfficher(personnage);
-        CarteAfficher(carte);
+        CarteAfficher(&carte);
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);

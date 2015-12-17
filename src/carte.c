@@ -117,87 +117,92 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
-void CarteAfficher(t_carte carte) {
+void VideAfficher() {
+    printf(" ");
+}
+
+void MurAfficher(int i, int j, t_carte carte) {
+    if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+        printf("┌");
+    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+        printf("└");
+    } else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+        printf("┐");
+    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+        printf("┘");
+    } else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
+        printf("—");
+    } else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
+        printf("|");
+    } else {
+        printf("¤");
+    }
+}
+
+void SolAfficher() {
+    printf(" ");
+}
+
+void CheminAfficher() {
+    printf("░");
+}
+
+void EscalierAfficher() {
+    printf(">");
+}
+
+void CarteAfficher(t_carte * carte) {
 	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-            if(CheckSalleJoueur(i, j, carte)) {
+            if(CheckSalleJoueur(i, j, *carte)) {
                 color(black, "Screen");
-                if(carte.cord.x==i && carte.cord.y==j) {
+                if(carte->cord.x==i && carte->cord.y==j) {
                     color(cyan,"@");
-                } else if (CheckMonstreEnVieIci(i,j,carte)) {
+                } else if (CheckMonstreEnVieIci(i,j,*carte)) {
                     color(red,"£");
                 } else {
-                    switch(carte.grille[i][j]) {
-                        case 0 :    printf(" "); break;
-                        case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
-                                        printf("┌");
-                                    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
-                                        printf("└");
-                                    } else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-                                        printf("┐");
-                                    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-                                        printf("┘");
-                                    } else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
-                                        printf("—");
-                                    } else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
-                                        printf("|");
-                                    } else {
-                                        printf("¤");
-                                    }
+                    switch(carte->grille[i][j]) {
+                        case 0 :    VideAfficher();
                                     break;
-                    
-                        case 2 :    printf(" "); break;
-                        case 3 :    printf("░"); break;
-                        case 4 :    carte.escalierVu = 1;
-                                    printf(">");
+                        case 1 :    MurAfficher(i, j, *carte);
+                                    break;
+                        case 2 :    SolAfficher();
+                                    break;
+                        case 3 :    CheminAfficher();
+                                    break;
+                        case 4 :    carte->escalierVu = 1;
+                                    EscalierAfficher();
                                     break;
 				
                         default :   printf(" "); break;
                     }
 				}
             } else {
-                //color(black, "Screen");
-                switch(carte.grille[i][j]) {
+                //color(blue, "Screen");
+                switch(carte->grille[i][j]) {
                     case 0 :    color(black, "Screen");
-                                printf(" ");
+                                VideAfficher();
                                 break;
-                    case 1 : 	color(blue, "Screen");
-                                if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
-                                    printf("┌");
-                                } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
-                                    printf("└");
-                                } else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-                                    printf("┐");
-                                } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-                                    printf("┘");
-                                } else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
-                                    printf("—");
-                                } else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
-                                    printf("|");
-                                } else {
-                                    printf("¤");
-                                }
+                    case 1 :    color(blue, "Screen");
+                                MurAfficher(i, j, *carte);
                                 break;
-                        
                     case 2 :    color(blue, "Screen");
-                                printf(" ");
+                                SolAfficher();
                                 break;
                     case 3 :    color(blue, "Screen");
-                                printf("░");
+                                CheminAfficher();
                                 break;
                     case 4 :    color(blue, "Screen");
-                                if(carte.escalierVu) {
-                                    printf(">");
+                                if(carte->escalierVu) {
+                                    EscalierAfficher();
                                 } else {
-                                    printf(" ");
+                                    SolAfficher();
                                 }
                                 break;
                         
-                    default :   color(blue, "Screen");
-                                printf(" ");
-                                break;
+                    default :   printf(" "); break;
                 }
             }
 		}
@@ -408,7 +413,7 @@ void CarteTester(int test) {
 	switch(test) {
 		case 1 : 	carte = CarteCharger();
 					//MatriceAfficher(carte.grille);
-					CarteAfficher(carte);
+					CarteAfficher(&carte);
 					break;
 	}
 }
