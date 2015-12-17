@@ -12,7 +12,7 @@ void DeplacementTester(int t){
 /* Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/
 int DeplacementMarcher(t_carte * map){
     char cmd_move;
-		
+	
 	printf("Saisir un deplacement : ");
     scanf(" %1c",&cmd_move);
     printf("\n");

@@ -266,7 +266,7 @@ void MonstreTester()
     MonstrePositionner(&carte, monstrePuissance);
     
     printf("\n\n");
-    CarteAfficher(carte);
+    CarteAfficher(&carte);
     
     perso.stats.vie=5;
     
@@ -281,8 +281,8 @@ void MonstreTester()
         scanf("%i", &test);
         
         switch(test){
-            case 1: MonstreDeplacement(&carte, &perso); CarteAfficher(carte); break;
-            case 2: CarteAfficher(carte); break;
+            case 1: MonstreDeplacement(&carte, &perso); CarteAfficher(&carte); break;
+            case 2: CarteAfficher(&carte); break;
             case 6: printf(""); break;
             default : printf("Erreur votre choix doit etre compris entre 1 et 6\n");
         }

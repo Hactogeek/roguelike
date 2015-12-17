@@ -18,22 +18,80 @@
 #define NB_MAX_MONSTRE 	SALLES_MAX_X * SALLES_MAX_Y * 2
 #define CLEAR_SC		"\e[1;1H\e[2J"
 
-typedef struct {int x; int y;}t_posMonstre;
-typedef struct {t_posMonstre monstrePos; int monstreVie; int puissance;}t_monstre;
+typedef struct {
+	int x;
+	int y;
+} t_posMonstre;
 
-typedef struct {int x; int y;}t_posJoueur;
+typedef struct {
+	t_posMonstre monstrePos;
+	int monstreVie;
+	int puissance;
+} t_monstre;
 
-typedef struct {int haut; int bas; int gauche; int droite;} t_porte;
+typedef struct {
+	int x;
+	int y;
+} t_posJoueur;
 
-typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; int nbMonstreCarte; t_monstre monstre[NB_MAX_MONSTRE]; int etage; int monstrePuissance; t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]; int escalierVu;}t_carte;
+typedef struct {
+	int haut;
+	int bas;
+	int gauche;
+	int droite;
+} t_porte;
 
-typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
-typedef struct {int vie; int score;}t_statistique;
-typedef struct {int arme; int armure;}t_equip;
-typedef struct {int aReflechir;}t_inv;
-typedef struct {int niveau;int xpRequis;int xp;} t_experience;
-typedef struct {char nom[20];t_experience experience; t_statistique stats; t_caracteristique caract; t_equip equipement; t_inv inventaire;}t_personnage;
+typedef struct {
+	int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];
+	t_posJoueur cord;
+	int nbMonstreCarte;
+	t_monstre monstre[NB_MAX_MONSTRE];
+	int etage;
+	int monstrePuissance;
+	t_porte porte[SALLES_MAX_X][SALLES_MAX_Y];
+	int escalierVu;
+	char dernierEvenement[100];
+} t_carte;
 
-typedef struct {int seed;  t_personnage perso; int difficulte;}t_partie;
+typedef struct {
+	int vitalite;
+	int force;
+	int agilite;
+} t_caracteristique;
+
+typedef struct {
+	int vie;
+	int score;
+} t_statistique;
+
+typedef struct {
+	int arme;
+	int armure;
+} t_equip;
+
+typedef struct {
+	int aReflechir;
+} t_inv;
+
+typedef struct {
+	int niveau;
+	int xpRequis;
+	int xp;
+} t_experience;
+
+typedef struct {
+	char nom[20];
+	t_experience experience;
+	t_statistique stats;
+	t_caracteristique caract;
+	t_equip equipement;
+	t_inv inventaire;
+} t_personnage;
+
+typedef struct {
+	int seed;
+	t_personnage perso;
+	int difficulte;
+} t_partie;
 
 #endif

@@ -38,6 +38,7 @@ void JeuCommencer(){
     personnage.stats.score=0;
     while(!CheckTestPersonnage(personnage)){        
         printf(CLEAR_SC);
+        //Chargement d'un nouvel étage
         if(CheckEscalier(carte.cord.x, carte.cord.y, carte)) {
             etage=carte.etage;
             monstrePuissance=carte.monstrePuissance;
@@ -61,8 +62,11 @@ void JeuCommencer(){
             MonstrePositionner(&carte, carte.monstrePuissance);
            
         }
+        
         PersonnageAfficher(personnage);
         CarteAfficher(&carte);
+        printf("Dernier evenement : %s\n", carte.dernierEvenement);
+        strcpy(carte.dernierEvenement, "");
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);
