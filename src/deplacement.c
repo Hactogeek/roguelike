@@ -11,13 +11,13 @@ void DeplacementTester(int t){
 
 /* Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/
 int DeplacementMarcher(t_carte * map){
-	char cmd_move;
+    char cmd_move;
 		
 	printf("Saisir un deplacement : ");
-	scanf(" %1c",&cmd_move);
-	printf("\n");
+    scanf(" %1c",&cmd_move);
+    printf("\n");
 
-	switch(cmd_move) {
+    switch(cmd_move) {
 		case 's':	if(CheckMonstre(map->cord.x+1,map->cord.y,*map)==1){
 		    			return MonstreIdParPosition(map,map->cord.x+1,map->cord.y);
 		    		} else if (CheckSalle(map->cord.x+1,map->cord.y,*map)==1||CheckChemin(map->cord.x+1,map->cord.y,*map)||CheckEscalier(map->cord.x+1,map->cord.y,*map)){

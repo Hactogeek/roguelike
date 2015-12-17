@@ -38,14 +38,11 @@ void JeuCommencer(){
     personnage.stats.score=0;
     while(!CheckTestPersonnage(personnage)){        
         printf(CLEAR_SC);
-        if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
-        {
-        	
+        if(CheckEscalier(carte.cord.x, carte.cord.y, carte)) {
             etage=carte.etage;
             monstrePuissance=carte.monstrePuissance;
             
             carte = CarteCharger();
-            
             
             carte.etage=etage+1;
             if(carte.etage%2==0)

@@ -116,40 +116,82 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 }
 
 void CarteAfficher(t_carte carte) {
-	int i,j; 
+	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			if(carte.cord.x==i && carte.cord.y==j){
-				color(6,"@");
-            } else if (CheckMonstreEnVieIci(i,j,carte)){
-				color(1,"£");
-			} else {
-				switch(carte.grille[i][j]) {
-					case 0 : printf(" "); break;
-					case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
-									printf("┌");
-								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
-									printf("└");
-								} else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-									printf("┐");
-								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-									printf("┘");
-								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
-									printf("—");
-								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
-									printf("|");
-								} else {
-									printf("¤");
-								}
-							break;
-					case 2 : printf(" "); break;
-					case 3 : printf("░"); break;
-					case 4 : printf(">"); break;
+            if(CheckSalleJoueur(i, j, carte)) {
+                color(black, "Screen");
+                if(carte.cord.x==i && carte.cord.y==j) {
+                    color(cyan,"@");
+                } else if (CheckMonstreEnVieIci(i,j,carte)) {
+                    color(red,"£");
+                } else {
+                    switch(carte.grille[i][j]) {
+                        case 0 : printf(" "); break;
+                        case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+                                        printf("┌");
+                                    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+                                        printf("└");
+                                    } else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+                                        printf("┐");
+                                    } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+                                        printf("┘");
+                                    } else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
+                                        printf("—");
+                                    } else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
+                                        printf("|");
+                                    } else {
+                                        printf("¤");
+                                    }
+                                break;
+                    
+                        case 2 : printf(" "); break;
+                        case 3 : printf("░"); break;
+                        case 4 : printf(">"); break;
 				
-					default : printf(" "); break;
+                        default : printf(" "); break;
+                    }
 				}
-			}
+            } else {
+                //color(black, "Screen");
+                switch(carte.grille[i][j]) {
+                    case 0 :    color(black, "Screen");
+                                printf(" ");
+                                break;
+                    case 1 : 	color(blue, "Screen");
+                                if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+                                    printf("┌");
+                                } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+                                    printf("└");
+                                } else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+                                    printf("┐");
+                                } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+                                    printf("┘");
+                                } else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
+                                    printf("—");
+                                } else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
+                                    printf("|");
+                                } else {
+                                    printf("¤");
+                                }
+                                break;
+                        
+                    case 2 :    color(blue, "Screen");
+                                printf(" ");
+                                break;
+                    case 3 :    color(blue, "Screen");
+                                printf("░");
+                                break;
+                    case 4 :    color(blue, "Screen");
+                                printf(">");
+                                break;
+                        
+                    default :   color(blue, "Screen");
+                                printf(" ");
+                                break;
+                }
+            }
 		}
 		printf("\n");
 	}

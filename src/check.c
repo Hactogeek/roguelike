@@ -22,8 +22,8 @@ int CheckTestPersonnage(t_personnage perso){
 }
 
 //Retourne 1 si le joueur est sur une case de changement d'etage
-int CheckTestEtage(t_carte pos){
-    return (pos.grille[pos.cord.x][pos.cord.y]==4);
+int CheckTestEtage(t_carte carte){
+    return (carte.grille[carte.cord.x][carte.cord.y]==4);
 }
 
 
@@ -104,6 +104,7 @@ int CheckEscalier(int x, int y, t_carte carte){
     }
 }
 
+//Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien)
 int CheckSalleVide(int salleX, int salleY, t_carte carte) {
 	if(EstContenuDans(0, TAILLE_SALLE_X-1, salleX) && EstContenuDans(0, TAILLE_SALLE_Y, salleY)) { 
 		int i,j;
@@ -122,10 +123,26 @@ int CheckSalleVide(int salleX, int salleY, t_carte carte) {
 	}
 }
 
+//Retourne 1 si la case envoyée en paramètre est vide
 int CheckVide(int x, int y, t_carte carte) {
 	if(EstContenuDans(0, TAILLE_CARTE_X-1, x) && EstContenuDans(0, TAILLE_CARTE_Y, y)) {
 		return (carte.grille[x][y]==0);
 	} else {
 		return 0;
 	}
+}
+
+//
+int CheckSalleJoueur(int x, int y, t_carte carte) {
+    if(EstContenuDans(0, TAILLE_CARTE_X-1, x) && EstContenuDans(0, TAILLE_CARTE_Y, y)) {
+        int xJoueur = carte.cord.x;
+        int yJoueur = carte.cord.y;
+        if(x/TAILLE_SALLE_X == xJoueur/TAILLE_SALLE_X && y/TAILLE_SALLE_Y == yJoueur/TAILLE_SALLE_Y) {
+            return 1;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
 }

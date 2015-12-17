@@ -13,3 +13,4 @@ int CheckSalle(int x, int y, t_carte carte);
 int CheckEscalier(int x, int y, t_carte carte);
 int CheckSalleVide(int salleX, int salleY, t_carte carte);
 int CheckVide(int x, int y, t_carte carte);
+int CheckSalleJoueur(int x, int y, t_carte carte);
