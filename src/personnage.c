@@ -26,6 +26,7 @@ void PersonnageInitialiser(t_personnage * perso){
 	scanf("%20s", pseudo);
 	
     strcpy(perso->nom, pseudo);
+    printf("%s",  perso->nom);
     
 	perso->experience.niveau=0;
 	perso->experience.xp=0;
@@ -52,15 +53,7 @@ void PersonnageInitialiser(t_personnage * perso){
 }
 
 void PersonnageAfficherPseudo(t_personnage player){
-	int taille=strlen(player.nom),i;
-	char nom[taille];
-	for(i=0;i<taille;i++){
-		//color(6, player.nom[i]);
-		//printf("%c",player.nom[i]);
-		nom[i] = player.nom[i];
-	}
-	
-	color(6, nom);
+	color(6, player.nom);
 }
 
 void PersonnageAfficherNiveau(t_personnage player){
