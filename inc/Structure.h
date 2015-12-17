@@ -25,7 +25,7 @@ typedef struct {int x; int y;}t_posJoueur;
 
 typedef struct {int haut; int bas; int gauche; int droite;} t_porte;
 
-typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; int nbMonstreCarte; t_monstre monstre[NB_MAX_MONSTRE]; int etage; int monstrePuissance; t_porte porte[SALLES_MAX_X][SALLES_MAX_Y];}t_carte;
+typedef struct {int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];t_posJoueur cord; int nbMonstreCarte; t_monstre monstre[NB_MAX_MONSTRE]; int etage; int monstrePuissance; t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]; int escalierVu;}t_carte;
 
 typedef struct {int vitalite; int force; int agilite;}t_caracteristique;
 typedef struct {int vie; int score;}t_statistique;

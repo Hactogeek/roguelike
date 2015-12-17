@@ -1,13 +1,15 @@
 #include "../inc/general.h"
 
-void CarteInitialiser(t_carte *carteGrille) {
+void CarteInitialiser(t_carte *carte) {
 	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			carteGrille->grille[i][j] = 0;
+			carte->grille[i][j] = 0;
 		}
 	}
+    
+    carte->escalierVu = 0;
 }
 
 int SallesPossiblesCompter(FILE *carteFichier) {
@@ -128,7 +130,7 @@ void CarteAfficher(t_carte carte) {
                     color(red,"£");
                 } else {
                     switch(carte.grille[i][j]) {
-                        case 0 : printf(" "); break;
+                        case 0 :    printf(" "); break;
                         case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
                                         printf("┌");
                                     } else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
@@ -144,13 +146,15 @@ void CarteAfficher(t_carte carte) {
                                     } else {
                                         printf("¤");
                                     }
-                                break;
+                                    break;
                     
-                        case 2 : printf(" "); break;
-                        case 3 : printf("░"); break;
-                        case 4 : printf(">"); break;
+                        case 2 :    printf(" "); break;
+                        case 3 :    printf("░"); break;
+                        case 4 :    carte.escalierVu = 1;
+                                    printf(">");
+                                    break;
 				
-                        default : printf(" "); break;
+                        default :   printf(" "); break;
                     }
 				}
             } else {
@@ -184,7 +188,11 @@ void CarteAfficher(t_carte carte) {
                                 printf("░");
                                 break;
                     case 4 :    color(blue, "Screen");
-                                printf(">");
+                                if(carte.escalierVu) {
+                                    printf(">");
+                                } else {
+                                    printf(" ");
+                                }
                                 break;
                         
                     default :   color(blue, "Screen");
@@ -404,4 +412,3 @@ void CarteTester(int test) {
 					break;
 	}
 }
-
