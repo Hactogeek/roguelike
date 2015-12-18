@@ -322,7 +322,7 @@ void CarteAfficher(t_carte * carte) {
 *   \brief Permet de créer une carte à partir d'un fichier contenant des paterns
 *	\return La carte ainsi créée
 */
-t_carte CarteCharger() {
+t_carte CarteCreer() {
 	FILE * carteFichier;
 	t_carte carte;
 	char carteCase;
@@ -514,6 +514,7 @@ t_carte CarteCharger() {
 			}
 		}
 		fclose(carteFichier);
+		//Sauvegarde(carte);
 		
 	} else {
 		printf("Erreur lors du chargement de la carte");

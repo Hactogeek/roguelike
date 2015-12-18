@@ -1,3 +1,6 @@
+#ifndef _general_h
+#define _general_h
+
 #include <time.h>
 #include "Outil.h"
 #include "Structure.h"
@@ -10,3 +13,5 @@
 #include "combat.h"
 #include "jeu.h"
 #include "monstre.h"
+
+#endif

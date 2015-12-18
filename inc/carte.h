@@ -97,8 +97,8 @@ void ObstacleAfficher();
 */
 void CarteAfficher(t_carte * carte);
 
-/** \fn void CarteCharger(void)
+/** \fn void CarteCreer(void)
 *   \brief Permet de créer une carte à partir d'un fichier contenant des paterns
 *	\return La carte ainsi créée
 */
-t_carte CarteCharger();
+t_carte CarteCreer();

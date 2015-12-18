@@ -9,3 +9,4 @@
 void JeuAmorcer();
 void JeuTester();
 void JeuCommencer();
+void JeuContinuer(t_carte * carte, t_personnage * personnage);

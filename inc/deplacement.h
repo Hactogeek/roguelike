@@ -8,4 +8,4 @@
 
 void DeplacementAmorcer();
 void DeplacementTester(int t);
-int DeplacementMarcher(t_carte * map);
+int DeplacementMarcher(int cmd_move, t_carte * map);

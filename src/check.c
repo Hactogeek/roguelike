@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  \file check.c
  \brief  Roguelike

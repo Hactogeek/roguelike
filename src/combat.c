@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
 *	\file combat.c
 *	\brief  Roguelike
