@@ -1,10 +1,18 @@
+/**
+*	\file combat.c
+*	\brief  Roguelike
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
 #include "../inc/general.h"
 
-void PersonnageAmorcer(){
 
-}
-
-//Cherche un endroit pour placer le personnage dans une salle
+/** \fn void PersonnagePositionner(t_carte * carte)
+*   \brief Cherche un endroit pour placer le personnage dans une salle
+*   \param carte La carte du jeu
+*   \return Rien
+*/
 void PersonnagePositionner(t_carte * carte){
 	int bienPlace=0,x,y;
 	srand(time(NULL));
@@ -17,6 +25,11 @@ void PersonnagePositionner(t_carte * carte){
 			carte->cord.y=y;// Une fois que c'est bon les coordonné sont affecté	
 }
 
+/** \fn void PersonnageInitialiser(t_personnage * perso)
+*   \brief Initialise les parametres de la variable perso
+*   \param perso Le personnage
+*   \return Rien
+*/
 void PersonnageInitialiser(t_personnage * perso){
 	char pseudo[20];
 	
@@ -52,10 +65,20 @@ void PersonnageInitialiser(t_personnage * perso){
     printf("Fin Creation Personnage\n\n");
 }
 
+/** \fn void PersonnageAfficherPseudo(t_personnage player)
+*   \brief Affiche le pseudo en couleur du player 
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherPseudo(t_personnage player){
 	color(6, player.nom);
 }
 
+/** \fn void PersonnageAfficherNiveau(t_personnage player)
+*   \brief Affiche le niveau en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherNiveau(t_personnage player){
 	char niveau[10];
 	sprintf(niveau, "%i", player.experience.niveau);
@@ -63,6 +86,11 @@ void PersonnageAfficherNiveau(t_personnage player){
 
 }
 
+/** \fn void PersonnageAfficherVie(t_personnage player)
+*   \brief Affiche la vie en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherVie(t_personnage player){
 	char vie[10];
 	int couleur;
@@ -79,30 +107,55 @@ void PersonnageAfficherVie(t_personnage player){
 	color(couleur, vie);
 }
 
+/** \fn void PersonnageAfficherVieMax(t_personnage player)
+*   \brief Affiche la vitaité en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherVieMax(t_personnage player){
 	char vitalite[10];
 	sprintf(vitalite, "%i", player.caract.vitalite);
 	color(2, vitalite);
 }
 
+/** \fn void PersonnageAfficherScore(t_personnage player)
+*   \brief Affiche le score en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherScore(t_personnage player){
 	char score[10];
 	sprintf(score, "%i", player.stats.score);
 	color(6, score);
 }
 
+/** \fn void PersonnageAfficherXP(t_personnage player)
+*   \brief Affiche l'xp en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherXP(t_personnage player){
 	char xp[10];
 	sprintf(xp, "%i", player.experience.xp);
 	color(6, xp);
 }
 
+/** \fn void PersonnageAfficherXpRequis(t_personnage player)
+*   \brief Affiche l'xp requis en couleur du player
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageAfficherXpRequis(t_personnage player){
 	char xpRequis[10];
 	sprintf(xpRequis, "%i", player.experience.xpRequis);
 	color(6, xpRequis);
 }
 
+/** \fn void PersonnageAfficher(t_personnage perso)
+*   \brief Affiche les parametre du player
+*   \param perso Le personnage
+*   \return Rien
+*/
 void PersonnageAfficher(t_personnage perso){
 	printf("| Pseudo : ");
 	PersonnageAfficherPseudo(perso);
@@ -172,34 +225,11 @@ void PersonnageCharger(t_personnage * perso)
     Appel1("PersonnageCharger");
 }
 
-void PersonnageTester(){
-	int test;
-	t_personnage perso;
-    
-    printf("PersonnageTester : \n\n");
-    
-    do{
-        printf("\nMenu :\n");
-        printf(" 1 - Initialiser Personnage\n");
-        printf(" 2 - Afficher Personnage\n");
-        printf(" 3 - Sauvegarder Personnage\n");
-        printf(" 4 - Charger Personnage\n");
-        printf(" 6 - Quitter\n\n");
-        
-        printf("Votre choix :");
-        scanf("%i", &test);
-        
-        switch(test){
-            case 1: PersonnageInitialiser(&perso); break;
-            case 2: PersonnageAfficher(perso); break;
-            case 3: PersonnageSauvegarder(&perso); break;
-            case 4: PersonnageCharger(&perso); break;
-            case 6: printf(""); break;
-            default : printf("Erreur votre choix doit etre compris entre 1 et 6\n");
-        }
-    }while(test!=6);
-	
-}
+/** \fn void PersonnageLevelUp(t_personnage * player)
+*   \brief Fait passer le player d'un niveau et increment ses paramètres
+*   \param player Le personnage
+*   \return Rien
+*/
 void PersonnageLevelUp(t_personnage * player){
 	int gainVita=0, gainForce=0, gainAgi=0;
 	

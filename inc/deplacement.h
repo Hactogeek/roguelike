@@ -8,4 +8,4 @@
 
 void DeplacementAmorcer();
 void DeplacementTester(int t);
-int DeplacementMarcher(int cmd_move, t_carte * map);
+int DeplacementMarcher(int cmd_move, t_carte * map);/**<Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/

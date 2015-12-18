@@ -8,17 +8,8 @@
 
 #include "../inc/general.h"
 
-/** 
+/**	\fn void CombatRemporter(t_personnage * player,t_carte * carte,int idMob)
 *	\brief Distribue l'xp et augmente le score au joueur et test si il doit le faire passer de niveau
-*   \param player le joueur
-*   \param carte La carte du jeu
-*   \param idMob L'id du monstre battu
-*   \return Rien
-*/
-
-#include "../inc/general.h"
-
-/** \brief Distribue l'xp et augmente le score au joueur et test si il doit le faire passer de niveau
 *   \param player le joueur
 *   \param carte La carte du jeu
 *   \param idMob L'id du monstre battu
@@ -34,7 +25,8 @@ void CombatRemporter(t_personnage * player,t_carte * carte,int idMob){
 	}
 }
 
-/** \brief Retire des pdv au monstre passer en id
+/**	\fn void CombatTaper(t_personnage * player,t_carte * carte,int idMob)
+*	\brief Retire des pdv au monstre passer en id
 *   \param player Le joueur
 *   \param carte La carte du jeu
 *   \param idMob L'id du monstre battu
