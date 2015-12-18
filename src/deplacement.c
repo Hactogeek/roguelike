@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
 *	\file deplacement.c
 *	\brief  Roguelike
@@ -8,15 +7,6 @@
 */
 
 #include "../inc/general.h"
-
-void DeplacementAmorcer(){
-}
-
-void DeplacementTester(int t){
-    t_carte map;
-    switch(t){case 1 :DeplacementMarcher(&map); break;}
-}
-
 
 /** \fn int DeplacementMarcher(t_carte * map)
 *   \brief Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué

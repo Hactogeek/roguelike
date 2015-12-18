@@ -6,6 +6,4 @@
 *	\date 18 décembre 2015
 */
 
-void DeplacementAmorcer();
-void DeplacementTester(int t);
-int DeplacementMarcher(t_carte * map);
+int DeplacementMarcher(t_carte * map);/**<Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/
