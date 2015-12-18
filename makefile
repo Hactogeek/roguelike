@@ -14,3 +14,4 @@ $(EXEC): $(OBJ)
 
 clean:
 	rm -i $(SRC)*.o
+	rm -i */*.*~
