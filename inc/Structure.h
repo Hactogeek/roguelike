@@ -52,7 +52,7 @@ typedef struct {
 
 /**
 *	\struct t_porte
-*	\brief 
+*	\brief Les différentes portes qu'une salle peut avoir
 */
 typedef struct {
 	int haut;
@@ -63,7 +63,7 @@ typedef struct {
 
 /**
 *	\struct t_carte
-*	\brief 
+*	\brief Contient la grille avec les informations sur le contenu de la carte, les coordonnées du joueur, le nombre de monstres présents, leurs caractéristiques, l'étage sur lequel on est, la puissance des monstres, les portes, si le joueur a vu l'escalier, et le dernier évênement subi par le joueur
 */
 typedef struct {
 	int grille[TAILLE_CARTE_X][TAILLE_CARTE_Y];
