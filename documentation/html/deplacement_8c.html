@@ -92,45 +92,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Roguelike.  
+<p>Deplacement du joueur.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;../inc/general.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="general_8h_source.html">../inc/general.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a86ae747d991f8ea5e743f2040bdbf19a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86ae747d991f8ea5e743f2040bdbf19a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DeplacementAmorcer</b> ()</td></tr>
-<tr class="separator:a86ae747d991f8ea5e743f2040bdbf19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dc3142ed77e1548a9b725172eae0681"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dc3142ed77e1548a9b725172eae0681"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DeplacementTester</b> (int t)</td></tr>
-<tr class="separator:a9dc3142ed77e1548a9b725172eae0681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd4cf56e5c0d1b4a6add0567f3eddc55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deplacement_8c.html#abd4cf56e5c0d1b4a6add0567f3eddc55">DeplacementMarcher</a> (<a class="el" href="structt__carte.html">t_carte</a> *map)</td></tr>
-<tr class="memdesc:abd4cf56e5c0d1b4a6add0567f3eddc55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué  <a href="#abd4cf56e5c0d1b4a6add0567f3eddc55">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abd4cf56e5c0d1b4a6add0567f3eddc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5712778a9b612d86a92e569cacb1391f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="deplacement_8c.html#a5712778a9b612d86a92e569cacb1391f">DeplacementMarcher</a> (int cmd_move, <a class="el" href="structt__carte.html">t_carte</a> *map)</td></tr>
+<tr class="memdesc:a5712778a9b612d86a92e569cacb1391f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deplace le personnage et retourne l'id du monstre si il y a un combat a effectuer.  <a href="#a5712778a9b612d86a92e569cacb1391f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5712778a9b612d86a92e569cacb1391f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Roguelike. </p>
+<div class="textblock"><p>Deplacement du joueur. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Tony Marteau, Dimitri Bernot, Marvin Jean </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>18 décembre 2015 </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="abd4cf56e5c0d1b4a6add0567f3eddc55"></a>
+<a class="anchor" id="a5712778a9b612d86a92e569cacb1391f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int DeplacementMarcher </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
-          <td class="paramname"><em>map</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cmd_move</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué </p>
+<p>Deplace le personnage et retourne l'id du monstre si il y a un combat a effectuer. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
+    <tr><td class="paramname">cmd_move</td><td>Le déplacement à effectuer </td></tr>
     <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
   </table>
   </dd>

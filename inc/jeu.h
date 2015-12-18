@@ -1,6 +1,6 @@
 /**
 *	\file jeu.h
-*	\brief  Roguelike
+*	\brief  prototype fonction jeu
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
 *	\version 1.0.0
 *	\date 18 décembre 2015

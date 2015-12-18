@@ -1,6 +1,6 @@
 /**
  \file monstre.c
- \brief  Roguelike
+ \brief  Fonction de gestion des monstres
  \author Tony Marteau, Dimitri Bernot, Marvin Jean
  \version 1.0.0
  \date 18 décembre 2015

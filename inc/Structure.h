@@ -1,6 +1,6 @@
 /**
 *	\file Structure.h
-*	\brief  Roguelike
+*	\brief  Structure utile au roguelike
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
 *	\version 1.0.0
 *	\date 18 décembre 2015

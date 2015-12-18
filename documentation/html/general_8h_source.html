@@ -89,25 +89,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">general.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;Outil.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Structure_8h.html">Structure.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;couleur.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="carte_8h.html">carte.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="deplacement_8h.html">deplacement.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="personnage_8h.html">personnage.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="check_8h.html">check.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="combat_8h.html">combat.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jeu_8h.html">jeu.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="monstre_8h.html">monstre.h</a>&quot;</span></div>
-<div class="ttc" id="check_8h_html"><div class="ttname"><a href="check_8h.html">check.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="combat_8h_html"><div class="ttname"><a href="combat_8h.html">combat.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="monstre_8h_html"><div class="ttname"><a href="monstre_8h.html">monstre.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="carte_8h_html"><div class="ttname"><a href="carte_8h.html">carte.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="Structure_8h_html"><div class="ttname"><a href="Structure_8h.html">Structure.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="jeu_8h_html"><div class="ttname"><a href="jeu_8h.html">jeu.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="personnage_8h_html"><div class="ttname"><a href="personnage_8h.html">personnage.h</a></div><div class="ttdoc">Roguelike. </div></div>
-<div class="ttc" id="deplacement_8h_html"><div class="ttname"><a href="deplacement_8h.html">deplacement.h</a></div><div class="ttdoc">Roguelike. </div></div>
+<a href="general_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef _general_h</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define _general_h</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Outil.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Structure_8h.html">Structure.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="couleur_8h.html">couleur.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;sauvegarde.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="carte_8h.html">carte.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="deplacement_8h.html">deplacement.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="personnage_8h.html">personnage.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="check_8h.html">check.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="combat_8h.html">combat.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="jeu_8h.html">jeu.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="monstre_8h.html">monstre.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="check_8h_html"><div class="ttname"><a href="check_8h.html">check.h</a></div><div class="ttdoc">Prototype foncttion verification. </div></div>
+<div class="ttc" id="combat_8h_html"><div class="ttname"><a href="combat_8h.html">combat.h</a></div><div class="ttdoc">Prototype fonction combat joueur->monstre. </div></div>
+<div class="ttc" id="monstre_8h_html"><div class="ttname"><a href="monstre_8h.html">monstre.h</a></div><div class="ttdoc">Prototype fonction monstre. </div></div>
+<div class="ttc" id="carte_8h_html"><div class="ttname"><a href="carte_8h.html">carte.h</a></div><div class="ttdoc">Protoype fonction carte. </div></div>
+<div class="ttc" id="Structure_8h_html"><div class="ttname"><a href="Structure_8h.html">Structure.h</a></div><div class="ttdoc">Structure utile au roguelike. </div></div>
+<div class="ttc" id="jeu_8h_html"><div class="ttname"><a href="jeu_8h.html">jeu.h</a></div><div class="ttdoc">prototype fonction jeu </div></div>
+<div class="ttc" id="personnage_8h_html"><div class="ttname"><a href="personnage_8h.html">personnage.h</a></div><div class="ttdoc">Prototype des fonctions pour le personnage. </div></div>
+<div class="ttc" id="couleur_8h_html"><div class="ttname"><a href="couleur_8h.html">couleur.h</a></div><div class="ttdoc">Protoype gestion couleur terminal. </div></div>
+<div class="ttc" id="deplacement_8h_html"><div class="ttname"><a href="deplacement_8h.html">deplacement.h</a></div><div class="ttdoc">Prototype donction deplacementpersonnage. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

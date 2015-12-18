@@ -1,6 +1,6 @@
 /**
 *	\file personnage.h
-*	\brief  Roguelike
+*	\brief  Prototype des fonctions pour le personnage
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
 *	\version 1.0.0
 *	\date 18 décembre 2015

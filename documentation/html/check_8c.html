@@ -92,9 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Roguelike.  
+<p>Fichier avec fonctions de vérifications.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &quot;../inc/general.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="general_8h_source.html">../inc/general.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
@@ -131,8 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckTester</b> ()</t
 <tr class="memitem:a74668cc60bce1a5268f540ed39807c49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a74668cc60bce1a5268f540ed39807c49">CheckUpNiveau</a> (<a class="el" href="structt__personnage.html">t_personnage</a> player)</td></tr>
 <tr class="memdesc:a74668cc60bce1a5268f540ed39807c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourne 1 si le joueur merite d'up  <a href="#a74668cc60bce1a5268f540ed39807c49">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a74668cc60bce1a5268f540ed39807c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0787772e3d0416341f9d983c403074c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0787772e3d0416341f9d983c403074c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>CheckSalle</b> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memitem:ae0787772e3d0416341f9d983c403074c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#ae0787772e3d0416341f9d983c403074c">CheckSalle</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
 <tr class="separator:ae0787772e3d0416341f9d983c403074c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94fa8401cc16acbc4400970e691d2d27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a94fa8401cc16acbc4400970e691d2d27">CheckEscalier</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
 <tr class="memdesc:a94fa8401cc16acbc4400970e691d2d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le joueur est sur un escalier.  <a href="#a94fa8401cc16acbc4400970e691d2d27">Plus de détails...</a><br /></td></tr>
@@ -148,7 +147,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>CheckSalle</b> (int x,
 <tr class="separator:a2f980f139cecb7012210126ccb354dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Roguelike. </p>
+<div class="textblock"><p>Fichier avec fonctions de vérifications. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Tony Marteau, Dimitri Bernot, Marvin Jean </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>18 décembre 2015 </dd></dl>
@@ -401,6 +400,39 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>CheckSalle</b> (int x,
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae0787772e3d0416341f9d983c403074c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckSalle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retourne 1 si il y a une salle au coordonn� saisie </p>
 
 </div>
 </div>

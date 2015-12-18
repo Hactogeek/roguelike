@@ -1,0 +1,99 @@
+\hypertarget{couleur_8h}{}\section{Référence du fichier inc/couleur.h}
+\label{couleur_8h}\index{inc/couleur.\+h@{inc/couleur.\+h}}
+
+
+Protoype gestion couleur terminal.  
+
+
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{couleur_8h_ac8946d2a0583792b5f43ba0f6616ff84}{}enum {\bfseries terminal} \{ \\*
+{\bfseries black}, 
+{\bfseries red}, 
+{\bfseries green}, 
+{\bfseries yellow}, 
+\\*
+{\bfseries blue}, 
+{\bfseries magenta}, 
+{\bfseries cyan}, 
+{\bfseries white}
+ \}\label{couleur_8h_ac8946d2a0583792b5f43ba0f6616ff84}
+
+\item 
+\hypertarget{couleur_8h_a72bba37476e63c27f023823f17619987}{}enum {\bfseries screen} \{ {\bfseries reinit} = 0, 
+{\bfseries blink} = 5, 
+{\bfseries invert\+Color} = 7
+ \}\label{couleur_8h_a72bba37476e63c27f023823f17619987}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{couleur_8h_aa1b198e2a86cf333bd2b8d74e21409f1}{color} (int color, char type\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{couleur_8h_a728c5deabcb9e271c6962577c60ef566}{font\+Color} (int \hyperlink{couleur_8h_aa1b198e2a86cf333bd2b8d74e21409f1}{color})
+\item 
+void \hyperlink{couleur_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{clear\+Screen} ()
+\item 
+void \hyperlink{couleur_8h_aafe20dae78dfbeea7c9102fadcfba1e0}{reinit\+Color} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Protoype gestion couleur terminal. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 d�cembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{couleur_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}{}\index{couleur.\+h@{couleur.\+h}!clear\+Screen@{clear\+Screen}}
+\index{clear\+Screen@{clear\+Screen}!couleur.\+h@{couleur.\+h}}
+\subsubsection[{clear\+Screen()}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{couleur_8h_a9d7e8af417b6d543da691e9c0e2f6f9f}
+Efface l\textquotesingle{}écran \hypertarget{couleur_8h_aa1b198e2a86cf333bd2b8d74e21409f1}{}\index{couleur.\+h@{couleur.\+h}!color@{color}}
+\index{color@{color}!couleur.\+h@{couleur.\+h}}
+\subsubsection[{color(int color, char type[])}]{\setlength{\rightskip}{0pt plus 5cm}void color (
+\begin{DoxyParamCaption}
+\item[{int}]{color, }
+\item[{char}]{type\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{couleur_8h_aa1b198e2a86cf333bd2b8d74e21409f1}
+Change la couleur de l\textquotesingle{}écran ou de la police 
+\begin{DoxyParams}{Paramètres}
+{\em color} & Couleur à utiliser \\
+\hline
+{\em type} & Texte à changer de couleur ou arrière plan \\
+\hline
+\end{DoxyParams}
+\hypertarget{couleur_8h_a728c5deabcb9e271c6962577c60ef566}{}\index{couleur.\+h@{couleur.\+h}!font\+Color@{font\+Color}}
+\index{font\+Color@{font\+Color}!couleur.\+h@{couleur.\+h}}
+\subsubsection[{font\+Color(int color)}]{\setlength{\rightskip}{0pt plus 5cm}void font\+Color (
+\begin{DoxyParamCaption}
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}\label{couleur_8h_a728c5deabcb9e271c6962577c60ef566}
+Change la couleur de la police 
+\begin{DoxyParams}{Paramètres}
+{\em color} & Couleur à utiliser \\
+\hline
+\end{DoxyParams}
+\hypertarget{couleur_8h_aafe20dae78dfbeea7c9102fadcfba1e0}{}\index{couleur.\+h@{couleur.\+h}!reinit\+Color@{reinit\+Color}}
+\index{reinit\+Color@{reinit\+Color}!couleur.\+h@{couleur.\+h}}
+\subsubsection[{reinit\+Color()}]{\setlength{\rightskip}{0pt plus 5cm}void reinit\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{couleur_8h_aafe20dae78dfbeea7c9102fadcfba1e0}
+Réinitialise la couleur de l\textquotesingle{}écran 

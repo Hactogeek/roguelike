@@ -2,7 +2,7 @@
 \label{check_8h}\index{inc/check.\+h@{inc/check.\+h}}
 
 
-Roguelike.  
+Prototype foncttion verification.  
 
 
 \subsection*{Fonctions}
@@ -32,8 +32,7 @@ int \hyperlink{check_8h_a3dc0ace79ac2d725484bc03dec3d0ea9}{Check\+Chemin} (int x
 \begin{DoxyCompactList}\small\item\em Retourne 1 si il y a un chemin au coordonné saisie. \end{DoxyCompactList}\item 
 int \hyperlink{check_8h_a74668cc60bce1a5268f540ed39807c49}{Check\+Up\+Niveau} (\hyperlink{structt__personnage}{t\+\_\+personnage} player)
 \begin{DoxyCompactList}\small\item\em retourne 1 si le joueur merite d\textquotesingle{}up \end{DoxyCompactList}\item 
-\hypertarget{check_8h_ae0787772e3d0416341f9d983c403074c}{}int {\bfseries Check\+Salle} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)\label{check_8h_ae0787772e3d0416341f9d983c403074c}
-
+int \hyperlink{check_8h_ae0787772e3d0416341f9d983c403074c}{Check\+Salle} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
 \item 
 int \hyperlink{check_8h_a94fa8401cc16acbc4400970e691d2d27}{Check\+Escalier} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
 \begin{DoxyCompactList}\small\item\em Retourne 1 si le joueur est sur un escalier. \end{DoxyCompactList}\item 
@@ -46,7 +45,7 @@ int \hyperlink{check_8h_a2f980f139cecb7012210126ccb354dbf}{Check\+Salle\+Joueur}
 
 
 \subsection{Description détaillée}
-Roguelike. 
+Prototype foncttion verification. 
 
 \begin{DoxyAuthor}{Auteur}
 Tony Marteau, Dimitri Bernot, Marvin Jean 
@@ -73,6 +72,8 @@ Tony Marteau, Dimitri Bernot, Marvin Jean
 
 Retourne 1 si il y a un chemin au coordonné saisie. 
 
+Retourne 1 si il y a un chemin au coordonn� saisie
+
 
 \begin{DoxyParams}{Paramètres}
 {\em x} & La cordonnée en x de la cellule \\
@@ -97,6 +98,8 @@ Vrai ou faux
 
 
 Retourne 1 si le joueur est sur un escalier. 
+
+Retourne 1 si le joueur est sur un escalier
 
 
 \begin{DoxyParams}{Paramètres}
@@ -123,6 +126,8 @@ Vrai ou faux
 
 Retourne 1 si il y a un monstre aux coordonnées indiqué 
 
+Retourne 1 si il y a un monstre aux coordonn�es indiqu�
+
 
 \begin{DoxyParams}{Paramètres}
 {\em x} & La cordonnée en x du monstre \\
@@ -148,6 +153,8 @@ Vrai ou faux
 
 Retourne 1 s\textquotesingle{}il y a un mostre en vie aux coordonénes indiquées. 
 
+Retourne 1 s\textquotesingle{}il y a un mostre en vie aux coordon�nes indiqu�es
+
 
 \begin{DoxyParams}{Paramètres}
 {\em x} & La cordonnée en x du monstre \\
@@ -172,6 +179,8 @@ Vrai ou faux
 
 Retourne 1 si le monstre est en vie par rapport a son I\+D. 
 
+Retourne 1 si le monstre est en vie par rapport a son I\+D
+
 
 \begin{DoxyParams}{Paramètres}
 {\em id\+Mob} & L\textquotesingle{}I\+D du monstre \\
@@ -195,6 +204,8 @@ Vrai ou faux
 
 Retourne 1 si il y a un mur au coordonné saisie. 
 
+Retourne 1 si il y a un mur au coordonn� saisie
+
 
 \begin{DoxyParams}{Paramètres}
 {\em x} & La cordonnée en x de la cellule \\
@@ -207,7 +218,16 @@ Retourne 1 si il y a un mur au coordonné saisie.
 \begin{DoxyReturn}{Renvoie}
 Vrai ou faux 
 \end{DoxyReturn}
-\hypertarget{check_8h_a2f980f139cecb7012210126ccb354dbf}{}\index{check.\+h@{check.\+h}!Check\+Salle\+Joueur@{Check\+Salle\+Joueur}}
+\hypertarget{check_8h_ae0787772e3d0416341f9d983c403074c}{}\index{check.\+h@{check.\+h}!Check\+Salle@{Check\+Salle}}
+\index{Check\+Salle@{Check\+Salle}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Salle(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Salle (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_ae0787772e3d0416341f9d983c403074c}
+Retourne 1 si il y a une salle au coordonn� saisie \hypertarget{check_8h_a2f980f139cecb7012210126ccb354dbf}{}\index{check.\+h@{check.\+h}!Check\+Salle\+Joueur@{Check\+Salle\+Joueur}}
 \index{Check\+Salle\+Joueur@{Check\+Salle\+Joueur}!check.\+h@{check.\+h}}
 \subsubsection[{Check\+Salle\+Joueur(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Salle\+Joueur (
 \begin{DoxyParamCaption}
@@ -219,6 +239,8 @@ Vrai ou faux
 
 
 Retourne 1 si le joueur est dans une salle. 
+
+Retourne 1 si le joueur est dans une salle
 
 
 \begin{DoxyParams}{Paramètres}
@@ -245,6 +267,8 @@ Vrai ou faux
 
 Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien) 
 
+Retourne 1 si la salle est vide (uniquement compos�e de vide, sans mur ni rien)
+
 
 \begin{DoxyParams}{Paramètres}
 {\em salle\+X} & La cordonnée en x de la salle \\
@@ -268,6 +292,8 @@ Vrai ou faux
 
 Retourne 1 si le joueur est sur une case de changement d\textquotesingle{}etage. 
 
+Retourne 1 si le joueur est sur une case de changement d\textquotesingle{}etage
+
 
 \begin{DoxyParams}{Paramètres}
 {\em carte} & La carte du jeu \\
@@ -287,6 +313,8 @@ Vrai ou faux
 
 Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1. 
 
+Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1
+
 
 \begin{DoxyParams}{Paramètres}
 {\em perso} & Le personnage joué \\
@@ -305,6 +333,8 @@ Vrai ou faux
 
 
 retourne 1 si le joueur merite d\textquotesingle{}up 
+
+retourne 1 si le joueur merite d\textquotesingle{}up
 
 
 \begin{DoxyParams}{Paramètres}
@@ -326,6 +356,8 @@ Vrai ou faux
 
 
 Retourne 1 si la case envoyée en paramètre est vide. 
+
+etourne 1 si la case envoy�e en param�tre est vide
 
 
 \begin{DoxyParams}{Paramètres}
@@ -351,6 +383,8 @@ Vrai ou faux
 
 
 Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus) 
+
+Retourne 1 si le nombre donn� en troisi�me param�tre est compris entre les deux autres nombres (inclus)
 
 
 \begin{DoxyParams}{Paramètres}

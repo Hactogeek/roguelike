@@ -1,6 +1,6 @@
 /**
 *	\file monstre.h
-*	\brief  Roguelike
+*	\brief  Prototype fonction monstre
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
 *	\version 1.0.0
 *	\date 18 décembre 2015
