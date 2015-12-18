@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
 *	\file deplacement.c
 *	\brief  Roguelike

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
 *	\file combat.c
 *	\brief  Roguelike
@@ -10,6 +11,15 @@
 
 /** 
 *	\brief Distribue l'xp et augmente le score au joueur et test si il doit le faire passer de niveau
+*   \param player le joueur
+*   \param carte La carte du jeu
+*   \param idMob L'id du monstre battu
+*   \return Rien
+*/
+
+#include "../inc/general.h"
+
+/** \brief Distribue l'xp et augmente le score au joueur et test si il doit le faire passer de niveau
 *   \param player le joueur
 *   \param carte La carte du jeu
 *   \param idMob L'id du monstre battu
