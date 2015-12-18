@@ -2,6 +2,7 @@
 #include "Outil.h"
 #include "Structure.h"
 #include "couleur.h"
+#include "sauvegarde.h"
 #include "carte.h"
 #include "deplacement.h"
 #include "personnage.h"
