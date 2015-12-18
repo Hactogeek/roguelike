@@ -32,7 +32,7 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
   - [x] Systeme de combat
  - [x] Makefile
  - [x] Test
- - [ ] Documentation
+ - [x] Documentation
  - [x] Github
   - [x] Création
   - [x] Organisation definitive
@@ -44,7 +44,6 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
  - Inventaire
  - Classe pour le personnage
  - Musique
- - Brouillard de guerre
 	
 ## Changelog
  - 2/12/15 : Déplacement du joueur dans une map générée aleatoirement. Déplacement de monstres dans une map générée aléatoirement.

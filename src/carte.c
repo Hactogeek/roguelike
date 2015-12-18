@@ -1,5 +1,18 @@
+/**
+*	\file carte.c
+*	\brief  Fichier de génération et gestion de la carte
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
+
+
 #include "../inc/general.h"
 
+/** \fn void CarteInitialiser(t_carte *carte)
+*   \brief Initialise la carte donnée en paramètre en remplissant sa grille de 0
+*   \param *carte L'adresse de la carte
+*/
 void CarteInitialiser(t_carte *carte) {
 	int i,j;
 	
@@ -12,6 +25,11 @@ void CarteInitialiser(t_carte *carte) {
 	carte->escalierVu = 0;
 }
 
+/** \fn int SallesPossiblesCompter(FILE *carteFichier)
+*   \brief Retoure le nombre de salles différentes comptées dans le fichier donné en paramètre
+*   \param *carteFichier Le fichier contenant les différents paterns de salles
+*   \return Le nombre de paterns différents
+*/
 int SallesPossiblesCompter(FILE *carteFichier) {
 	int nb_salles = 0;
 	char carteCase;
@@ -26,6 +44,10 @@ int SallesPossiblesCompter(FILE *carteFichier) {
 	return nb_salles;
 }
 
+/** \fn void PorteInitialiser(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y])
+*   \brief Initialise le tableau des portes en le remplissant de 0
+*   \param porte[SALLES_MAX_X][SALLES_MAX_Y] Le tableau contenant les portes
+*/
 void PorteInitialiser(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	int x,y;
 	
@@ -39,6 +61,10 @@ void PorteInitialiser(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	}
 }
 
+/** \fn void PortePlacer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y])
+*   \brief Place toutes les portes possibles et logiques
+*   \param porte[SALLES_MAX_X][SALLES_MAX_Y] Le tableau contenant les portes
+*/
 void PortePlacer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	int x,y;
 	
@@ -66,6 +92,10 @@ void PortePlacer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	}
 }
 
+/** \fn void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y])
+*   \brief Retire certaines portes choisies de manière aléatoire
+*   \param porte[SALLES_MAX_X][SALLES_MAX_Y] Le tableau contenant les portes
+*/
 void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	int x,y;
 	int ordre;
@@ -95,6 +125,12 @@ void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	}
 }
 
+/** \fn void ObstaclesPlacer(int nb_salles_x, int nb_salles_y, t_carte *carte)
+*   \brief Place un obstacle dans une salle donnée
+*   \param nb_salles_x La coordonnée en ordonnée de la salle
+*	\param nb_salles_y La coordonnée en abscisse de la salle
+*	\param *carte L'adresse de la carte
+*/
 void ObstaclesPlacer(int nb_salles_x, int nb_salles_y, t_carte *carte) {
 	int i,j;
 	int x,y;
@@ -108,7 +144,11 @@ void ObstaclesPlacer(int nb_salles_x, int nb_salles_y, t_carte *carte) {
 		carte->grille[x][y] = 5;
 	}
 }
-			
+
+/** \fn void EscalierChoix(t_carte * carte)
+*   \brief Choisi l'emplacement de l'escalier et le place à cet endroit de la carte, en s'assurant que ce soit bien dans une salle et non voisin d'un chemin
+*	\param *carte L'adresse de la carte
+*/
 void EscalierChoix(t_carte * carte) {
 	int caseX;
 	int caseY;
@@ -121,6 +161,10 @@ void EscalierChoix(t_carte * carte) {
 	carte->grille[caseX][caseY] = 4;
 }
 
+/** \fn void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y])
+*   \brief Affiche la carte sous sa forme de matrice
+*	\param matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y] La matrice à afficher
+*/
 void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	int i,j;
 	
@@ -132,10 +176,19 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
+/** \fn void VideAfficher(void)
+*   \brief Permet d'afficher le vide contenu dans la carte
+*/
 void VideAfficher() {
 	printf(" ");
 }
 
+/** \fn void MurAfficher(int i, int j, t_carte carte)
+*   \brief Permet d'afficher un mur en fonction des salles l'entourant
+*	\param i La coordonnée en ordonnée de la case contenant le mur
+*	\param j La coordonnée en abscisse de la case contenant le mur
+*	\param carte La carte
+*/
 void MurAfficher(int i, int j, t_carte carte) {
 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
 		printf("┌");
@@ -154,22 +207,38 @@ void MurAfficher(int i, int j, t_carte carte) {
 	}
 }
 
+/** \fn void SolAfficher(void)
+*   \brief Permet d'afficher le sol contenu dans la carte
+*/
 void SolAfficher() {
 	printf(" ");
 }
 
+/** \fn void CheminAfficher(void)
+*   \brief Permet d'afficher le chemin contenu dans la carte
+*/
 void CheminAfficher() {
 	printf("░");
 }
 
+/** \fn void EscalierAfficher(void)
+*   \brief Permet d'afficher l'escalier contenu dans la carte
+*/
 void EscalierAfficher() {
 	printf(">");
 }
 
+/** \fn void ObstacleAfficher(void)
+*   \brief Permet d'afficher l'obstacle contenu dans la carte
+*/
 void ObstacleAfficher() {
 	printf("¤");
 }
 
+/** \fn void CarteAfficher(t_carte * carte)
+*   \brief Permet d'afficher la carte complète, comme vue sur la console
+*	\param *carte L'adresse de la carte à afficher
+*/
 void CarteAfficher(t_carte * carte) {
 	int i,j;
 	
@@ -248,7 +317,11 @@ void CarteAfficher(t_carte * carte) {
 		printf("\n");
 	}
 }
-	
+
+/** \fn void CarteCharger(void)
+*   \brief Permet de créer une carte à partir d'un fichier contenant des paterns
+*	\return La carte ainsi créée
+*/
 t_carte CarteCharger() {
 	FILE * carteFichier;
 	t_carte carte;
@@ -446,15 +519,4 @@ t_carte CarteCharger() {
 		printf("Erreur lors du chargement de la carte");
 	}
 	return carte;
-}
-
-
-void CarteTester(int test) {
-	t_carte carte;
-	switch(test) {
-		case 1 : 	carte = CarteCharger();
-					//MatriceAfficher(carte.grille);
-					CarteAfficher(&carte);
-					break;
-	}
 }
