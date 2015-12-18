@@ -1,13 +1,15 @@
 #include "../inc/general.h"
 
-void CarteInitialiser(t_carte *carteGrille) {
+void CarteInitialiser(t_carte *carte) {
 	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			carteGrille->grille[i][j] = 0;
+			carte->grille[i][j] = 0;
 		}
 	}
+	
+	carte->escalierVu = 0;
 }
 
 int SallesPossiblesCompter(FILE *carteFichier) {
@@ -93,6 +95,20 @@ void PorteRetirer(t_porte porte[SALLES_MAX_X][SALLES_MAX_Y]) {
 	}
 }
 
+void ObstaclesPlacer(int nb_salles_x, int nb_salles_y, t_carte *carte) {
+	int i,j;
+	int x,y;
+	
+	do {
+		x = uHasard(TAILLE_SALLE_X) + nb_salles_x * TAILLE_SALLE_X;
+		y = uHasard(TAILLE_SALLE_Y) + nb_salles_y * TAILLE_SALLE_Y;
+	} while(!CheckSalle(x, y, *carte) || CheckChemin(x-1, y, *carte) || CheckChemin(x, y-1, *carte) || CheckChemin(x+1, y, *carte) || CheckChemin(x, y+1, *carte));
+	
+	if(uHasard(2)) {
+		carte->grille[x][y] = 5;
+	}
+}
+			
 void EscalierChoix(t_carte * carte) {
 	int caseX;
 	int caseY;
@@ -101,6 +117,7 @@ void EscalierChoix(t_carte * carte) {
 		caseX = nHasard(TAILLE_CARTE_X);
 		caseY = nHasard(TAILLE_CARTE_Y);
 	} while(!CheckSalle(caseX, caseY, *carte) || CheckChemin(caseX-1, caseY, *carte) || CheckChemin(caseX, caseY-1, *carte) || CheckChemin(caseX+1, caseY, *carte) || CheckChemin(caseX, caseY+1, *carte));
+	
 	carte->grille[caseX][caseY] = 4;
 }
 
@@ -115,39 +132,116 @@ void MatriceAfficher(int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]) {
 	}
 }
 
-void CarteAfficher(t_carte carte) {
-	int i,j; 
+void VideAfficher() {
+	printf(" ");
+}
+
+void MurAfficher(int i, int j, t_carte carte) {
+	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
+		printf("┌");
+	} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
+		printf("└");
+	} else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+		printf("┐");
+	} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
+		printf("┘");
+	} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
+		printf("—");
+	} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
+		printf("|");
+	} else {
+		printf("¤");
+	}
+}
+
+void SolAfficher() {
+	printf(" ");
+}
+
+void CheminAfficher() {
+	printf("░");
+}
+
+void EscalierAfficher() {
+	printf(">");
+}
+
+void ObstacleAfficher() {
+	printf("¤");
+}
+
+void CarteAfficher(t_carte * carte) {
+	int i,j;
 	
 	for(i = 0; i < TAILLE_CARTE_X; i++) {
 		for(j = 0; j < TAILLE_CARTE_Y; j++) {
-			if(carte.cord.x==i && carte.cord.y==j){
-				color(6,"@");
-            } else if (CheckMonstreEnVieIci(i,j,carte)){
-				color(1,"£");
-			} else {
-				switch(carte.grille[i][j]) {
-					case 0 : printf(" "); break;
-					case 1 : 	if(CheckMur(i+1,j,carte) && CheckMur(i,j+1,carte)) {
-									printf("┌");
-								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j+1,carte)) {
-									printf("└");
-								} else if(CheckMur(i+1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-									printf("┐");
-								} else if(CheckMur(i-1,j,carte) == 1 && CheckMur(i,j-1,carte)) {
-									printf("┘");
-								} else if((CheckMur(i,j-1,carte) || CheckChemin(i,j-1,carte)) && (CheckMur(i,j+1,carte) || CheckChemin(i,j+1,carte))) {
-									printf("—");
-								} else if((CheckMur(i-1,j,carte) || CheckChemin(i-1,j,carte)) && (CheckMur(i+1,j,carte) || CheckChemin(i+1,j,carte))) {
-									printf("|");
-								} else {
-									printf("#");
-								}
-							break;
-					case 2 : printf(" "); break;
-					case 3 : printf("░"); break;
-					case 4 : printf(">"); break;
+			if(CheckSalleJoueur(i, j, *carte)) {
+				color(black, "Screen");
+				if(carte->cord.x==i && carte->cord.y==j) {
+					color(cyan,"@");
+				} else if (CheckMonstreEnVieIci(i,j,*carte)) {
+					color(red,"£");
+				} else {
+					switch(carte->grille[i][j]) {
+						case 0 :	VideAfficher();
+									break;
+						case 1 :	MurAfficher(i, j, *carte);
+									break;
+						case 2 :	SolAfficher();
+									break;
+						case 3 :	CheminAfficher();
+									break;
+						case 4 :	carte->escalierVu = 1;
+									EscalierAfficher();
+									break;
+						case 5 :	ObstacleAfficher();
+									break;
 				
-					default : printf(" "); break;
+						default :   printf(" "); break;
+					}
+				}
+			} else {
+				//color(blue, "Screen");
+				switch(carte->grille[i][j]) {
+					case 0 :	if(j > 0) {
+									if(!CheckVide(i, j-1, *carte)) {
+										color(COULEUR_NORMALE, "Screen");
+									}
+								} else {
+									color(COULEUR_NORMALE, "Screen");
+								}
+								
+								VideAfficher();
+								break;
+					case 1 :	if(CheckVide(i, j-1, *carte)) {
+									color(COULEUR_BROUILLARD, "Screen");
+								}
+								MurAfficher(i, j, *carte);
+								break;
+					case 2 :	if(CheckVide(i, j-1, *carte)) {
+									color(COULEUR_BROUILLARD, "Screen");
+								}
+								SolAfficher();
+								break;
+					case 3 :   	if(CheckVide(i, j-1, *carte) || CheckChemin(i, j-1, *carte)) {
+									color(COULEUR_BROUILLARD, "Screen");
+								}
+								CheminAfficher();
+								break;
+					case 4 :   	if(CheckVide(i, j-1, *carte)) {
+									color(COULEUR_BROUILLARD, "Screen");
+								}
+								if(carte->escalierVu) {
+									EscalierAfficher();
+								} else {
+									SolAfficher();
+								}
+								break;
+					
+					case 5 :	ObstacleAfficher();
+								break;
+					
+					default :   printf(" "); break;
 				}
 			}
 		}
@@ -204,7 +298,6 @@ t_carte CarteCharger() {
 					}
 					
 					//Détermination de la salle qui sera mise
-					//salleId = rand()/RAND_MAX * nb_salles_diff;
 					salleId = nHasard(nb_salles_diff);
 					
 					//Récupération de la salle au bon id
@@ -242,13 +335,13 @@ t_carte CarteCharger() {
 									case '1' : carte.grille[i][j] = 1; break;
 									case '2' : carte.grille[i][j] = 2; break;
 									case '3' :
-										if(carte.porte[nb_salles_x][nb_salles_y].haut && carte.grille[i-1][j] == 0) {
+										if(carte.porte[nb_salles_x][nb_salles_y].haut && CheckVide(i-1, j, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].bas && carte.grille[i-1][j] == 2) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].bas && CheckSalle(i-1, j, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].gauche && carte.grille[i][j-1] == 0) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].gauche && CheckVide(i, j-1, carte)) {
 											carte.grille[i][j] = 3;
-										} else if(carte.porte[nb_salles_x][nb_salles_y].droite && carte.grille[i][j-1] == 2) {
+										} else if(carte.porte[nb_salles_x][nb_salles_y].droite && CheckSalle(i, j-1, carte)) {
 											carte.grille[i][j] = 3;
 										} else {
 											carte.grille[i][j] = 1;
@@ -261,6 +354,8 @@ t_carte CarteCharger() {
 							}
 						}
 					}
+					
+					ObstaclesPlacer(nb_salles_x, nb_salles_y, &carte);
 					nb_salles++;
 				}
 			}
@@ -359,8 +454,7 @@ void CarteTester(int test) {
 	switch(test) {
 		case 1 : 	carte = CarteCharger();
 					//MatriceAfficher(carte.grille);
-					CarteAfficher(carte);
+					CarteAfficher(&carte);
 					break;
 	}
 }
-

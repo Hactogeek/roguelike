@@ -1,11 +1,3 @@
-//
-//  jeu.c
-//  
-//
-//  Created by Jean Marvin on 27/11/2015.
-//
-//
-
 #include "../inc/general.h"
 
 void JeuAmorcer(){
@@ -38,14 +30,13 @@ void JeuCommencer(){
     personnage.stats.score=0;
     while(!CheckTestPersonnage(personnage)){        
         printf(CLEAR_SC);
-        if(CheckEscalier(carte.cord.x, carte.cord.y, carte)==1)
-        {
-        	
+        //Chargement d'un nouvel étage
+        if(CheckEscalier(carte.cord.x, carte.cord.y, carte)) {
             etage=carte.etage;
             monstrePuissance=carte.monstrePuissance;
             
+            carte.escalierVu = 0;
             carte = CarteCharger();
-            
             
             carte.etage=etage+1;
             if(carte.etage%2==0)
@@ -63,8 +54,11 @@ void JeuCommencer(){
             MonstrePositionner(&carte, carte.monstrePuissance);
            
         }
+        
         PersonnageAfficher(personnage);
-        CarteAfficher(carte);
+        CarteAfficher(&carte);
+        printf("Dernier evenement : %s\n", carte.dernierEvenement);
+        strcpy(carte.dernierEvenement, "");
         do{
 			idMob=DeplacementMarcher(&carte);
 		}while(idMob==-2);

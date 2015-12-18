@@ -1,3 +1,10 @@
+/**
+*	\file personnage.h
+*	\brief  Roguelike
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
 void PersonnageAmorcer();
 void PersonnagePositionner(t_carte * carte);
 void PersonnageInitialiser(t_personnage * perso);

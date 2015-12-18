@@ -1,0 +1,82 @@
+\hypertarget{combat_8c}{}\section{Référence du fichier src/combat.c}
+\label{combat_8c}\index{src/combat.\+c@{src/combat.\+c}}
+
+
+Roguelike.  
+
+
+{\ttfamily \#include \char`\"{}../inc/general.\+h\char`\"{}}\\*
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{combat_8c_a991abc3918f7229d4774a681c5c57113}{Combat\+Remporter} (\hyperlink{structt__personnage}{t\+\_\+personnage} $\ast$player, \hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int id\+Mob)
+\begin{DoxyCompactList}\small\item\em Distribue l\textquotesingle{}xp et augmente le score au joueur et test si il doit le faire passer de niveau. \end{DoxyCompactList}\item 
+void \hyperlink{combat_8c_afc07669d6274c8706e0e82c0c586d488}{Combat\+Taper} (\hyperlink{structt__personnage}{t\+\_\+personnage} $\ast$player, \hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int id\+Mob)
+\begin{DoxyCompactList}\small\item\em Retire des pdv au monstre passer en id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Roguelike. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 décembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{combat_8c_a991abc3918f7229d4774a681c5c57113}{}\index{combat.\+c@{combat.\+c}!Combat\+Remporter@{Combat\+Remporter}}
+\index{Combat\+Remporter@{Combat\+Remporter}!combat.\+c@{combat.\+c}}
+\subsubsection[{Combat\+Remporter(t\+\_\+personnage $\ast$player, t\+\_\+carte $\ast$carte, int id\+Mob)}]{\setlength{\rightskip}{0pt plus 5cm}void Combat\+Remporter (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+personnage} $\ast$}]{player, }
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{int}]{id\+Mob}
+\end{DoxyParamCaption}
+)}\label{combat_8c_a991abc3918f7229d4774a681c5c57113}
+
+
+Distribue l\textquotesingle{}xp et augmente le score au joueur et test si il doit le faire passer de niveau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em player} & le joueur \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+{\em id\+Mob} & L\textquotesingle{}id du monstre battu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Rien 
+\end{DoxyReturn}
+\hypertarget{combat_8c_afc07669d6274c8706e0e82c0c586d488}{}\index{combat.\+c@{combat.\+c}!Combat\+Taper@{Combat\+Taper}}
+\index{Combat\+Taper@{Combat\+Taper}!combat.\+c@{combat.\+c}}
+\subsubsection[{Combat\+Taper(t\+\_\+personnage $\ast$player, t\+\_\+carte $\ast$carte, int id\+Mob)}]{\setlength{\rightskip}{0pt plus 5cm}void Combat\+Taper (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+personnage} $\ast$}]{player, }
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{int}]{id\+Mob}
+\end{DoxyParamCaption}
+)}\label{combat_8c_afc07669d6274c8706e0e82c0c586d488}
+
+
+Retire des pdv au monstre passer en id. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em player} & Le joueur \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+{\em id\+Mob} & L\textquotesingle{}id du monstre battu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Rien 
+\end{DoxyReturn}

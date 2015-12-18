@@ -1,0 +1,84 @@
+\hypertarget{Structure_8h}{}\section{Référence du fichier inc/\+Structure.h}
+\label{Structure_8h}\index{inc/\+Structure.\+h@{inc/\+Structure.\+h}}
+
+
+Roguelike.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__posMonstre}{t\+\_\+pos\+Monstre}
+\begin{DoxyCompactList}\small\item\em Position des monstres. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__monstre}{t\+\_\+monstre}
+\begin{DoxyCompactList}\small\item\em Position, Vie et puissance des monstres. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__posJoueur}{t\+\_\+pos\+Joueur}
+\begin{DoxyCompactList}\small\item\em Position du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__porte}{t\+\_\+porte}
+\item 
+struct \hyperlink{structt__carte}{t\+\_\+carte}
+\item 
+struct \hyperlink{structt__caracteristique}{t\+\_\+caracteristique}
+\begin{DoxyCompactList}\small\item\em Vitalite, force et agilite du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__statistique}{t\+\_\+statistique}
+\begin{DoxyCompactList}\small\item\em Vie et score du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__equip}{t\+\_\+equip}
+\item 
+struct \hyperlink{structt__inv}{t\+\_\+inv}
+\item 
+struct \hyperlink{structt__experience}{t\+\_\+experience}
+\begin{DoxyCompactList}\small\item\em Niveau, experience et experience prochain niveau du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__personnage}{t\+\_\+personnage}
+\begin{DoxyCompactList}\small\item\em Experiencen statistique et caracteristique du joueur. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__partie}{t\+\_\+partie}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{Structure_8h_a5e00932a84d3401fb227414ce96dab6d}{}\#define {\bfseries S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X}~2\label{Structure_8h_a5e00932a84d3401fb227414ce96dab6d}
+
+\item 
+\hypertarget{Structure_8h_ad9d9b34dc646b6a472d49b5983637248}{}\#define {\bfseries S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y}~5\label{Structure_8h_ad9d9b34dc646b6a472d49b5983637248}
+
+\item 
+\hypertarget{Structure_8h_a608fae13cb35fc3e5844976e383e885a}{}\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+S\+A\+L\+L\+E\+\_\+\+X}~15\label{Structure_8h_a608fae13cb35fc3e5844976e383e885a}
+
+\item 
+\hypertarget{Structure_8h_aef95feca591fc0fcfffb4eb5c46ffbf7}{}\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+S\+A\+L\+L\+E\+\_\+\+Y}~15\label{Structure_8h_aef95feca591fc0fcfffb4eb5c46ffbf7}
+
+\item 
+\hypertarget{Structure_8h_a9b467b93d677fe1ed8939420a2cc1686}{}\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X}~T\+A\+I\+L\+L\+E\+\_\+\+S\+A\+L\+L\+E\+\_\+\+X $\ast$ S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\label{Structure_8h_a9b467b93d677fe1ed8939420a2cc1686}
+
+\item 
+\hypertarget{Structure_8h_ad8de2b08735037f0ab5d2702b570e4ab}{}\#define {\bfseries T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y}~T\+A\+I\+L\+L\+E\+\_\+\+S\+A\+L\+L\+E\+\_\+\+Y $\ast$ S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\label{Structure_8h_ad8de2b08735037f0ab5d2702b570e4ab}
+
+\item 
+\hypertarget{Structure_8h_a670dac25e6cb371c5624a36da9561d13}{}\#define {\bfseries S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X}~S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X $\ast$ S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\label{Structure_8h_a670dac25e6cb371c5624a36da9561d13}
+
+\item 
+\hypertarget{Structure_8h_a9f3fbfb42056e9c53e79b818804055fc}{}\#define {\bfseries N\+B\+\_\+\+M\+A\+X\+\_\+\+M\+O\+N\+S\+T\+R\+E}~S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X $\ast$ S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y $\ast$ 2\label{Structure_8h_a9f3fbfb42056e9c53e79b818804055fc}
+
+\item 
+\hypertarget{Structure_8h_afc5d33b6e339e76015e6b4679018aef0}{}\#define {\bfseries C\+L\+E\+A\+R\+\_\+\+S\+C}~\char`\"{}\textbackslash{}e\mbox{[}1;1\+H\textbackslash{}e\mbox{[}2\+J\char`\"{}\label{Structure_8h_afc5d33b6e339e76015e6b4679018aef0}
+
+\item 
+\hypertarget{Structure_8h_ab6dd0487a5fab50a574bc58749f652f2}{}\#define {\bfseries C\+O\+U\+L\+E\+U\+R\+\_\+\+N\+O\+R\+M\+A\+L\+E}~black\label{Structure_8h_ab6dd0487a5fab50a574bc58749f652f2}
+
+\item 
+\hypertarget{Structure_8h_a5fb66b005ef8710678198db8769274ca}{}\#define {\bfseries C\+O\+U\+L\+E\+U\+R\+\_\+\+B\+R\+O\+U\+I\+L\+L\+A\+R\+D}~blue\label{Structure_8h_a5fb66b005ef8710678198db8769274ca}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Roguelike. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 d�cembre 2015 
+\end{DoxyDate}

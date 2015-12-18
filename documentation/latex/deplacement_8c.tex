@@ -1,0 +1,55 @@
+\hypertarget{deplacement_8c}{}\section{Référence du fichier src/deplacement.c}
+\label{deplacement_8c}\index{src/deplacement.\+c@{src/deplacement.\+c}}
+
+
+Roguelike.  
+
+
+{\ttfamily \#include \char`\"{}../inc/general.\+h\char`\"{}}\\*
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{deplacement_8c_a86ae747d991f8ea5e743f2040bdbf19a}{}void {\bfseries Deplacement\+Amorcer} ()\label{deplacement_8c_a86ae747d991f8ea5e743f2040bdbf19a}
+
+\item 
+\hypertarget{deplacement_8c_a9dc3142ed77e1548a9b725172eae0681}{}void {\bfseries Deplacement\+Tester} (int t)\label{deplacement_8c_a9dc3142ed77e1548a9b725172eae0681}
+
+\item 
+int \hyperlink{deplacement_8c_abd4cf56e5c0d1b4a6add0567f3eddc55}{Deplacement\+Marcher} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectué \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Roguelike. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 décembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{deplacement_8c_abd4cf56e5c0d1b4a6add0567f3eddc55}{}\index{deplacement.\+c@{deplacement.\+c}!Deplacement\+Marcher@{Deplacement\+Marcher}}
+\index{Deplacement\+Marcher@{Deplacement\+Marcher}!deplacement.\+c@{deplacement.\+c}}
+\subsubsection[{Deplacement\+Marcher(t\+\_\+carte $\ast$map)}]{\setlength{\rightskip}{0pt plus 5cm}int Deplacement\+Marcher (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{map}
+\end{DoxyParamCaption}
+)}\label{deplacement_8c_abd4cf56e5c0d1b4a6add0567f3eddc55}
+
+
+Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectué 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+integer L\textquotesingle{}id du mob / -\/1 / -\/2 
+\end{DoxyReturn}

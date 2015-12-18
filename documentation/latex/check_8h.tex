@@ -1,0 +1,366 @@
+\hypertarget{check_8h}{}\section{Référence du fichier inc/check.h}
+\label{check_8h}\index{inc/check.\+h@{inc/check.\+h}}
+
+
+Roguelike.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{check_8h_aca37b0bf25a640f90e7de6379981d1f3}{}void {\bfseries Check\+Amorcer} ()\label{check_8h_aca37b0bf25a640f90e7de6379981d1f3}
+
+\item 
+\hypertarget{check_8h_a15436d1dd003af72b1d53823b76892dd}{}void {\bfseries Check\+Tester} ()\label{check_8h_a15436d1dd003af72b1d53823b76892dd}
+
+\item 
+int \hyperlink{check_8h_a0d1b684224f8b95b039d054627f9b951}{Est\+Contenu\+Dans} (int nb1, int nb2, int nb\+\_\+a\+\_\+chercher)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus) \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_af0602590b657568d187e6b16b87a2fb9}{Check\+Test\+Personnage} (\hyperlink{structt__personnage}{t\+\_\+personnage} perso)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a42c01430c3a5683fd1fe81e4d4b1d854}{Check\+Test\+Etage} (\hyperlink{structt__carte}{t\+\_\+carte} pos)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si le joueur est sur une case de changement d\textquotesingle{}etage. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_adafd29e5d6cb62bc457fca44dcc1a2e2}{Check\+Monstre} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si il y a un monstre aux coordonnées indiqué \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a9032123479067ebff0b0483716b32519}{Check\+Mur} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si il y a un mur au coordonné saisie. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a89bc46dbcfcd33229614d2e6bf14803a}{Check\+Monstre\+Vie} (int id\+Mob, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si le monstre est en vie par rapport a son I\+D. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a07b7b3e7363b4f6ffb123ffad7f679f8}{Check\+Monstre\+En\+Vie\+Ici} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 s\textquotesingle{}il y a un mostre en vie aux coordonénes indiquées. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a3dc0ace79ac2d725484bc03dec3d0ea9}{Check\+Chemin} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si il y a un chemin au coordonné saisie. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a74668cc60bce1a5268f540ed39807c49}{Check\+Up\+Niveau} (\hyperlink{structt__personnage}{t\+\_\+personnage} player)
+\begin{DoxyCompactList}\small\item\em retourne 1 si le joueur merite d\textquotesingle{}up \end{DoxyCompactList}\item 
+\hypertarget{check_8h_ae0787772e3d0416341f9d983c403074c}{}int {\bfseries Check\+Salle} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)\label{check_8h_ae0787772e3d0416341f9d983c403074c}
+
+\item 
+int \hyperlink{check_8h_a94fa8401cc16acbc4400970e691d2d27}{Check\+Escalier} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si le joueur est sur un escalier. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a8480fb6752866cb9dba0542e1a6979e6}{Check\+Salle\+Vide} (int salle\+X, int salle\+Y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien) \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a62b75270e24333aecacfe694b871f38f}{Check\+Vide} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si la case envoyée en paramètre est vide. \end{DoxyCompactList}\item 
+int \hyperlink{check_8h_a2f980f139cecb7012210126ccb354dbf}{Check\+Salle\+Joueur} (int x, int y, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Retourne 1 si le joueur est dans une salle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Roguelike. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 d�cembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{check_8h_a3dc0ace79ac2d725484bc03dec3d0ea9}{}\index{check.\+h@{check.\+h}!Check\+Chemin@{Check\+Chemin}}
+\index{Check\+Chemin@{Check\+Chemin}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Chemin(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Chemin (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a3dc0ace79ac2d725484bc03dec3d0ea9}
+
+
+Retourne 1 si il y a un chemin au coordonné saisie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x de la cellule \\
+\hline
+{\em y} & La cordonnée en y de la cellule \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a94fa8401cc16acbc4400970e691d2d27}{}\index{check.\+h@{check.\+h}!Check\+Escalier@{Check\+Escalier}}
+\index{Check\+Escalier@{Check\+Escalier}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Escalier(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Escalier (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a94fa8401cc16acbc4400970e691d2d27}
+
+
+Retourne 1 si le joueur est sur un escalier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x de la cellule \\
+\hline
+{\em y} & La cordonnée en y de la cellule \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_adafd29e5d6cb62bc457fca44dcc1a2e2}{}\index{check.\+h@{check.\+h}!Check\+Monstre@{Check\+Monstre}}
+\index{Check\+Monstre@{Check\+Monstre}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Monstre(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Monstre (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_adafd29e5d6cb62bc457fca44dcc1a2e2}
+
+
+Retourne 1 si il y a un monstre aux coordonnées indiqué 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x du monstre \\
+\hline
+{\em y} & La cordonnée en y du monstre \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a07b7b3e7363b4f6ffb123ffad7f679f8}{}\index{check.\+h@{check.\+h}!Check\+Monstre\+En\+Vie\+Ici@{Check\+Monstre\+En\+Vie\+Ici}}
+\index{Check\+Monstre\+En\+Vie\+Ici@{Check\+Monstre\+En\+Vie\+Ici}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Monstre\+En\+Vie\+Ici(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Monstre\+En\+Vie\+Ici (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a07b7b3e7363b4f6ffb123ffad7f679f8}
+
+
+Retourne 1 s\textquotesingle{}il y a un mostre en vie aux coordonénes indiquées. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x du monstre \\
+\hline
+{\em y} & La cordonnée en y du monstre \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a89bc46dbcfcd33229614d2e6bf14803a}{}\index{check.\+h@{check.\+h}!Check\+Monstre\+Vie@{Check\+Monstre\+Vie}}
+\index{Check\+Monstre\+Vie@{Check\+Monstre\+Vie}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Monstre\+Vie(int id\+Mob, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Monstre\+Vie (
+\begin{DoxyParamCaption}
+\item[{int}]{id\+Mob, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a89bc46dbcfcd33229614d2e6bf14803a}
+
+
+Retourne 1 si le monstre est en vie par rapport a son I\+D. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em id\+Mob} & L\textquotesingle{}I\+D du monstre \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a9032123479067ebff0b0483716b32519}{}\index{check.\+h@{check.\+h}!Check\+Mur@{Check\+Mur}}
+\index{Check\+Mur@{Check\+Mur}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Mur(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Mur (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a9032123479067ebff0b0483716b32519}
+
+
+Retourne 1 si il y a un mur au coordonné saisie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x de la cellule \\
+\hline
+{\em y} & La cordonnée en y de la cellule \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a2f980f139cecb7012210126ccb354dbf}{}\index{check.\+h@{check.\+h}!Check\+Salle\+Joueur@{Check\+Salle\+Joueur}}
+\index{Check\+Salle\+Joueur@{Check\+Salle\+Joueur}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Salle\+Joueur(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Salle\+Joueur (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a2f980f139cecb7012210126ccb354dbf}
+
+
+Retourne 1 si le joueur est dans une salle. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x de la cellule \\
+\hline
+{\em y} & La cordonnée en y de la cellule \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a8480fb6752866cb9dba0542e1a6979e6}{}\index{check.\+h@{check.\+h}!Check\+Salle\+Vide@{Check\+Salle\+Vide}}
+\index{Check\+Salle\+Vide@{Check\+Salle\+Vide}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Salle\+Vide(int salle\+X, int salle\+Y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Salle\+Vide (
+\begin{DoxyParamCaption}
+\item[{int}]{salle\+X, }
+\item[{int}]{salle\+Y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a8480fb6752866cb9dba0542e1a6979e6}
+
+
+Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em salle\+X} & La cordonnée en x de la salle \\
+\hline
+{\em salle\+Y} & La cordonnée en y de la salle \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a42c01430c3a5683fd1fe81e4d4b1d854}{}\index{check.\+h@{check.\+h}!Check\+Test\+Etage@{Check\+Test\+Etage}}
+\index{Check\+Test\+Etage@{Check\+Test\+Etage}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Test\+Etage(t\+\_\+carte pos)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Test\+Etage (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a42c01430c3a5683fd1fe81e4d4b1d854}
+
+
+Retourne 1 si le joueur est sur une case de changement d\textquotesingle{}etage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_af0602590b657568d187e6b16b87a2fb9}{}\index{check.\+h@{check.\+h}!Check\+Test\+Personnage@{Check\+Test\+Personnage}}
+\index{Check\+Test\+Personnage@{Check\+Test\+Personnage}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Test\+Personnage(t\+\_\+personnage perso)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Test\+Personnage (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+personnage}}]{perso}
+\end{DoxyParamCaption}
+)}\label{check_8h_af0602590b657568d187e6b16b87a2fb9}
+
+
+Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em perso} & Le personnage joué \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a74668cc60bce1a5268f540ed39807c49}{}\index{check.\+h@{check.\+h}!Check\+Up\+Niveau@{Check\+Up\+Niveau}}
+\index{Check\+Up\+Niveau@{Check\+Up\+Niveau}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Up\+Niveau(t\+\_\+personnage player)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Up\+Niveau (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+personnage}}]{player}
+\end{DoxyParamCaption}
+)}\label{check_8h_a74668cc60bce1a5268f540ed39807c49}
+
+
+retourne 1 si le joueur merite d\textquotesingle{}up 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em player} & Le joueur du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a62b75270e24333aecacfe694b871f38f}{}\index{check.\+h@{check.\+h}!Check\+Vide@{Check\+Vide}}
+\index{Check\+Vide@{Check\+Vide}!check.\+h@{check.\+h}}
+\subsubsection[{Check\+Vide(int x, int y, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}int Check\+Vide (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{check_8h_a62b75270e24333aecacfe694b871f38f}
+
+
+Retourne 1 si la case envoyée en paramètre est vide. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em x} & La cordonnée en x de la cellule \\
+\hline
+{\em y} & La cordonnée en y de la cellule \\
+\hline
+{\em carte} & La carte du jeu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
+\hypertarget{check_8h_a0d1b684224f8b95b039d054627f9b951}{}\index{check.\+h@{check.\+h}!Est\+Contenu\+Dans@{Est\+Contenu\+Dans}}
+\index{Est\+Contenu\+Dans@{Est\+Contenu\+Dans}!check.\+h@{check.\+h}}
+\subsubsection[{Est\+Contenu\+Dans(int nb1, int nb2, int nb\+\_\+a\+\_\+chercher)}]{\setlength{\rightskip}{0pt plus 5cm}int Est\+Contenu\+Dans (
+\begin{DoxyParamCaption}
+\item[{int}]{nb1, }
+\item[{int}]{nb2, }
+\item[{int}]{nb\+\_\+a\+\_\+chercher}
+\end{DoxyParamCaption}
+)}\label{check_8h_a0d1b684224f8b95b039d054627f9b951}
+
+
+Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb1} & La premiere borne \\
+\hline
+{\em nb2} & La seconde borne \\
+\hline
+{\em nb\+\_\+a\+\_\+chercher} & Le nombre à vérifié \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrai ou faux 
+\end{DoxyReturn}
