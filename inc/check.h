@@ -1,3 +1,10 @@
+/**
+*	\file check.h
+*	\brief  Roguelike
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
 void CheckAmorcer();
 void CheckTester();
 int EstContenuDans(int nb1, int nb2, int nb_a_chercher);

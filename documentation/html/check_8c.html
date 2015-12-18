@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Roguelike: Référence du fichier src/check.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Roguelike
+   </div>
+   <div id="projectbrief">Projet de L2SPI - Universite du Maine</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier check.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Roguelike.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;../inc/general.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aca37b0bf25a640f90e7de6379981d1f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca37b0bf25a640f90e7de6379981d1f3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckAmorcer</b> ()</td></tr>
+<tr class="separator:aca37b0bf25a640f90e7de6379981d1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15436d1dd003af72b1d53823b76892dd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15436d1dd003af72b1d53823b76892dd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CheckTester</b> ()</td></tr>
+<tr class="separator:a15436d1dd003af72b1d53823b76892dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1b684224f8b95b039d054627f9b951"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a0d1b684224f8b95b039d054627f9b951">EstContenuDans</a> (int nb1, int nb2, int nb_a_chercher)</td></tr>
+<tr class="memdesc:a0d1b684224f8b95b039d054627f9b951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus)  <a href="#a0d1b684224f8b95b039d054627f9b951">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0d1b684224f8b95b039d054627f9b951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0602590b657568d187e6b16b87a2fb9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#af0602590b657568d187e6b16b87a2fb9">CheckTestPersonnage</a> (<a class="el" href="structt__personnage.html">t_personnage</a> perso)</td></tr>
+<tr class="memdesc:af0602590b657568d187e6b16b87a2fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1.  <a href="#af0602590b657568d187e6b16b87a2fb9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af0602590b657568d187e6b16b87a2fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20ff6686d63a027ac48a262ab56994c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#ae20ff6686d63a027ac48a262ab56994c">CheckTestEtage</a> (<a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:ae20ff6686d63a027ac48a262ab56994c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le joueur est sur une case de changement d'etage.  <a href="#ae20ff6686d63a027ac48a262ab56994c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae20ff6686d63a027ac48a262ab56994c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafd29e5d6cb62bc457fca44dcc1a2e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#adafd29e5d6cb62bc457fca44dcc1a2e2">CheckMonstre</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:adafd29e5d6cb62bc457fca44dcc1a2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si il y a un monstre aux coordonnées indiqué  <a href="#adafd29e5d6cb62bc457fca44dcc1a2e2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adafd29e5d6cb62bc457fca44dcc1a2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b7b3e7363b4f6ffb123ffad7f679f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a07b7b3e7363b4f6ffb123ffad7f679f8">CheckMonstreEnVieIci</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a07b7b3e7363b4f6ffb123ffad7f679f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 s'il y a un mostre en vie aux coordonénes indiquées.  <a href="#a07b7b3e7363b4f6ffb123ffad7f679f8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a07b7b3e7363b4f6ffb123ffad7f679f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9032123479067ebff0b0483716b32519"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a9032123479067ebff0b0483716b32519">CheckMur</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a9032123479067ebff0b0483716b32519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si il y a un mur au coordonné saisie.  <a href="#a9032123479067ebff0b0483716b32519">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9032123479067ebff0b0483716b32519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bc46dbcfcd33229614d2e6bf14803a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a89bc46dbcfcd33229614d2e6bf14803a">CheckMonstreVie</a> (int idMob, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a89bc46dbcfcd33229614d2e6bf14803a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le monstre est en vie par rapport a son ID.  <a href="#a89bc46dbcfcd33229614d2e6bf14803a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a89bc46dbcfcd33229614d2e6bf14803a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc0ace79ac2d725484bc03dec3d0ea9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a3dc0ace79ac2d725484bc03dec3d0ea9">CheckChemin</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a3dc0ace79ac2d725484bc03dec3d0ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si il y a un chemin au coordonné saisie.  <a href="#a3dc0ace79ac2d725484bc03dec3d0ea9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3dc0ace79ac2d725484bc03dec3d0ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74668cc60bce1a5268f540ed39807c49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a74668cc60bce1a5268f540ed39807c49">CheckUpNiveau</a> (<a class="el" href="structt__personnage.html">t_personnage</a> player)</td></tr>
+<tr class="memdesc:a74668cc60bce1a5268f540ed39807c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">retourne 1 si le joueur merite d'up  <a href="#a74668cc60bce1a5268f540ed39807c49">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a74668cc60bce1a5268f540ed39807c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0787772e3d0416341f9d983c403074c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae0787772e3d0416341f9d983c403074c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>CheckSalle</b> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="separator:ae0787772e3d0416341f9d983c403074c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94fa8401cc16acbc4400970e691d2d27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a94fa8401cc16acbc4400970e691d2d27">CheckEscalier</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a94fa8401cc16acbc4400970e691d2d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le joueur est sur un escalier.  <a href="#a94fa8401cc16acbc4400970e691d2d27">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a94fa8401cc16acbc4400970e691d2d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8480fb6752866cb9dba0542e1a6979e6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a8480fb6752866cb9dba0542e1a6979e6">CheckSalleVide</a> (int salleX, int salleY, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a8480fb6752866cb9dba0542e1a6979e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien)  <a href="#a8480fb6752866cb9dba0542e1a6979e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8480fb6752866cb9dba0542e1a6979e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b75270e24333aecacfe694b871f38f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a62b75270e24333aecacfe694b871f38f">CheckVide</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a62b75270e24333aecacfe694b871f38f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si la case envoyée en paramètre est vide.  <a href="#a62b75270e24333aecacfe694b871f38f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a62b75270e24333aecacfe694b871f38f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f980f139cecb7012210126ccb354dbf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="check_8c.html#a2f980f139cecb7012210126ccb354dbf">CheckSalleJoueur</a> (int x, int y, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a2f980f139cecb7012210126ccb354dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne 1 si le joueur est dans une salle.  <a href="#a2f980f139cecb7012210126ccb354dbf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2f980f139cecb7012210126ccb354dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Roguelike. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Tony Marteau, Dimitri Bernot, Marvin Jean </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>18 décembre 2015 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a3dc0ace79ac2d725484bc03dec3d0ea9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckChemin </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si il y a un chemin au coordonné saisie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x de la cellule </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y de la cellule </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a94fa8401cc16acbc4400970e691d2d27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckEscalier </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si le joueur est sur un escalier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x de la cellule </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y de la cellule </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adafd29e5d6cb62bc457fca44dcc1a2e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckMonstre </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si il y a un monstre aux coordonnées indiqué </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x du monstre </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y du monstre </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a07b7b3e7363b4f6ffb123ffad7f679f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckMonstreEnVieIci </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 s'il y a un mostre en vie aux coordonénes indiquées. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x du monstre </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y du monstre </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a89bc46dbcfcd33229614d2e6bf14803a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckMonstreVie </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>idMob</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si le monstre est en vie par rapport a son ID. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idMob</td><td>L'ID du monstre </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9032123479067ebff0b0483716b32519"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckMur </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si il y a un mur au coordonné saisie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x de la cellule </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y de la cellule </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2f980f139cecb7012210126ccb354dbf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckSalleJoueur </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si le joueur est dans une salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x de la cellule </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y de la cellule </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8480fb6752866cb9dba0542e1a6979e6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckSalleVide </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>salleX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>salleY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si la salle est vide (uniquement composée de vide, sans mur ni rien) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">salleX</td><td>La cordonnée en x de la salle </td></tr>
+    <tr><td class="paramname">salleY</td><td>La cordonnée en y de la salle </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae20ff6686d63a027ac48a262ab56994c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckTestEtage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si le joueur est sur une case de changement d'etage. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af0602590b657568d187e6b16b87a2fb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckTestPersonnage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__personnage.html">t_personnage</a>&#160;</td>
+          <td class="paramname"><em>perso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">perso</td><td>Le personnage joué </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a74668cc60bce1a5268f540ed39807c49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckUpNiveau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__personnage.html">t_personnage</a>&#160;</td>
+          <td class="paramname"><em>player</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retourne 1 si le joueur merite d'up </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player</td><td>Le joueur du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a62b75270e24333aecacfe694b871f38f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CheckVide </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si la case envoyée en paramètre est vide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>La cordonnée en x de la cellule </td></tr>
+    <tr><td class="paramname">y</td><td>La cordonnée en y de la cellule </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte du jeu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d1b684224f8b95b039d054627f9b951"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EstContenuDans </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_a_chercher</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb1</td><td>La premiere borne </td></tr>
+    <tr><td class="paramname">nb2</td><td>La seconde borne </td></tr>
+    <tr><td class="paramname">nb_a_chercher</td><td>Le nombre à vérifié </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Vrai ou faux </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

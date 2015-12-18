@@ -1,0 +1,172 @@
+\hypertarget{monstre_8h}{}\section{R√©f√©rence du fichier inc/monstre.h}
+\label{monstre_8h}\index{inc/monstre.\+h@{inc/monstre.\+h}}
+
+
+Roguelike.  
+
+
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{monstre_8h_aa7d6855c884cbbc74bdd9addd7b97e75}{}void {\bfseries Monstre\+Amorcer} ()\label{monstre_8h_aa7d6855c884cbbc74bdd9addd7b97e75}
+
+\item 
+void \hyperlink{monstre_8h_a466846e95bc17243de4e4accee6c61fc}{Monstre\+Mort} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
+\begin{DoxyCompactList}\small\item\em VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0) \end{DoxyCompactList}\item 
+void \hyperlink{monstre_8h_ae674405040c00eba8ee6289536265a83}{Monstre\+Deplacement} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, \hyperlink{structt__personnage}{t\+\_\+personnage} $\ast$perso)
+\begin{DoxyCompactList}\small\item\em DÈplacement des monstres. \end{DoxyCompactList}\item 
+void \hyperlink{monstre_8h_a8d1e859e1e8ecd83655602cdfc843a70}{Monstre\+Position\+Par\+Id} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int i, int $\ast$x, int $\ast$y)
+\begin{DoxyCompactList}\small\item\em Position du monstre par son id. \end{DoxyCompactList}\item 
+int \hyperlink{monstre_8h_ab28e6179abb160652f236ab2735aaf4a}{Monstre\+Id\+Par\+Position} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int x, int y)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}id s\textquotesingle{}il y a un monstre en position (x,y) \end{DoxyCompactList}\item 
+void \hyperlink{monstre_8h_acc2001fa802319866009289bc55f0fa7}{Monstre\+Positionner} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int monstre\+Puissance)
+\begin{DoxyCompactList}\small\item\em Positionnement des monstres alÈatoirement sur la carte. \end{DoxyCompactList}\item 
+\hypertarget{monstre_8h_af9d37bc5c6167416c2cc050472f221b8}{}void {\bfseries Monstre\+Tester} ()\label{monstre_8h_af9d37bc5c6167416c2cc050472f221b8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description d√©taill√©e}
+Roguelike. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 dÈcembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{monstre_8h_ae674405040c00eba8ee6289536265a83}{}\index{monstre.\+h@{monstre.\+h}!Monstre\+Deplacement@{Monstre\+Deplacement}}
+\index{Monstre\+Deplacement@{Monstre\+Deplacement}!monstre.\+h@{monstre.\+h}}
+\subsubsection[{Monstre\+Deplacement(t\+\_\+carte $\ast$carte, t\+\_\+personnage $\ast$perso)}]{\setlength{\rightskip}{0pt plus 5cm}void Monstre\+Deplacement (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{{\bf t\+\_\+personnage} $\ast$}]{perso}
+\end{DoxyParamCaption}
+)}\label{monstre_8h_ae674405040c00eba8ee6289536265a83}
+
+
+DÈplacement des monstres. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em perso} & La structure personnage\\
+\hline
+\end{DoxyParams}
+DÈplacement des monstres.
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em perso} & La structure personnage \\
+\hline
+\end{DoxyParams}
+\hypertarget{monstre_8h_ab28e6179abb160652f236ab2735aaf4a}{}\index{monstre.\+h@{monstre.\+h}!Monstre\+Id\+Par\+Position@{Monstre\+Id\+Par\+Position}}
+\index{Monstre\+Id\+Par\+Position@{Monstre\+Id\+Par\+Position}!monstre.\+h@{monstre.\+h}}
+\subsubsection[{Monstre\+Id\+Par\+Position(t\+\_\+carte $\ast$carte, int x, int y)}]{\setlength{\rightskip}{0pt plus 5cm}int Monstre\+Id\+Par\+Position (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{monstre_8h_ab28e6179abb160652f236ab2735aaf4a}
+
+
+Retourne l\textquotesingle{}id s\textquotesingle{}il y a un monstre en position (x,y) 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em x} & Pointeur retour position x \\
+\hline
+{\em y} & Pointeur retour position y \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+-\/1 si pas de monstre, sinon retourne l\textquotesingle{}id du monstre 
+\end{DoxyReturn}
+\hypertarget{monstre_8h_a466846e95bc17243de4e4accee6c61fc}{}\index{monstre.\+h@{monstre.\+h}!Monstre\+Mort@{Monstre\+Mort}}
+\index{Monstre\+Mort@{Monstre\+Mort}!monstre.\+h@{monstre.\+h}}
+\subsubsection[{Monstre\+Mort(t\+\_\+carte $\ast$carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Monstre\+Mort (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}\label{monstre_8h_a466846e95bc17243de4e4accee6c61fc}
+
+
+VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0) 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte\\
+\hline
+\end{DoxyParams}
+VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0)
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{monstre_8h_acc2001fa802319866009289bc55f0fa7}{}\index{monstre.\+h@{monstre.\+h}!Monstre\+Positionner@{Monstre\+Positionner}}
+\index{Monstre\+Positionner@{Monstre\+Positionner}!monstre.\+h@{monstre.\+h}}
+\subsubsection[{Monstre\+Positionner(t\+\_\+carte $\ast$carte, int monstre\+Puissance)}]{\setlength{\rightskip}{0pt plus 5cm}void Monstre\+Positionner (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{int}]{monstre\+Puissance}
+\end{DoxyParamCaption}
+)}\label{monstre_8h_acc2001fa802319866009289bc55f0fa7}
+
+
+Positionnement des monstres alÈatoirement sur la carte. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em monstre\+Puissance} & Puissance des monstres placÈs\\
+\hline
+\end{DoxyParams}
+Positionnement des monstres alÈatoirement sur la carte.
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em monstre\+Puissance} & Puissance des monstres plac√©s \\
+\hline
+\end{DoxyParams}
+\hypertarget{monstre_8h_a8d1e859e1e8ecd83655602cdfc843a70}{}\index{monstre.\+h@{monstre.\+h}!Monstre\+Position\+Par\+Id@{Monstre\+Position\+Par\+Id}}
+\index{Monstre\+Position\+Par\+Id@{Monstre\+Position\+Par\+Id}!monstre.\+h@{monstre.\+h}}
+\subsubsection[{Monstre\+Position\+Par\+Id(t\+\_\+carte $\ast$carte, int i, int $\ast$x, int $\ast$y)}]{\setlength{\rightskip}{0pt plus 5cm}void Monstre\+Position\+Par\+Id (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte, }
+\item[{int}]{i, }
+\item[{int $\ast$}]{x, }
+\item[{int $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\label{monstre_8h_a8d1e859e1e8ecd83655602cdfc843a70}
+
+
+Position du monstre par son id. 
+
+
+\begin{DoxyParams}{Param√®tres}
+{\em carte} & La structure de la carte \\
+\hline
+{\em i} & L\textquotesingle{}id du monstre \\
+\hline
+{\em x} & Pointeur retour position x \\
+\hline
+{\em y} & Pointeur retour position y \\
+\hline
+\end{DoxyParams}

@@ -1,3 +1,11 @@
+/**
+*	\file deplacement.c
+*	\brief  Roguelike
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
+
 #include "../inc/general.h"
 
 void DeplacementAmorcer(){
@@ -9,10 +17,14 @@ void DeplacementTester(int t){
 }
 
 
-/* Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué*/
+/** \fn int DeplacementMarcher(t_carte * map)
+*   \brief Deplace le personnage et retourne l'id du monstre si il y a un combat a effectué
+*   \param carte La carte du jeu
+*   \return integer L'id du mob / -1 / -2
+*/
 int DeplacementMarcher(t_carte * map){
     char cmd_move;
-	
+
 	printf("Saisir un deplacement : ");
     scanf(" %1c",&cmd_move);
     printf("\n");

@@ -1,3 +1,11 @@
+/**
+ \file check.c
+ \brief  Roguelike
+ \author Tony Marteau, Dimitri Bernot, Marvin Jean
+ \version 1.0.0
+ \date 18 décembre 2015
+ */
+
 #include "../inc/general.h"
 
 void CheckAmorcer(){
@@ -7,7 +15,8 @@ void CheckAmorcer(){
 void CheckTester(){
 
 }
-/** \brief Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus)
+/** \fn int EstContenuDans(int nb1, int nb2, int nb_a_chercher)
+*   \brief Retourne 1 si le nombre donné en troisième paramètre est compris entre les deux autres nombres (inclus)
 *   \param nb1 La premiere borne
 *   \param nb2 La seconde borne
 *   \param nb_a_chercher Le nombre à vérifié
@@ -20,7 +29,8 @@ int EstContenuDans(int nb1, int nb2, int nb_a_chercher) {
 		return nb_a_chercher >= nb1 && nb_a_chercher <= nb2;
 }
 
-/** \brief Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1
+/** \fn int CheckTestPersonnage(t_personnage perso)
+*   \brief Retourne 1 si la vie du personnage est a 0 ou moins cela retourne 1
 *   \param perso Le personnage joué
 *   \return Vrai ou faux
 */
@@ -28,7 +38,8 @@ int CheckTestPersonnage(t_personnage perso){
     return (perso.stats.vie<=0);
 }
 
-/** \brief Retourne 1 si le joueur est sur une case de changement d'etage
+/** \fn int CheckTestEtage(t_carte carte)
+*   \brief Retourne 1 si le joueur est sur une case de changement d'etage
 *   \param carte La carte du jeu
 *   \return Vrai ou faux
 */
@@ -37,7 +48,8 @@ int CheckTestEtage(t_carte carte){
 }
 
 
-/** \brief Retourne 1 si il y a un monstre aux coordonnées indiqué
+/** \fn int CheckMonstre(int x,int y, t_carte carte)
+*   \brief Retourne 1 si il y a un monstre aux coordonnées indiqué
 *   \param x La cordonnée en x du monstre
 *   \param y La cordonnée en y du monstre
 *   \param carte La carte du jeu
@@ -58,7 +70,8 @@ int CheckMonstre(int x,int y, t_carte carte){
 	}
 }
 
-/** \brief Retourne 1 s'il y a un mostre en vie aux coordonénes indiquées
+/** \fn int CheckMonstreEnVieIci(int x,int y, t_carte carte)
+*   \brief Retourne 1 s'il y a un mostre en vie aux coordonénes indiquées
 *   \param x La cordonnée en x du monstre
 *   \param y La cordonnée en y du monstre
 *   \param carte La carte du jeu
@@ -78,7 +91,8 @@ int CheckMonstreEnVieIci(int x,int y, t_carte carte) {
 	}
 }
 
-/** \brief Retourne 1 si il y a un mur au coordonné saisie
+/** \fn int CheckMur(int x,int y, t_carte carte)
+*   \brief Retourne 1 si il y a un mur au coordonné saisie
 *   \param x La cordonnée en x de la cellule
 *   \param y La cordonnée en y de la cellule
 *   \param carte La carte du jeu
@@ -92,7 +106,8 @@ int CheckMur(int x,int y, t_carte carte){
 	}
 }
 
-/** \brief Retourne 1 si le monstre est en vie par rapport a son ID
+/** \fn int CheckMonstreVie(int idMob,t_carte carte)
+*   \brief Retourne 1 si le monstre est en vie par rapport a son ID
 *   \param idMob L'ID du monstre
 *   \param carte La carte du jeu
 *   \return Vrai ou faux
@@ -101,7 +116,8 @@ int CheckMonstreVie(int idMob,t_carte carte){
 	return (carte.monstre[idMob].monstreVie>0);
 }
 
-/** \brief Retourne 1 si il y a un chemin au coordonné saisie
+/** \fn int CheckChemin(int x,int y, t_carte carte)
+*   \brief Retourne 1 si il y a un chemin au coordonné saisie
 *   \param x La cordonnée en x de la cellule
 *   \param y La cordonnée en y de la cellule
 *   \param carte La carte du jeu
