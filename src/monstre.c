@@ -8,6 +8,11 @@ void MonstreInitialiser(){
     
 }
 
+/** \brief Attaque du joueur par le monstre
+*   \param perso La structure personnage
+*   \param carte La structure de la carte
+*   \param i L'id du monstre qui inflige les dégats
+*/
 void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
 // Attaque du joueur par le monstre
 {    
@@ -24,6 +29,10 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
 	}
 }
 
+
+/** \brief Vérification de la vie de tout les monstres, si mort ils sont placés en (0,0)
+*   \param carte La structure de la carte
+*/
 void MonstreMort(t_carte * carte)
 {
 	int i;
@@ -38,6 +47,11 @@ void MonstreMort(t_carte * carte)
      }
 }
 
+
+/** \brief Déplacement des monstres
+*   \param carte La structure de la carte
+*   \param perso La structure personnage
+*/
 void MonstreDeplacement(t_carte * carte, t_personnage * perso)
 // Déplacement monstre en fonction du joueur
 {
@@ -199,6 +213,13 @@ void MonstreDeplacement(t_carte * carte, t_personnage * perso)
      }
 }
 
+
+/** \brief Position du monstre par son id
+*   \param carte La structure de la carte
+*   \param i L'id du monstre
+*   \param x Pointeur retour position x
+*   \param y Pointeur retour position y
+*/
 void MonstrePositionParId(t_carte * carte, int i, int * x, int * y)
 // Recupere l'adresse du monstre par ID
 {
@@ -206,6 +227,13 @@ void MonstrePositionParId(t_carte * carte, int i, int * x, int * y)
     *y=carte->monstre[i].monstrePos.y;
 }
 
+
+/** \brief Retourne l'id s'il y a un monstre en position (x,y)
+*   \param carte La structure de la carte
+*   \param x Pointeur retour position x
+*   \param y Pointeur retour position y
+*   \return -1 si pas de monstre, sinon retourne l'id du monstre
+*/
 int MonstreIdParPosition(t_carte * carte, int x, int y)
 // Retourne l'ID du monstre s'il y en a un a la position
 {
@@ -220,6 +248,10 @@ int MonstreIdParPosition(t_carte * carte, int x, int y)
     return -1;
 }
 
+/** \brief Positionnement des monstres aléatoirement sur la carte
+*   \param carte La structure de la carte
+*   \param monstrePuissance Puissance des monstres placés
+*/
 void MonstrePositionner(t_carte * carte, int monstrePuissance)
 // Positionnement du monstre dans les salles
 {

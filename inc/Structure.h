@@ -9,7 +9,7 @@
 #ifndef _Structure_h
 #define _Structure_h
 #define SALLES_MAX_X    3
-#define SALLES_MAX_Y    6
+#define SALLES_MAX_Y    14
 #define TAILLE_SALLE_X  15
 #define TAILLE_SALLE_Y  15
 #define TAILLE_CARTE_X  TAILLE_SALLE_X * SALLES_MAX_X
