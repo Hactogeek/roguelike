@@ -1,4 +1,4 @@
-/**
+﻿/**
  \file monstre.c
  \brief  Fonction de gestion des monstres
  \author Tony Marteau, Dimitri Bernot, Marvin Jean

@@ -1,4 +1,4 @@
-#include "../inc/general.h"
+﻿#include "../inc/general.h"
 
 void clearBuffer()
 {

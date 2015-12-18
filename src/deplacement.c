@@ -1,4 +1,4 @@
-/**
+﻿/**
 *	\file deplacement.c
 *	\brief  Deplacement du joueur
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean

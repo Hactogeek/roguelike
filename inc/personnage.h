@@ -1,9 +1,9 @@
-/**
+ï»¿/**
 *	\file personnage.h
 *	\brief  Prototype des fonctions pour le personnage
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
 *	\version 1.0.0
-*	\date 18 décembre 2015
+*	\date 18 dÃ©cembre 2015
 */
 
 void PersonnagePositionner(t_carte * carte);/**<Cherche un endroit pour placer le personnage dans une salle*/
@@ -26,5 +26,5 @@ void PersonnageAfficher(t_personnage perso);/**<Affiche les parametre du player*
 
 void PersonnageSauvegarder(t_personnage * perso);
 
-void PersonnageLevelUp(t_personnage * player);/**<Fait passer le player d'un niveau et increment ses paramètres*/
+void PersonnageLevelUp(t_personnage * player);/**<Fait passer le player d'un niveau et increment ses paramÃ¨tres*/
 void PersonnageAfficherPseudo(t_personnage player);/**<Affiche le pseudo en couleur du player */

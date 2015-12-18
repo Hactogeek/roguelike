@@ -1,4 +1,4 @@
-/**
+﻿/**
  \file check.c
  \brief  Fichier avec fonctions de vérifications
  \author Tony Marteau, Dimitri Bernot, Marvin Jean

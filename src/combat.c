@@ -1,4 +1,4 @@
-/**
+﻿/**
 *	\file combat.c
 *	\brief  Combats Joueur->Monstre
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean
