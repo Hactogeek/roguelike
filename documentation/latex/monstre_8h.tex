@@ -2,7 +2,7 @@
 \label{monstre_8h}\index{inc/monstre.\+h@{inc/monstre.\+h}}
 
 
-Roguelike.  
+Prototype fonction monstre.  
 
 
 \subsection*{Fonctions}
@@ -12,22 +12,22 @@ Roguelike.
 
 \item 
 void \hyperlink{monstre_8h_a466846e95bc17243de4e4accee6c61fc}{Monstre\+Mort} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
-\begin{DoxyCompactList}\small\item\em VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em V√©rification de la vie de tout les monstres, si mort ils sont plac√©s en (0,0) \end{DoxyCompactList}\item 
 void \hyperlink{monstre_8h_ae674405040c00eba8ee6289536265a83}{Monstre\+Deplacement} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, \hyperlink{structt__personnage}{t\+\_\+personnage} $\ast$perso)
-\begin{DoxyCompactList}\small\item\em DÈplacement des monstres. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em D√©placement des monstres. \end{DoxyCompactList}\item 
 void \hyperlink{monstre_8h_a8d1e859e1e8ecd83655602cdfc843a70}{Monstre\+Position\+Par\+Id} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int i, int $\ast$x, int $\ast$y)
 \begin{DoxyCompactList}\small\item\em Position du monstre par son id. \end{DoxyCompactList}\item 
 int \hyperlink{monstre_8h_ab28e6179abb160652f236ab2735aaf4a}{Monstre\+Id\+Par\+Position} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int x, int y)
 \begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}id s\textquotesingle{}il y a un monstre en position (x,y) \end{DoxyCompactList}\item 
 void \hyperlink{monstre_8h_acc2001fa802319866009289bc55f0fa7}{Monstre\+Positionner} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte, int monstre\+Puissance)
-\begin{DoxyCompactList}\small\item\em Positionnement des monstres alÈatoirement sur la carte. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Positionnement des monstres al√©atoirement sur la carte. \end{DoxyCompactList}\item 
 \hypertarget{monstre_8h_af9d37bc5c6167416c2cc050472f221b8}{}void {\bfseries Monstre\+Tester} ()\label{monstre_8h_af9d37bc5c6167416c2cc050472f221b8}
 
 \end{DoxyCompactItemize}
 
 
 \subsection{Description d√©taill√©e}
-Roguelike. 
+Prototype fonction monstre. 
 
 \begin{DoxyAuthor}{Auteur}
 Tony Marteau, Dimitri Bernot, Marvin Jean 
@@ -36,7 +36,7 @@ Tony Marteau, Dimitri Bernot, Marvin Jean
 1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-18 dÈcembre 2015 
+18 d√©cembre 2015 
 \end{DoxyDate}
 
 
@@ -51,16 +51,7 @@ Tony Marteau, Dimitri Bernot, Marvin Jean
 )}\label{monstre_8h_ae674405040c00eba8ee6289536265a83}
 
 
-DÈplacement des monstres. 
-
-
-\begin{DoxyParams}{Param√®tres}
-{\em carte} & La structure de la carte \\
-\hline
-{\em perso} & La structure personnage\\
-\hline
-\end{DoxyParams}
-DÈplacement des monstres.
+D√©placement des monstres. 
 
 
 \begin{DoxyParams}{Param√®tres}
@@ -103,14 +94,7 @@ Retourne l\textquotesingle{}id s\textquotesingle{}il y a un monstre en position 
 )}\label{monstre_8h_a466846e95bc17243de4e4accee6c61fc}
 
 
-VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0) 
-
-
-\begin{DoxyParams}{Param√®tres}
-{\em carte} & La structure de la carte\\
-\hline
-\end{DoxyParams}
-VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0)
+V√©rification de la vie de tout les monstres, si mort ils sont plac√©s en (0,0) 
 
 
 \begin{DoxyParams}{Param√®tres}
@@ -127,16 +111,7 @@ VÈrification de la vie de tout les monstres, si mort ils sont placÈs en (0,0)
 )}\label{monstre_8h_acc2001fa802319866009289bc55f0fa7}
 
 
-Positionnement des monstres alÈatoirement sur la carte. 
-
-
-\begin{DoxyParams}{Param√®tres}
-{\em carte} & La structure de la carte \\
-\hline
-{\em monstre\+Puissance} & Puissance des monstres placÈs\\
-\hline
-\end{DoxyParams}
-Positionnement des monstres alÈatoirement sur la carte.
+Positionnement des monstres al√©atoirement sur la carte. 
 
 
 \begin{DoxyParams}{Param√®tres}

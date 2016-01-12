@@ -2,7 +2,7 @@
 \label{deplacement_8h}\index{inc/deplacement.\+h@{inc/deplacement.\+h}}
 
 
-Roguelike.  
+Prototype donction deplacementpersonnage.  
 
 
 \subsection*{Fonctions}
@@ -14,12 +14,12 @@ Roguelike.
 \hypertarget{deplacement_8h_a9dc3142ed77e1548a9b725172eae0681}{}void {\bfseries Deplacement\+Tester} (int t)\label{deplacement_8h_a9dc3142ed77e1548a9b725172eae0681}
 
 \item 
-int \hyperlink{deplacement_8h_abd4cf56e5c0d1b4a6add0567f3eddc55}{Deplacement\+Marcher} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$map)
-\begin{DoxyCompactList}\small\item\em Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectué \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{deplacement_8h_a5712778a9b612d86a92e569cacb1391f}{Deplacement\+Marcher} (int cmd\+\_\+move, \hyperlink{structt__carte}{t\+\_\+carte} $\ast$map)
+\begin{DoxyCompactList}\small\item\em Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectuer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Roguelike. 
+Prototype donction deplacementpersonnage. 
 
 \begin{DoxyAuthor}{Auteur}
 Tony Marteau, Dimitri Bernot, Marvin Jean 
@@ -28,24 +28,29 @@ Tony Marteau, Dimitri Bernot, Marvin Jean
 1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-18 d�cembre 2015 
+18 decembre 2015 
 \end{DoxyDate}
 
 
 \subsection{Documentation des fonctions}
-\hypertarget{deplacement_8h_abd4cf56e5c0d1b4a6add0567f3eddc55}{}\index{deplacement.\+h@{deplacement.\+h}!Deplacement\+Marcher@{Deplacement\+Marcher}}
+\hypertarget{deplacement_8h_a5712778a9b612d86a92e569cacb1391f}{}\index{deplacement.\+h@{deplacement.\+h}!Deplacement\+Marcher@{Deplacement\+Marcher}}
 \index{Deplacement\+Marcher@{Deplacement\+Marcher}!deplacement.\+h@{deplacement.\+h}}
-\subsubsection[{Deplacement\+Marcher(t\+\_\+carte $\ast$map)}]{\setlength{\rightskip}{0pt plus 5cm}int Deplacement\+Marcher (
+\subsubsection[{Deplacement\+Marcher(int cmd\+\_\+move, t\+\_\+carte $\ast$map)}]{\setlength{\rightskip}{0pt plus 5cm}int Deplacement\+Marcher (
 \begin{DoxyParamCaption}
+\item[{int}]{cmd\+\_\+move, }
 \item[{{\bf t\+\_\+carte} $\ast$}]{map}
 \end{DoxyParamCaption}
-)}\label{deplacement_8h_abd4cf56e5c0d1b4a6add0567f3eddc55}
+)}\label{deplacement_8h_a5712778a9b612d86a92e569cacb1391f}
 
 
-Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectué 
+Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectuer. 
+
+Deplace le personnage et retourne l\textquotesingle{}id du monstre si il y a un combat a effectue
 
 
 \begin{DoxyParams}{Paramètres}
+{\em cmd\+\_\+move} & Le déplacement à effectuer \\
+\hline
 {\em carte} & La carte du jeu \\
 \hline
 \end{DoxyParams}

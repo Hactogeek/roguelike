@@ -1,4 +1,4 @@
-/**
+﻿/**
 *	\file carte.c
 *	\brief  Fichier de génération et gestion de la carte
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean

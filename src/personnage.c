@@ -1,4 +1,4 @@
-/**
+﻿/**
 *	\file combat.c
 *	\brief  Roguelike
 *	\author Tony Marteau, Dimitri Bernot, Marvin Jean

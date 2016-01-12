@@ -92,56 +92,391 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Roguelike.  
+<p>Protoype fonction carte.  
 <a href="#details">Plus de détails...</a></p>
 
 <p><a href="carte_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a1569148bfc521aa409cc260c84b89cb1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1569148bfc521aa409cc260c84b89cb1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CarteInitialiser</b> (<a class="el" href="structt__carte.html">t_carte</a> *carteGrille)</td></tr>
+<tr class="memitem:a1569148bfc521aa409cc260c84b89cb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a1569148bfc521aa409cc260c84b89cb1">CarteInitialiser</a> (<a class="el" href="structt__carte.html">t_carte</a> *carteGrille)</td></tr>
+<tr class="memdesc:a1569148bfc521aa409cc260c84b89cb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la carte donnée en paramètre en remplissant sa grille de 0.  <a href="#a1569148bfc521aa409cc260c84b89cb1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a1569148bfc521aa409cc260c84b89cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24d4914a48ae016d615f29315abe634b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24d4914a48ae016d615f29315abe634b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CarteAmorcer</b> ()</td></tr>
-<tr class="separator:a24d4914a48ae016d615f29315abe634b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a992fb6649c407d561f5912b050dc468b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a992fb6649c407d561f5912b050dc468b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>SallesPossiblesCompter</b> (FILE *carteFichier)</td></tr>
+<tr class="memitem:a992fb6649c407d561f5912b050dc468b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a992fb6649c407d561f5912b050dc468b">SallesPossiblesCompter</a> (FILE *carteFichier)</td></tr>
+<tr class="memdesc:a992fb6649c407d561f5912b050dc468b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retoure le nombre de salles différentes comptées dans le fichier donné en paramètre.  <a href="#a992fb6649c407d561f5912b050dc468b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a992fb6649c407d561f5912b050dc468b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ca1e63b7ad032ce15a3bc1318cc682"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15ca1e63b7ad032ce15a3bc1318cc682"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PorteInitialiser</b> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memitem:a15ca1e63b7ad032ce15a3bc1318cc682"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a15ca1e63b7ad032ce15a3bc1318cc682">PorteInitialiser</a> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memdesc:a15ca1e63b7ad032ce15a3bc1318cc682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le tableau des portes en le remplissant de 0.  <a href="#a15ca1e63b7ad032ce15a3bc1318cc682">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a15ca1e63b7ad032ce15a3bc1318cc682"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19629d269516aeccbfb2e9b83512348d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19629d269516aeccbfb2e9b83512348d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PortePlacer</b> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memitem:a19629d269516aeccbfb2e9b83512348d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a19629d269516aeccbfb2e9b83512348d">PortePlacer</a> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memdesc:a19629d269516aeccbfb2e9b83512348d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place toutes les portes possibles et logiques.  <a href="#a19629d269516aeccbfb2e9b83512348d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a19629d269516aeccbfb2e9b83512348d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cae0e717a406da2f2f48750ef46711f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cae0e717a406da2f2f48750ef46711f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PorteRetirer</b> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memitem:a0cae0e717a406da2f2f48750ef46711f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a0cae0e717a406da2f2f48750ef46711f">PorteRetirer</a> (<a class="el" href="structt__porte.html">t_porte</a> porte[SALLES_MAX_X][SALLES_MAX_Y])</td></tr>
+<tr class="memdesc:a0cae0e717a406da2f2f48750ef46711f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retire certaines portes choisies de manière aléatoire.  <a href="#a0cae0e717a406da2f2f48750ef46711f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a0cae0e717a406da2f2f48750ef46711f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3efd02349864176b4d5561b13175bcb9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3efd02349864176b4d5561b13175bcb9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ObstaclesPlacer</b> (int nb_salles_x, int nb_salles_y, <a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memitem:a3efd02349864176b4d5561b13175bcb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a3efd02349864176b4d5561b13175bcb9">ObstaclesPlacer</a> (int nb_salles_x, int nb_salles_y, <a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memdesc:a3efd02349864176b4d5561b13175bcb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place un obstacle dans une salle donnée.  <a href="#a3efd02349864176b4d5561b13175bcb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3efd02349864176b4d5561b13175bcb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c292ac9a739bb50eb30b8e680a15b41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c292ac9a739bb50eb30b8e680a15b41"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EscalierChoix</b> (<a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memitem:a8c292ac9a739bb50eb30b8e680a15b41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a8c292ac9a739bb50eb30b8e680a15b41">EscalierChoix</a> (<a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memdesc:a8c292ac9a739bb50eb30b8e680a15b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choisi l'emplacement de l'escalier et le place à cet endroit de la carte, en s'assurant que ce soit bien dans une salle et non voisin d'un chemin.  <a href="#a8c292ac9a739bb50eb30b8e680a15b41">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a8c292ac9a739bb50eb30b8e680a15b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af124fec7c7d1d1d607f11e0ff6c6fa9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af124fec7c7d1d1d607f11e0ff6c6fa9b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MatriceAfficher</b> (int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y])</td></tr>
+<tr class="memitem:af124fec7c7d1d1d607f11e0ff6c6fa9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#af124fec7c7d1d1d607f11e0ff6c6fa9b">MatriceAfficher</a> (int matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y])</td></tr>
+<tr class="memdesc:af124fec7c7d1d1d607f11e0ff6c6fa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la carte sous sa forme de matrice.  <a href="#af124fec7c7d1d1d607f11e0ff6c6fa9b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af124fec7c7d1d1d607f11e0ff6c6fa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a675d31944fb0a3102c81c7d9bba6fb77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a675d31944fb0a3102c81c7d9bba6fb77"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CarteAfficher</b> (<a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memitem:a199f7607ab808f994c6c627b8dc0c03b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a199f7607ab808f994c6c627b8dc0c03b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a199f7607ab808f994c6c627b8dc0c03b">VideAfficher</a> ()</td></tr>
+<tr class="memdesc:a199f7607ab808f994c6c627b8dc0c03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher le vide contenu dans la carte. <br /></td></tr>
+<tr class="separator:a199f7607ab808f994c6c627b8dc0c03b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd0758f5277dfa38fcb8046aa02b2bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a0fd0758f5277dfa38fcb8046aa02b2bc">MurAfficher</a> (int i, int j, <a class="el" href="structt__carte.html">t_carte</a> carte)</td></tr>
+<tr class="memdesc:a0fd0758f5277dfa38fcb8046aa02b2bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher un mur en fonction des salles l'entourant.  <a href="#a0fd0758f5277dfa38fcb8046aa02b2bc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0fd0758f5277dfa38fcb8046aa02b2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8721730652876fefe41a0843c815885a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8721730652876fefe41a0843c815885a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a8721730652876fefe41a0843c815885a">SolAfficher</a> ()</td></tr>
+<tr class="memdesc:a8721730652876fefe41a0843c815885a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher le sol contenu dans la carte. <br /></td></tr>
+<tr class="separator:a8721730652876fefe41a0843c815885a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f1e3c6d595fea2c5fad4b4ad416041"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87f1e3c6d595fea2c5fad4b4ad416041"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a87f1e3c6d595fea2c5fad4b4ad416041">CheminAfficher</a> ()</td></tr>
+<tr class="memdesc:a87f1e3c6d595fea2c5fad4b4ad416041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher le chemin contenu dans la carte. <br /></td></tr>
+<tr class="separator:a87f1e3c6d595fea2c5fad4b4ad416041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23600a1b85af1ba155e57ae51c606c06"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23600a1b85af1ba155e57ae51c606c06"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a23600a1b85af1ba155e57ae51c606c06">EscalierAfficher</a> ()</td></tr>
+<tr class="memdesc:a23600a1b85af1ba155e57ae51c606c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher l'escalier contenu dans la carte. <br /></td></tr>
+<tr class="separator:a23600a1b85af1ba155e57ae51c606c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cce4b7b57eeca65dd034c7e110d5a41"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cce4b7b57eeca65dd034c7e110d5a41"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a8cce4b7b57eeca65dd034c7e110d5a41">ObstacleAfficher</a> ()</td></tr>
+<tr class="memdesc:a8cce4b7b57eeca65dd034c7e110d5a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher l'obstacle contenu dans la carte. <br /></td></tr>
+<tr class="separator:a8cce4b7b57eeca65dd034c7e110d5a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675d31944fb0a3102c81c7d9bba6fb77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#a675d31944fb0a3102c81c7d9bba6fb77">CarteAfficher</a> (<a class="el" href="structt__carte.html">t_carte</a> *carte)</td></tr>
+<tr class="memdesc:a675d31944fb0a3102c81c7d9bba6fb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet d'afficher la carte complète, comme vue sur la console.  <a href="#a675d31944fb0a3102c81c7d9bba6fb77">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a675d31944fb0a3102c81c7d9bba6fb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d5b359485adc01ede046b1fd03b1f08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d5b359485adc01ede046b1fd03b1f08"></a>
-<a class="el" href="structt__carte.html">t_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CarteCharger</b> ()</td></tr>
-<tr class="separator:a6d5b359485adc01ede046b1fd03b1f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad821349cb0a31fd5405215cc9d1ba052"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad821349cb0a31fd5405215cc9d1ba052"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CarteTester</b> (int test)</td></tr>
-<tr class="separator:ad821349cb0a31fd5405215cc9d1ba052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6d58b505a3ca32898f7cd7d63ad44d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="carte_8h.html#af6d58b505a3ca32898f7cd7d63ad44d9">CarteCreer</a> ()</td></tr>
+<tr class="memdesc:af6d58b505a3ca32898f7cd7d63ad44d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de creer une carte a partir d'un fichier contenant des paterns.  <a href="#af6d58b505a3ca32898f7cd7d63ad44d9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af6d58b505a3ca32898f7cd7d63ad44d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Roguelike. </p>
+<div class="textblock"><p>Protoype fonction carte. </p>
 <dl class="section author"><dt>Auteur</dt><dd>Tony Marteau, Dimitri Bernot, Marvin Jean </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>18 d�cembre 2015 </dd></dl>
-</div></div><!-- contents -->
+<dl class="section date"><dt>Date</dt><dd>18 decembre 2015 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a675d31944fb0a3102c81c7d9bba6fb77"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CarteAfficher </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet d'afficher la carte complète, comme vue sur la console. </p>
+<p>Permet d'afficher la carte complete, comme vue sur la console.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte à afficher</td></tr>
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte a afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af6d58b505a3ca32898f7cd7d63ad44d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structt__carte.html">t_carte</a> CarteCreer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet de creer une carte a partir d'un fichier contenant des paterns. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La carte ainsi cree </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1569148bfc521aa409cc260c84b89cb1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CarteInitialiser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise la carte donnée en paramètre en remplissant sa grille de 0. </p>
+<p>Initialise la carte donnee en parametre en remplissant sa grille de 0.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8c292ac9a739bb50eb30b8e680a15b41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EscalierChoix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
+          <td class="paramname"><em>carte</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Choisi l'emplacement de l'escalier et le place à cet endroit de la carte, en s'assurant que ce soit bien dans une salle et non voisin d'un chemin. </p>
+<p>Choisi l'emplacement de l'escalier et le place e cet endroit de la carte, en s'assurant que ce soit bien dans une salle et non voisin d'un chemin.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af124fec7c7d1d1d607f11e0ff6c6fa9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatriceAfficher </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>matrice</em>[TAILLE_CARTE_X][TAILLE_CARTE_Y]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la carte sous sa forme de matrice. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]</td><td>La matrice à afficher</td></tr>
+    <tr><td class="paramname">matrice[TAILLE_CARTE_X][TAILLE_CARTE_Y]</td><td>La matrice e afficher </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0fd0758f5277dfa38fcb8046aa02b2bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurAfficher </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a>&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet d'afficher un mur en fonction des salles l'entourant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>La coordonnée en ordonnée de la case contenant le mur </td></tr>
+    <tr><td class="paramname">j</td><td>La coordonnée en abscisse de la case contenant le mur </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte</td></tr>
+    <tr><td class="paramname">i</td><td>La coordonnee en ordonnee de la case contenant le mur </td></tr>
+    <tr><td class="paramname">j</td><td>La coordonnee en abscisse de la case contenant le mur </td></tr>
+    <tr><td class="paramname">carte</td><td>La carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a3efd02349864176b4d5561b13175bcb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObstaclesPlacer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_salles_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_salles_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structt__carte.html">t_carte</a> *&#160;</td>
+          <td class="paramname"><em>carte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place un obstacle dans une salle donnée. </p>
+<p>Place un obstacle dans une salle donnee.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nb_salles_x</td><td>La coordonnée en ordonnée de la salle </td></tr>
+    <tr><td class="paramname">nb_salles_y</td><td>La coordonnée en abscisse de la salle </td></tr>
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte</td></tr>
+    <tr><td class="paramname">nb_salles_x</td><td>La coordonnee en ordonnee de la salle </td></tr>
+    <tr><td class="paramname">nb_salles_y</td><td>La coordonnee en abscisse de la salle </td></tr>
+    <tr><td class="paramname">*carte</td><td>L'adresse de la carte </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a15ca1e63b7ad032ce15a3bc1318cc682"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PorteInitialiser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__porte.html">t_porte</a>&#160;</td>
+          <td class="paramname"><em>porte</em>[SALLES_MAX_X][SALLES_MAX_Y]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise le tableau des portes en le remplissant de 0. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">porte[SALLES_MAX_X][SALLES_MAX_Y]</td><td>Le tableau contenant les portes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a19629d269516aeccbfb2e9b83512348d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PortePlacer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__porte.html">t_porte</a>&#160;</td>
+          <td class="paramname"><em>porte</em>[SALLES_MAX_X][SALLES_MAX_Y]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Place toutes les portes possibles et logiques. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">porte[SALLES_MAX_X][SALLES_MAX_Y]</td><td>Le tableau contenant les portes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0cae0e717a406da2f2f48750ef46711f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PorteRetirer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__porte.html">t_porte</a>&#160;</td>
+          <td class="paramname"><em>porte</em>[SALLES_MAX_X][SALLES_MAX_Y]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retire certaines portes choisies de manière aléatoire. </p>
+<p>Retire certaines portes choisies de maniere aleatoire.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">porte[SALLES_MAX_X][SALLES_MAX_Y]</td><td>Le tableau contenant les portes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a992fb6649c407d561f5912b050dc468b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SallesPossiblesCompter </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>carteFichier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retoure le nombre de salles différentes comptées dans le fichier donné en paramètre. </p>
+<p>Retoure le nombre de salles differentes comptees dans le fichier donne en param�tre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*carteFichier</td><td>Le fichier contenant les différents paterns de salles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de paterns différents</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*carteFichier</td><td>Le fichier contenant les differents paterns de salles </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de paterns differents </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">

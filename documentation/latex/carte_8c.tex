@@ -1,0 +1,290 @@
+\hypertarget{carte_8c}{}\section{Référence du fichier src/carte.c}
+\label{carte_8c}\index{src/carte.\+c@{src/carte.\+c}}
+
+
+Fichier de génération et gestion de la carte.  
+
+
+{\ttfamily \#include \char`\"{}../inc/general.\+h\char`\"{}}\\*
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{carte_8c_a8675becf0d30b7445e43f8c4357425bc}{Carte\+Initialiser} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
+\begin{DoxyCompactList}\small\item\em Initialise la carte donnée en paramètre en remplissant sa grille de 0. \end{DoxyCompactList}\item 
+int \hyperlink{carte_8c_a992fb6649c407d561f5912b050dc468b}{Salles\+Possibles\+Compter} (F\+I\+L\+E $\ast$carte\+Fichier)
+\begin{DoxyCompactList}\small\item\em Retoure le nombre de salles différentes comptées dans le fichier donné en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a15ca1e63b7ad032ce15a3bc1318cc682}{Porte\+Initialiser} (\hyperlink{structt__porte}{t\+\_\+porte} porte\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialise le tableau des portes en le remplissant de 0. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a19629d269516aeccbfb2e9b83512348d}{Porte\+Placer} (\hyperlink{structt__porte}{t\+\_\+porte} porte\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]})
+\begin{DoxyCompactList}\small\item\em Place toutes les portes possibles et logiques. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a0cae0e717a406da2f2f48750ef46711f}{Porte\+Retirer} (\hyperlink{structt__porte}{t\+\_\+porte} porte\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]})
+\begin{DoxyCompactList}\small\item\em Retire certaines portes choisies de manière aléatoire. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a3efd02349864176b4d5561b13175bcb9}{Obstacles\+Placer} (int nb\+\_\+salles\+\_\+x, int nb\+\_\+salles\+\_\+y, \hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
+\begin{DoxyCompactList}\small\item\em Place un obstacle dans une salle donnée. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a8c292ac9a739bb50eb30b8e680a15b41}{Escalier\+Choix} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
+\begin{DoxyCompactList}\small\item\em Choisi l\textquotesingle{}emplacement de l\textquotesingle{}escalier et le place à cet endroit de la carte, en s\textquotesingle{}assurant que ce soit bien dans une salle et non voisin d\textquotesingle{}un chemin. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_af124fec7c7d1d1d607f11e0ff6c6fa9b}{Matrice\+Afficher} (int matrice\mbox{[}T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X\mbox{]}\mbox{[}T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y\mbox{]})
+\begin{DoxyCompactList}\small\item\em Affiche la carte sous sa forme de matrice. \end{DoxyCompactList}\item 
+\hypertarget{carte_8c_a199f7607ab808f994c6c627b8dc0c03b}{}void \hyperlink{carte_8c_a199f7607ab808f994c6c627b8dc0c03b}{Vide\+Afficher} ()\label{carte_8c_a199f7607ab808f994c6c627b8dc0c03b}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le vide contenu dans la carte. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a0fd0758f5277dfa38fcb8046aa02b2bc}{Mur\+Afficher} (int i, int j, \hyperlink{structt__carte}{t\+\_\+carte} carte)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher un mur en fonction des salles l\textquotesingle{}entourant. \end{DoxyCompactList}\item 
+\hypertarget{carte_8c_a8721730652876fefe41a0843c815885a}{}void \hyperlink{carte_8c_a8721730652876fefe41a0843c815885a}{Sol\+Afficher} ()\label{carte_8c_a8721730652876fefe41a0843c815885a}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le sol contenu dans la carte. \end{DoxyCompactList}\item 
+\hypertarget{carte_8c_a87f1e3c6d595fea2c5fad4b4ad416041}{}void \hyperlink{carte_8c_a87f1e3c6d595fea2c5fad4b4ad416041}{Chemin\+Afficher} ()\label{carte_8c_a87f1e3c6d595fea2c5fad4b4ad416041}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher le chemin contenu dans la carte. \end{DoxyCompactList}\item 
+\hypertarget{carte_8c_a23600a1b85af1ba155e57ae51c606c06}{}void \hyperlink{carte_8c_a23600a1b85af1ba155e57ae51c606c06}{Escalier\+Afficher} ()\label{carte_8c_a23600a1b85af1ba155e57ae51c606c06}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher l\textquotesingle{}escalier contenu dans la carte. \end{DoxyCompactList}\item 
+\hypertarget{carte_8c_a8cce4b7b57eeca65dd034c7e110d5a41}{}void \hyperlink{carte_8c_a8cce4b7b57eeca65dd034c7e110d5a41}{Obstacle\+Afficher} ()\label{carte_8c_a8cce4b7b57eeca65dd034c7e110d5a41}
+
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher l\textquotesingle{}obstacle contenu dans la carte. \end{DoxyCompactList}\item 
+void \hyperlink{carte_8c_a675d31944fb0a3102c81c7d9bba6fb77}{Carte\+Afficher} (\hyperlink{structt__carte}{t\+\_\+carte} $\ast$carte)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}afficher la carte complète, comme vue sur la console. \end{DoxyCompactList}\item 
+\hyperlink{structt__carte}{t\+\_\+carte} \hyperlink{carte_8c_a73e584f4cd750d1cefb539b2411de270}{Carte\+Creer} ()
+\begin{DoxyCompactList}\small\item\em Permet de creer une carte a partir d\textquotesingle{}un fichier contenant des paterns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier de génération et gestion de la carte. 
+
+\begin{DoxyAuthor}{Auteur}
+Tony Marteau, Dimitri Bernot, Marvin Jean 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18 décembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{carte_8c_a675d31944fb0a3102c81c7d9bba6fb77}{}\index{carte.\+c@{carte.\+c}!Carte\+Afficher@{Carte\+Afficher}}
+\index{Carte\+Afficher@{Carte\+Afficher}!carte.\+c@{carte.\+c}}
+\subsubsection[{Carte\+Afficher(t\+\_\+carte $\ast$carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Carte\+Afficher (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a675d31944fb0a3102c81c7d9bba6fb77}
+
+
+Permet d\textquotesingle{}afficher la carte complète, comme vue sur la console. 
+
+Permet d\textquotesingle{}afficher la carte complete, comme vue sur la console.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte à afficher\\
+\hline
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte a afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a73e584f4cd750d1cefb539b2411de270}{}\index{carte.\+c@{carte.\+c}!Carte\+Creer@{Carte\+Creer}}
+\index{Carte\+Creer@{Carte\+Creer}!carte.\+c@{carte.\+c}}
+\subsubsection[{Carte\+Creer()}]{\setlength{\rightskip}{0pt plus 5cm}void Carte\+Creer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a73e584f4cd750d1cefb539b2411de270}
+
+
+Permet de creer une carte a partir d\textquotesingle{}un fichier contenant des paterns. 
+
+\begin{DoxyReturn}{Renvoie}
+La carte ainsi cree 
+\end{DoxyReturn}
+\hypertarget{carte_8c_a8675becf0d30b7445e43f8c4357425bc}{}\index{carte.\+c@{carte.\+c}!Carte\+Initialiser@{Carte\+Initialiser}}
+\index{Carte\+Initialiser@{Carte\+Initialiser}!carte.\+c@{carte.\+c}}
+\subsubsection[{Carte\+Initialiser(t\+\_\+carte $\ast$carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Carte\+Initialiser (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a8675becf0d30b7445e43f8c4357425bc}
+
+
+Initialise la carte donnée en paramètre en remplissant sa grille de 0. 
+
+Initialise la carte donnee en parametre en remplissant sa grille de 0.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a8c292ac9a739bb50eb30b8e680a15b41}{}\index{carte.\+c@{carte.\+c}!Escalier\+Choix@{Escalier\+Choix}}
+\index{Escalier\+Choix@{Escalier\+Choix}!carte.\+c@{carte.\+c}}
+\subsubsection[{Escalier\+Choix(t\+\_\+carte $\ast$carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Escalier\+Choix (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a8c292ac9a739bb50eb30b8e680a15b41}
+
+
+Choisi l\textquotesingle{}emplacement de l\textquotesingle{}escalier et le place à cet endroit de la carte, en s\textquotesingle{}assurant que ce soit bien dans une salle et non voisin d\textquotesingle{}un chemin. 
+
+Choisi l\textquotesingle{}emplacement de l\textquotesingle{}escalier et le place e cet endroit de la carte, en s\textquotesingle{}assurant que ce soit bien dans une salle et non voisin d\textquotesingle{}un chemin.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_af124fec7c7d1d1d607f11e0ff6c6fa9b}{}\index{carte.\+c@{carte.\+c}!Matrice\+Afficher@{Matrice\+Afficher}}
+\index{Matrice\+Afficher@{Matrice\+Afficher}!carte.\+c@{carte.\+c}}
+\subsubsection[{Matrice\+Afficher(int matrice[T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X][T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y])}]{\setlength{\rightskip}{0pt plus 5cm}void Matrice\+Afficher (
+\begin{DoxyParamCaption}
+\item[{int}]{matrice\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{carte_8c_af124fec7c7d1d1d607f11e0ff6c6fa9b}
+
+
+Affiche la carte sous sa forme de matrice. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y\mbox{]}} & La matrice à afficher\\
+\hline
+{\em matrice\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+X\mbox{]}\mbox{[}\+T\+A\+I\+L\+L\+E\+\_\+\+C\+A\+R\+T\+E\+\_\+\+Y\mbox{]}} & La matrice e afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a0fd0758f5277dfa38fcb8046aa02b2bc}{}\index{carte.\+c@{carte.\+c}!Mur\+Afficher@{Mur\+Afficher}}
+\index{Mur\+Afficher@{Mur\+Afficher}!carte.\+c@{carte.\+c}}
+\subsubsection[{Mur\+Afficher(int i, int j, t\+\_\+carte carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\+Afficher (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{{\bf t\+\_\+carte}}]{carte}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a0fd0758f5277dfa38fcb8046aa02b2bc}
+
+
+Permet d\textquotesingle{}afficher un mur en fonction des salles l\textquotesingle{}entourant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em i} & La coordonnée en ordonnée de la case contenant le mur \\
+\hline
+{\em j} & La coordonnée en abscisse de la case contenant le mur \\
+\hline
+{\em carte} & La carte\\
+\hline
+{\em i} & La coordonnee en ordonnee de la case contenant le mur \\
+\hline
+{\em j} & La coordonnee en abscisse de la case contenant le mur \\
+\hline
+{\em carte} & La carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a3efd02349864176b4d5561b13175bcb9}{}\index{carte.\+c@{carte.\+c}!Obstacles\+Placer@{Obstacles\+Placer}}
+\index{Obstacles\+Placer@{Obstacles\+Placer}!carte.\+c@{carte.\+c}}
+\subsubsection[{Obstacles\+Placer(int nb\+\_\+salles\+\_\+x, int nb\+\_\+salles\+\_\+y, t\+\_\+carte $\ast$carte)}]{\setlength{\rightskip}{0pt plus 5cm}void Obstacles\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+salles\+\_\+x, }
+\item[{int}]{nb\+\_\+salles\+\_\+y, }
+\item[{{\bf t\+\_\+carte} $\ast$}]{carte}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a3efd02349864176b4d5561b13175bcb9}
+
+
+Place un obstacle dans une salle donnée. 
+
+Place un obstacle dans une salle donnee.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb\+\_\+salles\+\_\+x} & La coordonnée en ordonnée de la salle \\
+\hline
+{\em nb\+\_\+salles\+\_\+y} & La coordonnée en abscisse de la salle \\
+\hline
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte\\
+\hline
+{\em nb\+\_\+salles\+\_\+x} & La coordonnee en ordonnee de la salle \\
+\hline
+{\em nb\+\_\+salles\+\_\+y} & La coordonnee en abscisse de la salle \\
+\hline
+{\em $\ast$carte} & L\textquotesingle{}adresse de la carte \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a15ca1e63b7ad032ce15a3bc1318cc682}{}\index{carte.\+c@{carte.\+c}!Porte\+Initialiser@{Porte\+Initialiser}}
+\index{Porte\+Initialiser@{Porte\+Initialiser}!carte.\+c@{carte.\+c}}
+\subsubsection[{Porte\+Initialiser(t\+\_\+porte porte[S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X][S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y])}]{\setlength{\rightskip}{0pt plus 5cm}void Porte\+Initialiser (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+porte}}]{porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a15ca1e63b7ad032ce15a3bc1318cc682}
+
+
+Initialise le tableau des portes en le remplissant de 0. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}} & Le tableau contenant les portes \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a19629d269516aeccbfb2e9b83512348d}{}\index{carte.\+c@{carte.\+c}!Porte\+Placer@{Porte\+Placer}}
+\index{Porte\+Placer@{Porte\+Placer}!carte.\+c@{carte.\+c}}
+\subsubsection[{Porte\+Placer(t\+\_\+porte porte[S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X][S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y])}]{\setlength{\rightskip}{0pt plus 5cm}void Porte\+Placer (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+porte}}]{porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a19629d269516aeccbfb2e9b83512348d}
+
+
+Place toutes les portes possibles et logiques. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}} & Le tableau contenant les portes \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a0cae0e717a406da2f2f48750ef46711f}{}\index{carte.\+c@{carte.\+c}!Porte\+Retirer@{Porte\+Retirer}}
+\index{Porte\+Retirer@{Porte\+Retirer}!carte.\+c@{carte.\+c}}
+\subsubsection[{Porte\+Retirer(t\+\_\+porte porte[S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X][S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y])}]{\setlength{\rightskip}{0pt plus 5cm}void Porte\+Retirer (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+porte}}]{porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a0cae0e717a406da2f2f48750ef46711f}
+
+
+Retire certaines portes choisies de manière aléatoire. 
+
+Retire certaines portes choisies de maniere aleatoire.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em porte\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+X\mbox{]}\mbox{[}\+S\+A\+L\+L\+E\+S\+\_\+\+M\+A\+X\+\_\+\+Y\mbox{]}} & Le tableau contenant les portes \\
+\hline
+\end{DoxyParams}
+\hypertarget{carte_8c_a992fb6649c407d561f5912b050dc468b}{}\index{carte.\+c@{carte.\+c}!Salles\+Possibles\+Compter@{Salles\+Possibles\+Compter}}
+\index{Salles\+Possibles\+Compter@{Salles\+Possibles\+Compter}!carte.\+c@{carte.\+c}}
+\subsubsection[{Salles\+Possibles\+Compter(\+F\+I\+L\+E $\ast$carte\+Fichier)}]{\setlength{\rightskip}{0pt plus 5cm}int Salles\+Possibles\+Compter (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{carte\+Fichier}
+\end{DoxyParamCaption}
+)}\label{carte_8c_a992fb6649c407d561f5912b050dc468b}
+
+
+Retoure le nombre de salles différentes comptées dans le fichier donné en paramètre. 
+
+Retoure le nombre de salles differentes comptees dans le fichier donne en param�tre.
+
+
+\begin{DoxyParams}{Paramètres}
+{\em $\ast$carte\+Fichier} & Le fichier contenant les différents paterns de salles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le nombre de paterns différents
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em $\ast$carte\+Fichier} & Le fichier contenant les differents paterns de salles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Le nombre de paterns differents 
+\end{DoxyReturn}

@@ -1,6 +1,6 @@
-/**
+﻿/**
  \file check.c
- \brief  Roguelike
+ \brief  Fichier avec fonctions de vérifications
  \author Tony Marteau, Dimitri Bernot, Marvin Jean
  \version 1.0.0
  \date 18 décembre 2015

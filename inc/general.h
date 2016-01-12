@@ -1,3 +1,11 @@
+﻿/**
+*	\file general.h
+*	\brief  Bibliothèque inclus
+*	\author Tony Marteau, Dimitri Bernot, Marvin Jean
+*	\version 1.0.0
+*	\date 18 décembre 2015
+*/
+
 #ifndef _general_h
 #define _general_h
 
