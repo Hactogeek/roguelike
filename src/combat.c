@@ -39,7 +39,6 @@ void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
 
 	vita=carte->monstre[idMob].monstreVie;
 	if(vita > 0) {
-		//strcpy(carte->dernierEvenement, "Le joueur a inflige %i degats au monstre, il lui en reste %i", player->caract.force, vita);
 		strcpy(carte->dernierEvenement, "Le joueur a inflige ");
 		sprintf(temp, "%i", player->caract.force);
 		strcat(carte->dernierEvenement, temp);
@@ -51,14 +50,6 @@ void CombatTaper(t_personnage * player,t_carte * carte,int idMob){
 		strcpy(carte->dernierEvenement, "Le joueur a acheve le monstre");
 	}
 
-	//printf("Le joueur a infligé %i dégats au monstre, ",player->caract.force);
-
-	/*vita=carte->monstre[idMob].monstreVie;
-	if(vita > 0){
-	printf("il lui en reste %i.\n",vita);
-	}else{
-	printf("il est mort.\n");
-	}*/
 
 	if(!CheckMonstreVie(idMob,*carte)){//Verifie que le monstre est mort
 		CombatRemporter(player,carte,idMob);

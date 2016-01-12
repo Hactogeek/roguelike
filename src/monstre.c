@@ -31,7 +31,7 @@ void MonstreAttaque(t_personnage * perso, t_carte * carte, int i)
 	if(esquive <= perso->caract.agilite){
 		printf("Le joueur a reussi a esquivé l'attaque.\n");
 	}else{
-		perso->stats.vie -= carte->monstre[i].puissance;
+		perso->stats.vie -= carte->monstrePuissance;
     
     	printf("Le joueur a %i pdv.\n", perso->stats.vie);
 	}

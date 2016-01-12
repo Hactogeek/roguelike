@@ -27,8 +27,8 @@ int main(){
 
 		/* Traitement du choix de l'utilisateur */
 		switch(choix) {	
-			case 1: JeuCommencer();break;
-			case 2: printf("Pas encore fais");break;
+			case 1: JeuCommencer();	break;
+			case 2: JeuCharger(); 	break;
 			case 3: printf("Au Revoir\n"); break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}

@@ -9,4 +9,6 @@
 void JeuAmorcer();
 void JeuTester();
 void JeuCommencer();
+void EtageChanger(t_carte * carte, t_personnage * personnage);
 void JeuContinuer(t_carte * carte, t_personnage * personnage);
+void JeuCharger();

@@ -436,8 +436,6 @@ t_carte CarteCreer() {
 		
 		EscalierChoix(&carte);
 		
-		
-		
 		//Création des chemins
 		/*
 		 * Lors de la création de la carte, des portes ont été atribuées
