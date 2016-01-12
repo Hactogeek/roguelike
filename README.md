@@ -19,13 +19,13 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
 	
 ## A Faire
 
- - [ ] Dévelopement
+ - [x] Dévelopement
   - [x] Génération de la grille
    - [x] Chemin entre les salles 
   - [x] Déplacement du personnage
   - [x] Changement d'étage
-  - [ ] Sauvegarde de la partie
-  - [ ] Charger d'une partie
+  - [x] Sauvegarde de la partie
+  - [x] Charger d'une partie
   - [x] Gestion des monstres
   - [x] Caractéristique
    - [x] Positionnement aléatoire
@@ -37,7 +37,7 @@ Le programme sera écrit en langage C et devra afficher le rendu du jeu dans le 
   - [x] Création
   - [x] Organisation definitive
   - [x] README à jour
- - [ ] Compte Rendu
+ - [x] Compte Rendu
  - [ ] Interface Graphique
 
 ## Idée
